@@ -1,7 +1,7 @@
 https://creativecommons.org/licenses/by-nc-sa/4.0/[image:https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg[License:
 CC BY-NC-SA 4.0]]
 
-image:https://github.com/itu-bdsa/lecture-notes/blob/main/images/banner.png?raw=true[alt=logo,width=100%]
+image:https://github.com/itu-bdsa/lecture_notes/blob/main/images/banner.png?raw=true[alt=logo,width=100%]
 
 == Analysis, Design and Software Architecture
 

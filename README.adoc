@@ -86,12 +86,12 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 
 |8
 |43
-|24/10/23
+|26/10/23
 |TBA
 | link:sessions/session_08/READING_MATERIAL.md[Material]
 | link:sessions/session_08/Slides.md[Intro to Blazor WebAssembly, Client-side rendering, and remote hosted MSSQL DB]
 a| * link:sessions/session_08/README_PROJECT.md[Reading cheeps with Blazor Webassembly frontend, JSON API backend, and hosted DB]
-   * *Project Review 2 (22/10)*
+   * *Project Review 2 (24/10)*
 
 |9
 |44

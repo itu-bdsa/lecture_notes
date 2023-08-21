@@ -166,4 +166,7 @@ image:https://images.manning.com/264/352/resize/book/9/37efddf-eba2-42ec-bdca-74
 
 === Attributions
 
-Icon in banner is from https://www.flaticon.com/free-icons/architecture[Architecture icons created by Freepik - Flaticon]
+Icons in banner are from
+
+* https://www.flaticon.com/free-icons/architecture[Architecture icons created by Freepik - Flaticon]
+* https://www.spriters-resource.com/resources/sheets/108/110732.png[The Spriters Resource]

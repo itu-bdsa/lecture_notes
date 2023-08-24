@@ -58,8 +58,8 @@ Some of which, we will use later in the course.
     3. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) with Ubuntu
 2. [Git](https://git-scm.com/downloads)
 3. [.NET **7**](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-  - That is, **not** .NET 6
-  - If your operating, sytstem is Windows install .NET 7 in WSL
+    - That is, **not** .NET 6
+    - If your operating, sytstem is Windows install .NET 7 in WSL
 4. [Visual Studio Code](https://code.visualstudio.com/Download) with extensions:
     - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
     - [.NET Core Test Explorer](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer)

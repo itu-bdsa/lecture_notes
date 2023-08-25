@@ -26,7 +26,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 |1
 |35
 |31/8/23
-|Helge
+|Helge & Rasmus
 | link:sessions/session_01/READING_MATERIAL.md[Material]
 | link:sessions/session_01/Slides.md[Course Intro, .NET CLI apps, VCS, Tooling]
 | link:sessions/session_01/README_PROJECT.md[Project start, initial _Chirp!_ CLI app]

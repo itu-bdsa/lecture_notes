@@ -155,7 +155,7 @@ TBA
 === Team
 
 * *Teachers*: Helge, Rasmus
-* *TAs*: Hannah, Mikkel, Patrick, Philip
+* *TAs*: Hannah, Mikkel, Patrick A, Patrick B, Philip
 
 === Books
 

@@ -23,7 +23,7 @@ Be done with the project work before we meet again next Thursday.
 
 * Form groups of **five** students, if you are lacking team members, find each other in the first exercise session or use our Teams channel.
 * [Create an organization on GitHub](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
-  - The organization has to be named `ITU_BDSA23_GROUP<no>`, where `<no>` is replaced with your group number
+  - The organization has to be named `ITU-BDSA23-GROUP<no>`, where `<no>` is replaced with your group number
   - [Add the five members of your group to that organization](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization)
 * Within the organization, [create a new public repository](https://docs.github.com/en/get-started/quickstart/create-a-repo) called `Chirp`.
 * All the project work of the next weeks takes place in this repository.

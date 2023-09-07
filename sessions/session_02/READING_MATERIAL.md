@@ -31,3 +31,8 @@
 * Using: [`System.CommandLine`](https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/march/net-parse-the-command-line-with-system-commandline)
 * Using: [`CommandLine`](https://github.com/commandlineparser/commandline)
 * Using: [`docopt.net`](https://docopt.github.io/docopt.net/dev/)
+
+## Diagrams
+
+* [UML class diagrams](https://www.uml-diagrams.org/class-diagrams-overview.html)
+https://www.uml-diagrams.org/class.html

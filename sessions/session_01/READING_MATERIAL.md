@@ -4,8 +4,7 @@
 ## About Git
 
 * In case you are in doubt about any of the basic Git command, see [section 2 of the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository).
-* [A visual explanation of various Git commands](https://onlywei.github.io/explain-git-with-d3/#reset
-)
+* [A visual explanation of various Git commands](https://onlywei.github.io/explain-git-with-d3/)
 * [A Visual Git Reference](https://marklodato.github.io/visual-git-guide/index-en.html)
 * [A Git Beginner Reference Guide](https://mukulrathi.com/git-beginner-cheatsheet/)
 

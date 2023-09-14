@@ -69,16 +69,16 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 |5/10/23
 |Rasmus
 | link:sessions/session_06/READING_MATERIAL.md[Material]
-| link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, Dependency Injection, Authentication and Authorization, and API testing]
-| link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support user login and add API tests]
+| link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, Dependency Injection, and API testing]
+| link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support ORM and add API tests]
 
 |7
 |41
 |12/10/23
-|Rasmus
+|Henrik & Rasmus
 | link:sessions/session_07/READING_MATERIAL.md[Material]
-| link:sessions/session_07/Slides.md[Identity Server and OAuth]
-| link:sessions/session_07/README_PROJECT.md[Refactor _Chirp!_ to support sending of cheeps, and login via GitHub]
+| Guest lecture on Software Licenses + link:sessions/session_07/Slides.md[Identity Server, Authentication and Authorization, and OAuth]
+| link:sessions/session_07/README_PROJECT.md[Refactor _Chirp!_ to support user login via GitHub and sending of cheeps]
 
 |
 |42

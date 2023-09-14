@@ -7,8 +7,8 @@
     <Nullable>enable</Nullable>
 
     <PublishRelease>true</PublishRelease>
-    <PublishSingleFile>true</PublishSingleFile>
-    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <SelfContained>true</SelfContained>
     <DebugType>embedded</DebugType>
     <AssemblyName>hello</AssemblyName>
     <RuntimeIdentifiers>win-x64;linux-x64;osx-x64</RuntimeIdentifiers>

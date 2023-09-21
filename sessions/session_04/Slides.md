@@ -136,8 +136,8 @@ _color: white
 _header: 10 minutes
 -->
 
-- Download a new _Chirp!_ CLI client for your operating system:
-  - [Windows](clients/win/chirp.exe), [MacOS](clients/osx/chirp), or [Linux (and WSL)](clients/linux/chirp)
+- Download a new _Chirp!_ CLI client for your operating system: [Windows](clients/win/chirp.exe), [MacOS](clients/osx/chirp), or [Linux (and WSL)](clients/linux/chirp)
+  - On MacOS/WSL/Linux make the file executable: `chmod u+x ~/Downloads/chirp`
 - Write a cheep from the terminal with the new client
   - **OBS**: the usual netiquette applies, i.e., write only messages that you would utter at your grandma's coffee table
   - **OBS**: For now, write short cheeps, i.e., a single sentence.

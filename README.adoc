@@ -19,9 +19,9 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 *OBS*: We expect you to be present during lectures and exercise sessions.
 
 .Course schedule *Note*: While times are locked, the topics are subject to change. Note, not all links are active yet. They will be populated continuously.
-[width="100%",cols="2%,4%,4%,4%,6%,40%,40%",options="header",]
+[width="100%",cols="2%,4%,4%,4%,6%,34%,40%,6%",options="header",]
 |=======================================================================
-|# |Week |Date |Lecturer |Reading |Topic |Project
+|# |Week |Date |Lecturer |Reading |Topic |Project| Chapter Map
 
 |1
 |35
@@ -30,6 +30,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 | link:sessions/session_01/READING_MATERIAL.md[Material]
 | link:sessions/session_01/Slides.md[Course Intro, .NET CLI apps, VCS, Tooling]
 | link:sessions/session_01/README_PROJECT.md[Project start, initial _Chirp!_ CLI app]
+|
 
 |2
 |36
@@ -38,6 +39,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 | link:sessions/session_02/READING_MATERIAL.md[Material]
 | link:sessions/session_02/Slides.md[Team Work with GitHub, Building, Libraries]
 | link:sessions/session_02/README_PROJECT.md[Refactoring _Chirp!_ CLI app]
+|
 
 |3
 |37
@@ -46,6 +48,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 | link:sessions/session_03/READING_MATERIAL.md[Material]
 | link:sessions/session_03/Slides.md[Intro to testing, CI/CD, and first design reflections]
 | link:sessions/session_03/README_PROJECT.md[Futher refactoring, add testing and CI/CD]
+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-35?origin=product-toc[35], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-36?origin=product-toc[36]
 
 |4
 |38
@@ -54,6 +57,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 | link:sessions/session_04/READING_MATERIAL.md[Material]
 | link:sessions/session_04/Slides.md[Intro to minimal API web apps and deployment to Azure]
 | link:sessions/session_04/README_PROJECT.md[Refactor CSV DB to Web Service with CLI client, CD to Azure]
+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-3?origin=product-toc[3], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-4?origin=product-toc[4], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-5?origin=product-toc[5]
 
 |5
 |39
@@ -63,6 +67,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 | link:sessions/session_05/Slides.md[Intro to Razor web apps, Server-side Rendering, and MVC pattern]
 a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp!_ web app]
    * *Project Review 1 (26/9)*
+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-13?origin=product-toc[13], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-14?origin=product-toc[14], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-15?origin=product-toc[15]
 
 |6
 |40
@@ -71,6 +76,7 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 | link:sessions/session_06/READING_MATERIAL.md[Material]
 | link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, Dependency Injection, and API testing]
 | link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support ORM and add API tests]
+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-8?origin=product-toc[8], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-9?origin=product-toc[9], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-10?origin=product-toc[10], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-11?origin=product-toc[11], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-12?origin=product-toc[12]
 
 |7
 |41
@@ -79,10 +85,11 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 | link:sessions/session_07/READING_MATERIAL.md[Material]
 | Guest lecture on Software Licenses + link:sessions/session_07/Slides.md[Identity Server, Authentication and Authorization, and OAuth]
 | link:sessions/session_07/README_PROJECT.md[Refactor _Chirp!_ to support user login via GitHub and sending of cheeps]
+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-23?origin=product-toc[23], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-24?origin=product-toc[24]
 
 |
 |42
-5+|Fall break
+6+|Fall break
 
 |8
 |43
@@ -92,6 +99,7 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 | link:sessions/session_08/Slides.md[Intro to Blazor WebAssembly, Client-side rendering, and remote hosted MSSQL DB]
 a| * link:sessions/session_08/README_PROJECT.md[Reading cheeps with Blazor Webassembly frontend, JSON API backend, and hosted DB]
    * *Project Review 2 (24/10)*
+|
 
 |9
 |44
@@ -100,6 +108,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Reading cheeps with Blazor Webas
 | link:sessions/session_09/READING_MATERIAL.md[Material]
 | link:sessions/session_09/Slides.md[Blazor internals and UI testing]
 | link:sessions/session_09/README_PROJECT.md[Add login with GitHub, sending of cheeps, and API & UI tests]
+|
 
 |10
 |45
@@ -108,6 +117,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Reading cheeps with Blazor Webas
 | link:sessions/session_10/READING_MATERIAL.md[Material]
 | link:sessions/session_10/Slides.md[Security of web applications]
 | link:sessions/session_10/README_PROJECT.md[Add (un-)follow feature, aged display of cheeps, harden and secure _Chirp!_]
+|
 
 |11
 |46
@@ -116,6 +126,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Reading cheeps with Blazor Webas
 | link:sessions/session_11/READING_MATERIAL.md[Material]
 | link:sessions/session_11/Slides.md[Documentation and visual languages for design and architecture]
 | link:sessions/session_11/README_PROJECT.md[Wild style, implement your own features to _Chirp!_]
+|
 
 |12
 |47
@@ -125,6 +136,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Reading cheeps with Blazor Webas
 | link:sessions/session_12/Slides.md[GDPR and Ethics in Software Engineering]
 a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
    * *Project Review 3 (21/11)*
+|
 
 |13
 |48
@@ -133,6 +145,7 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 | link:sessions/session_13/READING_MATERIAL.md[Material]
 | link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
 | link:sessions/session_13/README_PROJECT.md[Experiments with performance testing]
+|
 
 |14
 |49
@@ -141,6 +154,7 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |
 |Project demo day
 |Complete projects and write reports
+|
 
 |=======================================================================
 

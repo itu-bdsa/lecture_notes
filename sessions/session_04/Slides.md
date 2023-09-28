@@ -173,7 +173,7 @@ _header: 10 minutes
 - Open its development tools (press F12 on Firefox, Edge, ...)
 - Switch to the `Network` tab
 - Enter the URL <https://chirpremotedb.azurewebsites.net/cheeps> in the address bar and hit return
-- In the `Network` tab, click on the `GET` request to the domain `chirpremotedb.azurewebsites.net`
+- In the `Network` tab, click on the `GET` (blue document icon in Safari/Edge) request to the domain `chirpremotedb.azurewebsites.net`
 - Inspect the headers and bodies of the sent request and the received response.
 - Discuss with your neighbors what you see.
 

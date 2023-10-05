@@ -77,19 +77,6 @@ Continue to release and deploy automatically.
 That is, during the next weeks you bring **multiple** new versions `Chirp.Razor` running into production, i.e., to deploy them automatically to Azure App Service.
 The latest version of the application in production is always the latest version of the application in your main branch.
 You decide if it is the latest tagged version or the latest committed version, i.e., if your workflow is triggered by pushes to main or pushes of tags.
-Consequently, you deploy more often than once per week.
 
 Likely, you have a respective GitHub Actions workflow already from last week.
 If not, this task is here to signal that it is high time creating a working deployment workflow.
-
-### 2.c) Add Unit Tests
-
-Now, that you have decoupled your data persistence code properly from your application, augment your test suite from last time.
-
-Implement a set of unit tests for suitable functionality, e.g., data conversion.
-
-### 2.d) Use In-memory SQLite Database for testing
-
-As we realized during the last weeks, a direct dependency to a certain database is not advisable when running test suites.
-
-Consequently, configure your integration test suite so that it uses an in-memory SQLite database for testing.

@@ -73,11 +73,13 @@ If not, iterate over this cycle, i.e., problem identification, information gathe
 
 ### 2.b) Continuous Deployment
 
-Continue to release automatically.
-That is, during the next week you make multiple new versions `Chirp.Razor` running in production.
+Continue to release and deploy automatically.
+That is, during the next weeks you bring **multiple** new versions `Chirp.Razor` running into production, i.e., to deploy them automatically to Azure App Service.
 The latest version of the application in production is always the latest version of the application in your main branch.
-Assure that this is the case via a respective GitHub Actions workflow.
-Likely, you have one already from last week.
+You decide if it is the latest tagged version or the latest committed version, i.e., if your workflow is triggered by pushes to main or pushes of tags.
+Consequently, you deploy more often than once per week.
+
+Likely, you have a respective GitHub Actions workflow already from last week.
 If not, this task is here to signal that it is high time creating a working deployment workflow.
 
 ### 2.c) Add Unit Tests

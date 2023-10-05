@@ -64,7 +64,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 |28/9/23
 |Helge
 | link:sessions/session_05/READING_MATERIAL.md[Material]
-| link:sessions/session_05/Slides.md[Intro to Razor web apps, Server-side Rendering, and MVC pattern]
+| link:sessions/session_05/Slides.md[Intro to Razor web apps, Server-side Rendering, MVC pattern, and SQLite]
 a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp!_ web app]
    * *Project Review 1 (26/9)*
 | link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-13?origin=product-toc[13], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-14?origin=product-toc[14], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-15?origin=product-toc[15]

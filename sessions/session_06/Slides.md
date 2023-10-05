@@ -76,6 +76,16 @@ What do we do if we cannot finish our feature during a day?
 - It is not advisable to have a `main2.0` branch.
 - Likely, it is also not a good idea to call a branch `origin` since it is confusing when pointing to remote repositories in git commands.
 
+---
+
+## Process: Scientific problem solving
+
+> 1. Identify the problem
+> 2. Gather information
+> 3. Iterate potential solutions
+> 4. Test your solution<font size=3>
+Source: <a href="https://www.oreilly.com/content/4-steps-to-solving-any-software-problem/">E. Cain <i>4 steps to solving any software problem</i></a>
+</font>
 
 ---
 
@@ -382,6 +392,11 @@ var sorted = cities.Where(c => c.Name.Contains("i"))
 
 # Design: Repository Pattern
 
+<!--
+_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
+_color: white
+-->
+
 > A system with a complex domain model often benefits from a layer, [...] that isolates domain objects from details of the database access code. In such systems it can be worthwhile to build another layer of abstraction over the mapping layer where query construction code is concentrated.
 >
 > A Repository mediates between the domain and data mapping layers, acting like an in-memory domain object collection. Client objects construct query specifications declaratively and submit them to Repository for satisfaction.
@@ -391,138 +406,13 @@ var sorted = cities.Where(c => c.Name.Contains("i"))
 ![bg right:50% 100%](https://www.martinfowler.com/eaaCatalog/repositorySketch.gif)
 
 
-<!-- TODO: Add something from here? http://web.archive.org/web/20150404154203/http://www.remondo.net/repository-pattern-example-csharp/ -->
+# Demo
 
+## Repository Pattern
 
-## Design: Unit of Work
-
-<!--
-_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
-_color: white
--->
-
-![bg right:60% 100%](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
-
-<font size=3>
-Image source: <a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design">C. Torre et al. <i>Design the infrastructure persistence layer</i></a>
-</font>
-
-
-## Design: Unit of Work
-
-<!--
-_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
-_color: white
--->
-
-What does that mean for creating repositories
-
-
-
-## How to get data from domain models/Repositories into views?
-
-
-## Testing strategies with database
-
-![bg right:60% 100%](https://learn.microsoft.com/en-us/ef/core/testing/_static/fake-provider-and-repository-pattern.png)
-
-
-<font size=3>
-Image source: <a href="https://learn.microsoft.com/en-us/ef/core/testing/choosing-a-testing-strategy">Microsoft Documentation <i>Choosing a testing strategy</i></a>
-</font>
+what do
 
 ---
-
-### a) SQLite in memory
-
-
----
-
-### b) Mocks/Stubs
-
-What are these (mocks and stubs)?
-How is the relation to the repository pattern?
-
-
-
-
-## Development and testing of APIs with OpenAPI
-
-- OpenAPI
-- Add of endpoint explorer (Swagger middleware)
-
-
-
-## Dependency injection revisited
-
-Explain again ASP.NET DI container with repositories
-
-
-## Process: Scientific problem solving
-
-
-> 1. Identify the problem
-> 2. Gather information
-> 3. Iterate potential solutions
-> 4. Test your solution<font size=3>
-Source: <a href="https://www.oreilly.com/content/4-steps-to-solving-any-software-problem/">E. Cain <i>4 steps to solving any software problem</i></a>
-</font>
-
-
-
-
-## Recommendation: Separate Kinds of Code
-
-<!--
-_backgroundImage: "linear-gradient(to bottom, #e18ac2, #d112a5)"
-_color: white
--->
-
-> **Command Query Separation**
->
-> Separate Commands from Queries. Commands are procedures that have side effects. Queries are functions that return data. Every method should be either a Command or a Query, but not both.<font size=3>
-Source: Mark Seemann <i>"Code That Fits in Your Head"</i>
-</font>
-
-
-
-<!-- ----------------------------------------------------------------------- -->
-
-
-
-## Dependency Injection
-
-Basic idea, reverse direction of a dependency.
-In our examples it is often achieved by injecting a dependency to a class at construction time.
-The basic idea is even more general.
-When you call a binary with an argument, you inject information into the runtime without having the binary contain it directly.
-
-
-
-
-
-
-## Testing of web applications — End-to-end testing
-
-Moved from last week since no new information is stored in the databases.
-
-
-
-
-
-
-
-
-
-
-## `DbContext`? `DbSet`?
-
-
-
-
-
-
-
 
 ## What to do now?
 
@@ -532,4 +422,4 @@ Moved from last week since no new information is stored in the databases.
 - Check the [reading material](./READING_MATERIAL.md)
 - Work on the [project](./README_PROJECT.md)
 
-- <font color="#cecdce">If you feel you want prepare for next session, read chapters TODO! [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) </font>
+- <font color="#cecdce">If you feel you want prepare for next session, read chapters 23, 24 [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) </font>

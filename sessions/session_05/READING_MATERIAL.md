@@ -18,12 +18,3 @@
 
 * [Creating a pull request from one branch to another](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 * [Requesting a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)
-
-
-
-
-<!--
-  * [Return HTML from minial web-apis](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/responses?view=aspnetcore-7.0#customizing-responses)
-  * Conventions: https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
-  * Autoformat code on save: https://stackoverflow.com/questions/39494277/how-do-you-format-code-on-save-in-vs-code
- -->

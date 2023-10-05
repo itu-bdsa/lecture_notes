@@ -9,7 +9,7 @@ app.MapGet("/a/{endpoint}", (string endpoint) =>
 
 app.MapGet("/b/{endpoint}", (string endpoint) =>
 {
-    var informer = new InjectedDependencyExample.Informer(new DIExample.Writer.FileWriter());
+    var informer = new InjectedDependencyExample.Informer(new DIExample.Writer.StdIoWriter());
     informer.Inform(endpoint);
 });
 

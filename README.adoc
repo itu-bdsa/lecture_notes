@@ -178,6 +178,11 @@ The main book accompanying this course is link:https://www.manning.com/books/asp
 image:https://images.manning.com/264/352/resize/book/9/37efddf-eba2-42ec-bdca-744dc3de0d1e/Lock-3ed-HI.png[alt=Book_Cover]
 
 
+=== Automatic Feedback/Dashboards
+
+* [Status of _Chirp!_ apps week 5/6](http://209.38.208.62/report_razor_apps.html)
+
+
 === Attributions
 
 Icons in banner are from

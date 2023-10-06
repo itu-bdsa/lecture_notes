@@ -180,7 +180,8 @@ image:https://images.manning.com/264/352/resize/book/9/37efddf-eba2-42ec-bdca-74
 
 === Automatic Feedback/Dashboards
 
-* [Status of _Chirp!_ apps week 5/6](http://209.38.208.62/report_razor_apps.html)
+* link:http://209.38.208.62/report_razor_apps.html[Status of _Chirp!_ apps week 5/6]
+* link:http://209.38.208.62/org-commit-frequency.html[Weekly comit frequencies per group]
 
 
 === Attributions

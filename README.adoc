@@ -74,8 +74,8 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 |5/10/23
 |Rasmus
 | link:sessions/session_06/READING_MATERIAL.md[Material]
-| link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, Dependency Injection, and API testing]
-| link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support ORM and add API tests]
+| link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, LINQ, and Repository pattern]
+| link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support ORM]
 | link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-8?origin=product-toc[8], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-9?origin=product-toc[9], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-10?origin=product-toc[10], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-11?origin=product-toc[11], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-12?origin=product-toc[12]
 
 |7

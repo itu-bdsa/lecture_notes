@@ -48,26 +48,11 @@ Session 3
 
 <!-- First hour -->
 
-## Survey: How is it going so far?
-
-- Go to https://www.menti.com/
-- Use code: 6353 6231
-- Complete the survey
-
-## Feedback
-
-How is it going?
-
-* Are you really working on the projects?
-* Merge branches to main -> At least at the end of the day.
-* Read precisely! Interface spec is fixed.
-
-
 ## Feedback
 
 - Remember to add a `.gitignore` file to your projects
   * Your repositories should not be littered with artifacts that are not part of your _Chirp!_ systems! `.DS_Store` files, etc.
-  * **OBS**: `.gitignore` files have to be placed in root of your repositories (`.vscode` dir has to be there too)!
+
 * Add an `.editorconfig` file, so that you apply all the same code conventions.
 
 * Remember to clean up
@@ -385,7 +370,7 @@ Source: <a href="https://microsoft.github.io/code-with-engineering-playbook/auto
 
 <!-- ## End-to-end (E2E) Tests of C♯ CLI Programs
 
-TODO: FIXME XUnit cannot handle this, shall we switch to NUnit? -> Currently no!
+TODO: FIXME
 
 ```csharp
   [Fact]

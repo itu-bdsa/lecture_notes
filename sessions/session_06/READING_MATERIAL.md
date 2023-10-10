@@ -1,6 +1,6 @@
 # Reading Material for Session 06
 
-* Read chapter 12 from [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition)
+* Read chapters 8, 9, 10, and 11 from [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 
 
 ## Motivational (Optional)

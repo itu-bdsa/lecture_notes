@@ -60,6 +60,40 @@ On software licenses
 
 ---
 
+## Feedback: Working with/on issues
+
+<style scoped>
+section {
+  font-size: 22px;
+}
+
+pre {
+  font-size: 22px;
+}
+</style>
+
+Remember the purpose of an issue: You want to enable your team mates to take over work from the pile of issues that are required
+
+```
+As a developer, I want to test the functionality of the newly created Entity Framework Core, Razor Page app for robustness
+
+Acceptance Criteria:
+
+[] The test have been altered to now use EF Core
+[] Unit tests for suitable functionality have been added (e.g., data conversion)
+[] Test for the seeding data that was dumbed.
+[] The tests have been made to use an in-memory database thereby not interfering/altering the real database.
+```
+
+* What is good about this issue?
+* What could be improved?
+  * What is "robustness" here?
+  * What is "suitable functionality"?
+* Make such knowledge and assumptions explicit in the description of the issue.
+* Implicit knowledge cannot be implemented.
+
+---
+
 ## Feedback: Continue to release!
 
 <object data="http://209.38.208.62/release_activity_weekly.svg" width="60%" height="50%"><div></div></object>
@@ -132,11 +166,98 @@ _color: white
 _header: 15 minutes
 -->
 
-Make it *Clean* with *Onion*
+Make it *Clean* with *Onion*, and *CQS*
 
 Add restrictions to length and non-null on data model
 
 Replace integer IDs with Guids
+
+---
+
+# Repository pattern
+
+![bg](https://miro.medium.com/max/1400/1*wgpae8kWxzQPG0XBAzUWYw.jpeg)
+
+---
+
+# Repository Pattern
+
+- Enable CRUD on domain objects (entities)
+
+- Usually: one repository per entity
+
+- Debatable: has a `Save()` method
+
+---
+
+# Generic repository
+
+```csharp
+public interface Repository<T, K>
+{
+    T Create(T entity);
+    IReadOnlyCollection<T> Read();
+    T Read(K id);
+    void Update(T entity);
+    void Delete(K id);
+}
+```
+
+---
+
+# Repository Pattern
+
+> ... but wait ...Entity Framework already does that for me!?
+
+---
+
+# Recommended Repository: Per entity e.g., `Character`
+
+```csharp
+public interface ICharacterRepository
+{
+    int Create(CharacterCreateDTO character);
+    CharacterDetailsDTO Read(int characterId);
+    IReadOnlyCollection<CharacterDTO> Read();
+    void Update(CharacterUpdateDTO character);
+    void Delete(int characterId);
+}
+```
+
+...or something similar...
+
+---
+
+# Testing...
+
+- Testing live databases is hard
+- Testing live full systems is hard
+- By transitivity: Testing ... is hard...
+
+---
+
+# SQLite in-memory database
+
+```bash
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+```
+
+```csharp
+// Arrange
+using var connection = new SqliteConnection("Filename=:memory:");
+connection.Open();
+var builder = new DbContextOptionsBuilder<MyContext>().UseSqlite(connection);
+using var context = new MyContext(builder.Options);
+var repository = new MyRepository(context);
+```
+
+---
+
+# Demo
+
+## Testing Entity Framework with *SQLite in-memory*
+
+---
 
 ## What to do now?
 
@@ -147,3 +268,9 @@ Replace integer IDs with Guids
 - Work on the [project](./README_PROJECT.md)
 
 - <font color="#cecdce">If you feel you want prepare for next session, read chapters 6, 7, and 23 [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) </font>
+
+---
+
+# Thank you
+
+![bg right:60% contain](images/applause.png)

@@ -83,17 +83,13 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 |12/10/23
 |Henrik & Rasmus
 | link:sessions/session_07/READING_MATERIAL.md[Material]
-| Guest lecture on Software Licenses + link:sessions/session_07/Slides.md[Identity Server, Authentication and Authorization, and OAuth]
-| link:sessions/session_07/README_PROJECT.md[Refactor _Chirp!_ to support user login via GitHub and sending of cheeps]
-| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-23?origin=product-toc[23], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-24?origin=product-toc[24]
+| Guest lecture on Software Licenses + link:sessions/session_07/Slides.md[SW Licenses and Testing of EF Core Projects]
+| link:sessions/session_07/README_PROJECT.md[Add testing with EF Core and SQLite in memory database]
+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-8?origin=product-toc[8], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-9?origin=product-toc[9], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-10?origin=product-toc[10] (link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-12?origin=product-toc[12], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-35?origin=product-toc[35], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-36?origin=product-toc[36])
 
 |
 |42
 6+|Fall break
-
-Refactor _Chirp!_ to support user login via GitHub and sending of cheeps
-| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-23?origin=product-toc[23], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-24?origin=product-toc[24]
-Identity Server, Authentication and Authorization, and OAuth
 
 |8
 |43

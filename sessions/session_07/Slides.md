@@ -116,12 +116,6 @@ Acceptance Criteria:
 
 ---
 
-# Command Query Seperation
-
-<https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/>
-
----
-
 ![bg](images/onion.jpg)
 
 <div style="text-align: right;">
@@ -132,9 +126,13 @@ Acceptance Criteria:
 
 ---
 
-<!-- _class: default -->
-
 ![bg 75%](images/clean-architecture.png)
+
+---
+
+# Clean onions
+
+## Demo
 
 ---
 
@@ -155,6 +153,18 @@ dotnet ef database update --project ... --startup-project ...
 
 <https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet>
 <https://docs.microsoft.com/en-us/ef/core/modeling/>
+
+---
+
+# Command Query Seperation
+
+<https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/>
+
+---
+
+# CQS
+
+## Demo
 
 ---
 

@@ -11,15 +11,15 @@
 - [Entity Properties](https://learn.microsoft.com/en-us/ef/core/modeling/entity-properties)
 
 
-## Other stuff
+## Architecture
 
-- [Fluent Validation](https://docs.fluentvalidation.net/en/latest/)
 - [Common web application architectures](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures)
 - [Clean Architecture](https://github.com/ardalis/CleanArchitecture/)
 - [Command–query separation](https://en.wikipedia.org/wiki/Command–query_separation)
 - [CQS versus server generated IDs](https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/)
 - [Command Query Separation when Queries should have side-effects](https://blog.ploeh.dk/2015/10/08/command-query-separation-when-queries-should-have-side-effects/)
 - [CQRS](https://www.martinfowler.com/bliki/CQRS.html)
+
 
 ## Razor Page Applications with EF Core
 

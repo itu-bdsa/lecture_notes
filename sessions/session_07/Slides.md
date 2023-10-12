@@ -162,7 +162,20 @@ dotnet ef database update --project ... --startup-project ...
 
 ---
 
-# CQS
+## Recommendation: Separate Kinds of Code
+
+<!--
+_backgroundImage: "linear-gradient(to bottom, #e18ac2, #d112a5)"
+_color: white
+-->
+
+> **Command Query Separation**
+>
+> Separate Commands from Queries. Commands are procedures that have side effects. Queries are functions that return data. Every method should be either a Command or a Query, but not both.<font size=3>
+Source: Mark Seemann <i>"Code That Fits in Your Head"</i>
+</font>
+
+---
 
 ## Demo
 

@@ -15,64 +15,47 @@ Be done with the project work before we meet again next Thursday.
 
 **Note**: You may want to perform these steps in a different order - or simultaneously for some.
 
-### 1.a) Restrict Length of Cheeps in Data Model
-
-Make sure that your database does not contain cheeps, whose text is longer than 160 characters.
-Implement this restriction by constraining the data model accordingly.
-Implement other reasonable restrictions on author name length etc.
-
-### 1.b) Use In-memory SQLite Database for Testing
+### 1.a) Use In-memory SQLite Database for Testing
 
 As we realized during the last weeks, a direct dependency to a certain database is not advisable when running test suites.
 
 Consequently, configure your integration test suite so that it uses an in-memory SQLite database for testing.
 
+### 1.b) Extend Your Repositories
+
+Expose methods in your repositories (OBS: that includes the respective interfaces) that enable to:
+
+- Find `Author` by `name`
+- Find `Author` by `email`
+- Create a new `Author`
+
+- If not implemented already, retrieve `cheeps` for a certain page.
+- If not implemented already, retrieve `cheeps` for a certain page that are written by a certain `Author` who is identified by `name`
+- Create a new `cheep`. Note, that might mean to also create a respective author if she does not exist yet in _Chirp!_.
+
 ### 1.c) Add Unit Tests
 
 Now, that you have decoupled your data persistence code properly from your application, augment your test suite from last time.
 
-Implement a set of unit tests for suitable functionality, e.g., data conversion.
+Implement a set of unit tests for suitable functionality, e.g., all of the repository methods from the task above, data conversion, etc.
 
-### 1.d) Validation
+### 1.d) Command Query Separation
 
-Implement fluent validation on your DTOs/repository ensuring input is valid and proper error handling is made.
+Ensure that the methods that are exposed in your repositories follow are separated into commands and queries:
 
-E.g. author email should be formatted correctly and cheep length must be between 5 and 160 characters.
+> Separate Commands from Queries. Commands are procedures that have side effects. Queries are functions that return data. Every method should be either a Command or a Query, but not both.<font size=3>
+Source: Mark Seemann <i>"Code That Fits in Your Head"</i>
+</font>
 
-### 1.e) Expose API
+### 1.e) Warnings
 
-Expose your repository methods using minimal APIs in `Chirp.Razor`.
+Ensure that your project builds without any warnings.
+That is, make sure that *all* warnings in your code are addressed.
 
-### 1.f) Create cheep from UI
 
-Add a `/cheep` endpoint where you can enter `Author` and `Text` and `[Submit]` a cheep.
+## 2) Process
 
-### 1.g) CQS
-
-Ensure your repositories are following the CQS pattern.
-
-### 1.h) Extend repositories
-
-Enables:
-
-- Author:
-  - Find by `name`
-  - Find by `email`
-  - Create
-  - Delete (taking down all cheeps from author)
-
-- Cheeps:
-  - Get pages result
-  - Get pages result by author `name`
-  - Create
-
-### 1.i) Warning
-
-Ensure *all* warnings in your code have been dealt with.
-
-## Process
-
-### Choose a license for your _Chirp!_ project.
+### 2.a) Choose a license for your _Chirp!_ project.
 
 Choose a license for your _Chirp!_ project.
 If in doubt about which license might be suitable for your project, consult [choosealicense.com](https://choosealicense.com/)
@@ -84,3 +67,13 @@ For license compatibility, consider the overview from a [corresponding Wikipedia
 
 Place the license text in a file `LICENSE.md`, which you place in the root directory of your project on the main branch.
 See [GitHub's documentation](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) on how to add a license to an existing project.
+
+### 2.b) Continue to Release
+
+Continue to release and deploy automatically.
+That is, whenever you deploy automatically, you also create a new release.
+Meaning, the latest version of the application in production is always the latest version of the application in your main branch.
+You decide if it is the latest tagged version or the latest committed version, i.e., if your workflow is triggered by pushes to main or pushes of tags.
+
+This task is not asking for any new functionality.
+Just for that you continue to release automatically as during the last weeks.

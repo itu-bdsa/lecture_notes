@@ -47,7 +47,12 @@ Ensure that the methods that are exposed in your repositories follow are separat
 Source: Mark Seemann <i>"Code That Fits in Your Head"</i>
 </font>
 
-### 1.e) Warnings
+### 1.f) Onion Architecture
+
+Refactor your projects into an onion architecture, as seen in class.
+That is, in your `src` directory, create a `Chirp.Core` project that contains your DTOs, Repository interface(s), etc., a `Chirp.Infrastucture` project that contains you Repositorie(s), data model, database context, etc., and a `Chirp.Web` project that contains the actual Razor Page application
+
+### 1.f) Warnings
 
 Ensure that your project builds without any warnings.
 That is, make sure that *all* warnings in your code are addressed.

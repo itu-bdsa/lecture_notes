@@ -259,6 +259,35 @@ var repository = new MyRepository(context);
 
 ---
 
+# Validation
+
+```csharp
+public class CustomerValidator : AbstractValidator<Customer>
+{
+    public CustomerValidator()
+    {
+        RuleFor(x => x.Surname).NotEmpty();
+        RuleFor(x => x.Forename).NotEmpty().WithMessage("Please specify a first name");
+        RuleFor(x => x.Discount).NotEqual(0).When(x => x.HasDiscount);
+        RuleFor(x => x.Address).Length(20, 250);
+        RuleFor(x => x.Postcode).Must(BeAValidPostcode).WithMessage("Please specify a valid postcode");
+    }
+
+    private bool BeAValidPostcode(string postcode)
+    {
+        // custom postcode validating logic goes here
+    }
+}
+```
+
+---
+
+# Validation
+
+## Demo
+
+---
+
 ## What to do now?
 
 ![w:400px](https://25.media.tumblr.com/47f546206bf9a8b5dc97e7fe1b6714b3/tumblr_mi7nkgP6NH1qmegz6o1_500.gif)

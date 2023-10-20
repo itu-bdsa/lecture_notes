@@ -6,6 +6,8 @@ You have to work on the following topics.
 
   - [1) Software Development](#1-software-development)
   - [2) Process](#2-process)
+  - [3) Project Review 2](#3-project-review-2)
+
 
 Remember, you have to perform work on each topic and on **each** bullet point.
 Be done with the project work before we meet again next Thursday.
@@ -82,3 +84,13 @@ You decide if it is the latest tagged version or the latest committed version, i
 
 This task is not asking for any new functionality.
 Just for that you continue to release automatically as during the last weeks.
+
+
+## 3) Project Review 2
+
+Prepare for the second project review (next Tuesday 24. Oct.).
+Be prepared to demonstrate and inspect with the assigned TA:
+* How you build, test, and deploy your projects
+* The current state of your project
+
+In case you cannot meet with the TA who is assigned to your group, let her know well in advance that you cannot and reschedule to meeting to another suitable time slot!

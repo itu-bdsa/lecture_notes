@@ -64,6 +64,10 @@ Add a user profile page which initially only lists the claims of the user.
 
 Use *Individual Accounts* and subsequently enable GitHub using [External OAuth authentication providers](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins)
 
+A valuable resource when choosing this solution is chapter 23 of the course book Andrew Lock _ASP.NET Core in Action_.
+The first sections in it discuss ASP.NET Core Identity based on an example [from the official documentation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-7.0&tabs=netcore-cli)
+Section 23.4 explains in detail how to add ASP.NET Core Identity to an existing Razor Page application, which in your case is your current _Chirp!_ application.
+
 ### 1.b) Azure AD B2C + GitHub
 
 Use *Microsoft Identity Platform* to target your Azure AD B2C tenant and link it up to GitHub

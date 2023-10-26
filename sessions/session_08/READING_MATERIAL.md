@@ -1,6 +1,6 @@
 # Reading Material for Session 08
 
-## OAuth
+## Introduction to OAuth
 
 * Read this [blog post](https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc) that describes how OAuth works.
   - Alternatively watch [this video](https://youtu.be/t18YB3xDfXI) that accompanyings the article.
@@ -14,6 +14,9 @@
                 allowfullscreen>
         </iframe>
         </center>
+
+
+## ASP.NET Core Identity and Authentication with Azure App Service
 
 * [Choose an identity management solution](https://learn.microsoft.com/en-us/aspnet/core/security/how-to-choose-identity-solution)
 

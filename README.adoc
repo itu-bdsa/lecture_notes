@@ -143,7 +143,7 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |30/11/23
 |Helge
 | link:sessions/session_13/READING_MATERIAL.md[Material]
-| link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
+| Guest lecture on SE + link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
 | link:sessions/session_13/README_PROJECT.md[Experiments with performance testing]
 |
 

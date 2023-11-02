@@ -42,6 +42,12 @@ See for example this guide: https://learn.microsoft.com/en-us/azure/azure-sql/da
 
 Configure your _Chirp!_ applications that are deployed to Azure App Service, i.e., your applications in _production_, to target this Azure SQL database.
 
+The name of your database server is `bdsagroup<no>-chirpdb`, where `<no>` is replaced with your group number.
+
+Remember to configure your Azure SQL Server to use *SQL Login* with a username and password to use for your connection string.
+
+**Note**: The demo using Entra ID Groups and Managed Identity is not posible with your Azure Subscription on the ITU tenant. This is why we switch back to *legacy* SQL Login.
+
 ### Add feature: Sending Cheeps
 
 Extend your _Chirp!_ application so that users can send cheeps.

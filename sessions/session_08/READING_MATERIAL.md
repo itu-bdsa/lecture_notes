@@ -1,5 +1,8 @@
 # Reading Material for Session 08
 
+* Read chapters 23, 6, and 7 from [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition)
+
+
 ## Introduction to OAuth
 
 * Read this [blog post](https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc) that describes how OAuth works.

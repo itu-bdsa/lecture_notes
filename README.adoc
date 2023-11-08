@@ -116,7 +116,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |Rasmus
 | link:sessions/session_10/READING_MATERIAL.md[Material]
 | link:sessions/session_10/Slides.md[Security of web applications]
-| link:sessions/session_10/README_PROJECT.md[Add (un-)follow feature, harden and secure _Chirp!_]
+| link:sessions/session_10/README_PROJECT.md[Complete login and sending of cheeps. Check security]
 |link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-28?origin=product-toc[28], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-29?origin=product-toc[29]
 
 |11
@@ -124,16 +124,15 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |16/11/23
 |Helge
 | link:sessions/session_11/READING_MATERIAL.md[Material]
-| link:sessions/session_11/Slides.md[Documentation and visual languages for design and architecture]
-| link:sessions/session_11/README_PROJECT.md[Wild style, implement your own features to _Chirp!_]
+| Guest lecture on GDPR and "Privacy by Design" link:sessions/session_11/Slides.md[Requirements and Intro to visual languages for design and architecture]
+| link:sessions/session_11/README_PROJECT.md[Add (un-)follow feature, harden and secure _Chirp!_]
 |
-
 |12
 |47
 |23/11/23
 |Helge
 | link:sessions/session_12/READING_MATERIAL.md[Material]
-| link:sessions/session_12/Slides.md[GDPR and Ethics in Software Engineering]
+| link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
 a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
    * *Project Review 3 (21/11)*
 |
@@ -144,9 +143,9 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |Helge
 | link:sessions/session_13/READING_MATERIAL.md[Material]
 | Guest lecture on SE + link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
-| link:sessions/session_13/README_PROJECT.md[Experiments with performance testing]
+| link:sessions/session_13/README_PROJECT.md[Wild style, implement your own features to _Chirp!_]
 |
-
+// Experiments with performance testing
 |14
 |49
 |7/12/23
@@ -181,6 +180,7 @@ image:https://images.manning.com/264/352/resize/book/9/37efddf-eba2-42ec-bdca-74
 === Automatic Feedback/Dashboards
 
 * link:http://209.38.208.62/report_razor_apps.html[Status of _Chirp!_ apps week 5/6]
+* link:http://209.38.208.62/report_razor_apps2.html[Status of _Chirp!_ apps week 9/10]
 * link:http://209.38.208.62/org-commit-frequency.html[Weekly commit frequencies per group]
 * link:http://209.38.208.62/status.html[Weekly release frequencies and issue activity per group]
 

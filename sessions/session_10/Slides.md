@@ -259,6 +259,8 @@ Try to push a secret - can you make it fail?
 
 [Azure Front Door](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview)
 
+[Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/)
+
 ## Azure Web App Security
 
 ### Demo

@@ -208,6 +208,20 @@ MapBlazorHub
 
 ### Demo
 
+## [.NET Conf 2023](https://www.dotnetconf.net/)
+
+The largest .NET event hosted online
+
+November 14 ‐ 16.
+
+Releasing .NET 8
+
+[.NET Support Policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)
+
+**Note**: You do not need to update Chirp to .NET 8 for this course.
+
+- You should plan to update it NLT Q1 2024.
+
 ## Microsoft Defender for Cloud
 
 [What is Microsoft Defender for Cloud?](https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction)

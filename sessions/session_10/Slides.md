@@ -99,6 +99,11 @@ Jakob Krabbe Sørensen from [ComplyCloud](https://www.complycloud.com/) will giv
 
 ---------------------------------------------------------------
 
+## Last Lecture from me
+
+### Picture for LinkedIn
+
+### Also, sick child :(
 
 ## Topics
 
@@ -152,11 +157,36 @@ Jakob Krabbe Sørensen from [ComplyCloud](https://www.complycloud.com/) will giv
 
 me
 
+## Security in Web Applications
+
+### HTTPS demo
+
 ## OWASP Foundation, the Open Source Foundation for Application Security
 
 ### [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 
 ![](https://owasp.org/www-project-top-ten/assets/images/mapping.png)
+
+## XSRF/CSRF
+
+[Prevent Cross-Site Request Forgery (XSRF/CSRF) attacks in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery)
+
+### Antiforgery in ASP.NET Core
+
+Antiforgery middleware is added to the [Dependency injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) container when one of the following APIs is called in `Program.cs`:
+
+```txt
+AddMvc
+MapRazorPages
+MapControllerRoute
+MapBlazorHub
+```
+
+#### Demo
+
+## XSS
+
+[Prevent Cross-Site Scripting (XSS) in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cross-site-scripting)
 
 ## SQL Injection
 
@@ -259,6 +289,10 @@ Configure Web App:
 Configure SQL Server:
 
 - Allow Azure services only
+
+## Security and compliance is everybody's responsibility
+
+![bg](images/keys.jpg)
 
 ---------------------------------------------------------------
 

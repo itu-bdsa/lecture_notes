@@ -119,6 +119,8 @@ Jakob Krabbe Sørensen from [ComplyCloud](https://www.complycloud.com/) will giv
 - Azure Security Components
 - Azure Web App Security
 - Azure SQL Security
+- Hosted SQL Server support
+- Login support
 
 ##
 
@@ -307,6 +309,26 @@ Configure SQL Server:
 ## Security and compliance is everybody's responsibility
 
 ![bg](images/keys.jpg)
+
+## Extending data model
+
+### Follow/unfollow
+
+### Likes/reactions
+
+## Hosted SQL Server support
+
+### ?
+
+## Login support
+
+### ?
+
+#### Demo
+
+## Thank you
+
+![bg right:60% contain](images/applause.png)
 
 ---------------------------------------------------------------
 

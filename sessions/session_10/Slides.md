@@ -247,7 +247,9 @@ section {
 }
 </style>
 
-Configure GitHub Advanced Security
+Configure GitHub Advanced Security:
+
+- Go to repository --> Settings --> Code Security and Analysis
 
 Review the *Security* tab.
 

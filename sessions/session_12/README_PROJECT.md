@@ -42,7 +42,7 @@ This solution is of course not GDPR compliant.
 
 Alternatively, since you remember from Jakob that in terms of GDPR "anonymization == deletion", you can decide to implement deletion in this way.
 That is, you may want to implement this feature so that user names and other personal data are anonymized
-For this project, it is okay that you do not consider
+For this project, it is okay that you do not consider anonymizing the contents of a cheep.
 
 
 ## 2) Process

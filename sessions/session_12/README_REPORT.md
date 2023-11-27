@@ -68,9 +68,6 @@ Illustrate the organization of your code base.
 That is, illustrate which layers exist in your (onion) architecture.
 Make sure to illustrate which part of your code is residing in which layer.
 
-<!-- The latter does not have to be complete, it should be exemplary.
-That is, you do not have to provide for example -->
-
 ### Architecture of deployed application
 
 Illustrate the architecture of your deployed application.

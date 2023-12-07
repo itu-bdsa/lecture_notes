@@ -38,7 +38,7 @@ Make sure that the above features are tested in a suitable form.
 
 ## 3) Demo Day
 
-Prepare for the Demo day next week.
+Prepare for the Demo day next week (Thursday, 7/12/23).
 You present your work to each other in clusters of five (and one cluster of six) groups.
 Each group has 10 minutes to present. The remaining time in the time slots is used for discussions and feedback.
 

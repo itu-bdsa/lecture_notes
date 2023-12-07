@@ -4,7 +4,7 @@
 
 ## Formal Requirements
 
-All your documentation for that report is written in Markdown, a lightweight markup language (https://www.markdownguide.org).
+All your documentation for this report is written in Markdown, a lightweight markup language (https://www.markdownguide.org).
 In the root of your repository, create a directory called `docs`.
 Let it contain a file called `report.md`.
 
@@ -19,7 +19,7 @@ cd docs
 pandoc report.md -o 2023_itubdsa_group_<no>_report.pdf
 ```
 
-Find instructions on how to install `pandoc` [here](https://pandoc.org/installing.html)
+Find instructions on how to install `pandoc` [here](https://pandoc.org/installing.html).
 In case you do not want to install `pandoc` locally to build your report PDF file, you can add the [GitHub Actions Pandoc Action](https://github.com/pandoc/pandoc-action-example) to a respective workflow that updates the PDF file on pushes to/merges with the `docs` directory in your repository.
 
 Use the [report template](./docs/report.md) that is provided next to this description.
@@ -41,15 +41,12 @@ So make sure they do not become too small.
 Create all illustrations either with [PlantUML](https://plantuml.com/) or with [DrawIO](https://app.diagrams.net/).
 Store all sources of your diagrams, i.e., PlantUML diagram source code or DrawIO XML files under `docs` in a directory called `diagrams`.
 
-Before handing in your project reports, make sure that your source code is suitably documented in-code.
+Before handing in your project report, make sure that your source code is suitably documented in-code.
 
 **OBS**: After handing in your reports, please let your deployed systems be operational until the end of the third week of January 2024.
 
 The following describes the sections that your report has to provide.
 These sections are also provided in the project template.
-OBS: This is a preliminary description.
-Helge might change it slightly before 7/12/23.
-In case there is a change, Helge will inform you via Teams.
 
 -------------------------------------------------------------------------------
 
@@ -73,6 +70,12 @@ Make sure to illustrate which part of your code is residing in which layer.
 Illustrate the architecture of your deployed application.
 Remember, you developed a client-server application.
 Illustrate the server component and to where it is deployed, illustrate a client component, and show how these communicate with each other.
+
+**OBS**: In case you ran out of credits for hosting an Azure SQL database and you switched back to deploying an application with in-process SQLite database, then do the following:
+
+- Under this section, provide two diagrams, one that shows how _Chirp!_ was deployed with hosted database and one that shows how it is now again with SQLite.
+- Under this section, provide a brief description of the reason for switching again to SQLite as database.
+- In that description, provide a link to the commit hash in your GitHub repository that points to the latest version of your _Chirp!_ application with hosted database (we look at the entire history of your project, so we see that it was there at some point).
 
 ### User activities
 
@@ -98,7 +101,7 @@ Some HTTP calls and responses, some calls and responses in C# and likely some mo
 Illustrate with a UML activity diagram how your _Chirp!_ applications are build, tested, released, and deployed.
 That is, illustrate the flow of activities in your respective GitHub Actions workflows.
 
-Describe briefly the illustration, i.e., how you application is built, tested, released, and deployed.
+Describe the illustration briefly, i.e., how your application is built, tested, released, and deployed.
 
 ### Team work
 
@@ -115,7 +118,7 @@ Likely, it is best to describe how we clone your project, which commands we have
 
 ### How to run test suite locally
 
-List all necessary steps that Rasmus or Helge have to execute to execute your test suites.
+List all necessary steps that Rasmus or Helge have to perform to execute your test suites.
 Here, you can assume that we already cloned your repository in the step above.
 
 Briefly describe what kinds of tests you have in your test suites and what they are testing.

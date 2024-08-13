@@ -167,7 +167,7 @@ TBA
 
 === Team
 
-* *Teachers*: Helge, Rasmus
+* *Teachers*: Helge, Adrian
 * *TAs*: David F., David S., Patrick, Phi Va, Rasmus
 
 === Books

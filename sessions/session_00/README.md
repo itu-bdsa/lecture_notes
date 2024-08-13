@@ -1,4 +1,4 @@
-The following describes what we would like you to do before the first session of the course _Analysis, Design and Software Architecture_ on Thursday, Aug. 31th (10:00).
+The following describes what we would like you to do before the first session of the course _Analysis, Design and Software Architecture_ on Wednesday, Aug. 28th (10:00).
 
 We would like that you prepare the following three things:
 
@@ -7,7 +7,7 @@ We would like that you prepare the following three things:
   * [C) Setup workstation](#C-setup-workstation)
 
 In case you have problems with installation of any of the tools, do not despair.
-You will be able to ask the TAs for help during the first exercise session on Thursday, Aug. 31th (14:00).
+You will be able to ask the TAs for help during the first exercise session on Wednesday, Aug. 28th (14:00).
 
 -------------------------------------------------------------------------------
 
@@ -58,13 +58,12 @@ Some of which, we will use later in the course.
     3. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) with Ubuntu
 2. [Git](https://git-scm.com/downloads)
 3. [.NET **7**](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-    - That is, **not** .NET 6
     - If your operating, sytstem is Windows install .NET 7 in WSL
-4. [Visual Studio Code](https://code.visualstudio.com/Download) with extensions:
+4. A full IDE:
+    - [JetBrains Rider](https://www.jetbrains.com/rider/) (all operating systems) Note, you can get a free student license for all JetBrais IDEs that you use during your education, see <https://www.jetbrains.com/community/education/#students>
+    - *Optionally* [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (Windows and Mac only)
+5. *Optionally* [Visual Studio Code](https://code.visualstudio.com/Download) with extensions:
     - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
     - [.NET Core Test Explorer](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer)
     - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
     - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
-5. *Optionally* a full IDE:
-    - [JetBrains Rider](https://www.jetbrains.com/rider/) (all operating systems) Note, you can get a free student license for all JetBrais IDEs that you use during your education, see <https://www.jetbrains.com/community/education/#students>
-    - [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (Windows and Mac only)

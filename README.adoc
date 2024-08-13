@@ -9,12 +9,12 @@ image:https://github.com/itu-bdsa/lecture_notes/blob/main/images/banner.png?raw=
 === Content
 
 
-This page contains information on the schedule, material, exam, etc. for the BSc course "Analysis, Design and Software Architecture" at IT University of Copenhagen, fall 2023 (link:hhttps://learnit.itu.dk/user/index.php?id=3022222[Course description on LearnIT]).
+This page contains information on the schedule, material, exam, etc. for the BSc course "Analysis, Design and Software Architecture" at IT University of Copenhagen, fall 2024 (link:https://learnit.itu.dk/user/index.php?id=3023591[Course description on LearnIT]).
 
 
 === Schedule
 
-Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise sessions are scheduled on Thursdays 14:00 to 16:00 in rooms 3A12-14, 3A18, 3A54, and Tuesdays 12:00-14:00 in rooms 2A12-14, 2A20, 2A52.
+Lectures are on Wednesdays from 10:00 to 14:00 in Auditorium 1. Exercise sessions are scheduled on Tuesdays 14:00 to 16:00 in rooms 4A56, 4A58, 5A60, and Wednesdays 14:00-16:00 in rooms 2A12-14, 2A52.
 
 *OBS*: We expect you to be present during lectures and exercise sessions.
 
@@ -25,8 +25,8 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 
 |1
 |35
-|31/8/23
-|Helge & Rasmus
+|28/08/2024
+|Helge
 | link:sessions/session_01/READING_MATERIAL.md[Material]
 | link:sessions/session_01/Slides.md[Course Intro, .NET CLI apps, VCS, Tooling]
 | link:sessions/session_01/README_PROJECT.md[Project start, initial _Chirp!_ CLI app]
@@ -34,7 +34,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 
 |2
 |36
-|7/9/23
+|04/09/2024
 |Helge
 | link:sessions/session_02/READING_MATERIAL.md[Material]
 | link:sessions/session_02/Slides.md[Team Work with GitHub, Building, Libraries]
@@ -43,7 +43,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 
 |3
 |37
-|14/9/23
+|11/09/2024
 |Helge
 | link:sessions/session_03/READING_MATERIAL.md[Material]
 | link:sessions/session_03/Slides.md[Intro to testing, CI/CD, and first design reflections]
@@ -52,7 +52,7 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 
 |4
 |38
-|21/9/23
+|18/09/2024
 |Helge
 | link:sessions/session_04/READING_MATERIAL.md[Material]
 | link:sessions/session_04/Slides.md[Intro to minimal API web apps and deployment to Azure]
@@ -61,18 +61,18 @@ Lectures are on Thursdays from 10:00 to 14:00 in Auditorium 0 (0A27). Exercise s
 
 |5
 |39
-|28/9/23
+|25/09/2024
 |Helge
 | link:sessions/session_05/READING_MATERIAL.md[Material]
 | link:sessions/session_05/Slides.md[Intro to Razor web apps, Server-side Rendering, MVC pattern, and SQLite]
 a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp!_ web app]
-   * *Project Review 1 (26/9)*
+   * *Project Review 1 (24/9)*
 | link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-13?origin=product-toc[13], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-14?origin=product-toc[14], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-15?origin=product-toc[15]
 
 |6
 |40
-|5/10/23
-|Rasmus
+|02/10/2024
+|Adrian
 | link:sessions/session_06/READING_MATERIAL.md[Material]
 | link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, LINQ, and Repository pattern]
 | link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support ORM]
@@ -80,8 +80,8 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 
 |7
 |41
-|12/10/23
-|Henrik & Rasmus
+|09/10/2024
+|Adrian
 | link:sessions/session_07/READING_MATERIAL.md[Material]
 | Guest lecture on Software Licenses + link:sessions/session_07/Slides.md[SW Licenses and Testing of EF Core Projects]
 | link:sessions/session_07/README_PROJECT.md[Add testing with EF Core and SQLite in memory database]
@@ -93,18 +93,18 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 
 |8
 |43
-|26/10/23
-|Rasmus
+|23/10/2024
+|Adrian
 | link:sessions/session_08/READING_MATERIAL.md[Material]
 | link:sessions/session_08/Slides.md[Handling Users with ASP.NET Core Identity and OAuth]
 a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!_]
-   * *Project Review 2 (24/10)*
+   * *Project Review 2 (22/10)*
 |link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-6?origin=product-toc[6], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-7?origin=product-toc[7], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-23?origin=product-toc[23]
 
 |9
 |44
-|2/11/23
-|Rasmus
+|30/10/2024
+|Adrian
 | link:sessions/session_09/READING_MATERIAL.md[Material]
 | link:sessions/session_09/Slides.md[Forms and UI Testing]
 | link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and API & UI tests]
@@ -112,8 +112,8 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 
 |10
 |45
-|9/11/23
-|Rasmus
+|06/11/2024
+|Adrian
 | link:sessions/session_10/READING_MATERIAL.md[Material]
 | link:sessions/session_10/Slides.md[Security of web applications]
 | link:sessions/session_10/README_PROJECT.md[Complete login and sending of cheeps. Check security]
@@ -121,7 +121,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 
 |11
 |46
-|16/11/23
+|13/11/2024
 |Helge
 | link:sessions/session_11/READING_MATERIAL.md[Material]
 | Guest lecture on GDPR and "Privacy by Design" link:sessions/session_11/Slides.md[Requirements and Intro to visual languages for design and architecture]
@@ -129,17 +129,17 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |
 |12
 |47
-|23/11/23
+|20/11/2024
 |Helge
 | link:sessions/session_12/READING_MATERIAL.md[Material]
 | link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
 a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
-   * *Project Review 3 (21/11)*
+   * *Project Review 3 (19/11)*
 |
 
 |13
 |48
-|30/11/23
+|27/11/2024
 |Helge
 | link:sessions/session_13/READING_MATERIAL.md[Material]
 | Guest lecture on SE + link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
@@ -148,8 +148,8 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 // Experiments with performance testing
 |14
 |49
-|7/12/23
-|Helge & Rasmus
+|04/12/2024
+|Helge
 |
 |link:sessions/session_13/README_PROJECT.md#3-demo-day[Project demo day]
 |link:sessions/session_12/README_REPORT.md[Complete projects and write reports]
@@ -168,7 +168,7 @@ TBA
 === Team
 
 * *Teachers*: Helge, Rasmus
-* *TAs*: Hannah, Mikkel, Patrick A, Patrick B, Philip
+* *TAs*: David F., David S., Patrick, Phi Va, Rasmus
 
 === Books
 
@@ -176,6 +176,7 @@ The main book accompanying this course is link:https://www.manning.com/books/asp
 
 image:https://images.manning.com/264/352/resize/book/9/37efddf-eba2-42ec-bdca-744dc3de0d1e/Lock-3ed-HI.png[alt=Book_Cover]
 
+////
 
 === Automatic Feedback/Dashboards
 
@@ -183,6 +184,7 @@ image:https://images.manning.com/264/352/resize/book/9/37efddf-eba2-42ec-bdca-74
 * link:http://209.38.208.62/report_razor_apps2.html[Status of _Chirp!_ apps week 9/10]
 * link:http://209.38.208.62/org-commit-frequency.html[Weekly commit frequencies per group]
 * link:http://209.38.208.62/status.html[Weekly release frequencies and issue activity per group]
+////
 
 === Attributions
 

@@ -9,7 +9,7 @@ image:https://github.com/itu-bdsa/lecture_notes/blob/main/images/banner.png?raw=
 === Content
 
 
-This page contains information on the schedule, material, exam, etc. for the BSc course "Analysis, Design and Software Architecture" at IT University of Copenhagen, fall 2024 (link:https://learnit.itu.dk/user/index.php?id=3023591[Course description on LearnIT]).
+This page contains information on the schedule, material, exam, etc. for the BSc course "Analysis, Design and Software Architecture" at IT University of Copenhagen, fall 2024 (link:https://learnit.itu.dk/local/coursebase/view.php?ciid=1478[Course description on LearnIT]).
 
 
 === Schedule

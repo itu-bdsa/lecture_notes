@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Grades plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="a2f70af5-7b72-43cf-a670-117cb1cb8538" data-root-id="1002"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1115">
+          {"c0412b34-39e8-4a14-80c0-96b329d463cd":{"roots":{"references":[{"attributes":{"below":[{"id":"1013","type":"CategoricalAxis"}],"center":[{"id":"1016","type":"Grid"},{"id":"1021","type":"Grid"}],"left":[{"id":"1017","type":"LinearAxis"}],"plot_height":250,"renderers":[{"id":"1029","type":"GlyphRenderer"}],"title":{"id":"1003","type":"Title"},"toolbar":{"id":"1023","type":"Toolbar"},"x_range":{"id":"1005","type":"FactorRange"},"x_scale":{"id":"1009","type":"CategoricalScale"},"y_range":{"id":"1007","type":"DataRange1d"},"y_scale":{"id":"1011","type":"LinearScale"}},"id":"1002","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"start":0},"id":"1007","type":"DataRange1d"},{"attributes":{"grid_line_color":null,"ticker":{"id":"1014","type":"CategoricalTicker"}},"id":"1016","type":"Grid"},{"attributes":{},"id":"1032","type":"CategoricalTickFormatter"},{"attributes":{},"id":"1014","type":"CategoricalTicker"},{"attributes":{"fill_color":{"field":"colors"},"line_color":{"field":"colors"},"top":{"field":"counts"},"width":{"value":0.9},"x":{"field":"grades"}},"id":"1027","type":"VBar"},{"attributes":{},"id":"1037","type":"UnionRenderers"},{"attributes":{},"id":"1009","type":"CategoricalScale"},{"attributes":{},"id":"1018","type":"BasicTicker"},{"attributes":{"source":{"id":"1001","type":"ColumnDataSource"}},"id":"1030","type":"CDSView"},{"attributes":{},"id":"1034","type":"BasicTickFormatter"},{"attributes":{"dimension":1,"ticker":{"id":"1018","type":"BasicTicker"}},"id":"1021","type":"Grid"},{"attributes":{"axis_label":"Grades","formatter":{"id":"1032","type":"CategoricalTickFormatter"},"ticker":{"id":"1014","type":"CategoricalTicker"}},"id":"1013","type":"CategoricalAxis"},{"attributes":{"axis_label":"Frequency","formatter":{"id":"1034","type":"BasicTickFormatter"},"ticker":{"id":"1018","type":"BasicTicker"}},"id":"1017","type":"LinearAxis"},{"attributes":{"callback":null,"data":{"colors":["#718dbf","#718dbf","#718dbf","#718dbf","#718dbf","#e84d60","#e84d60"],"counts":[4,19,31,35,32,40,7],"grades":["12","10","7","4","2","0","-3"]},"selected":{"id":"1036","type":"Selection"},"selection_policy":{"id":"1037","type":"UnionRenderers"}},"id":"1001","type":"ColumnDataSource"},{"attributes":{"callback":null,"factors":["12","10","7","4","2","0","-3"]},"id":"1005","type":"FactorRange"},{"attributes":{"text":"2021 BDSA Grade Distribution"},"id":"1003","type":"Title"},{"attributes":{},"id":"1036","type":"Selection"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","logo":null,"tools":[{"id":"1022","type":"HoverTool"}]},"id":"1023","type":"Toolbar"},{"attributes":{},"id":"1011","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"counts"},"width":{"value":0.9},"x":{"field":"grades"}},"id":"1028","type":"VBar"},{"attributes":{"callback":null,"tooltips":[["Amount","@counts"]]},"id":"1022","type":"HoverTool"},{"attributes":{"data_source":{"id":"1001","type":"ColumnDataSource"},"glyph":{"id":"1027","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1028","type":"VBar"},"selection_glyph":null,"view":{"id":"1030","type":"CDSView"}},"id":"1029","type":"GlyphRenderer"}],"root_ids":["1002"]},"title":"Bokeh Application","version":"1.4.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1115').textContent;
+                  var render_items = [{"docid":"c0412b34-39e8-4a14-80c0-96b329d463cd","roots":{"1002":"a2f70af5-7b72-43cf-a670-117cb1cb8538"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

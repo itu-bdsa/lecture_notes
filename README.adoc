@@ -44,7 +44,7 @@ Lectures are on Wednesdays from 10:00 to 14:00 in Auditorium 1. Exercise session
 |3
 |37
 |11/09/2024
-|Helge
+|Helge (online)
 | link:sessions/session_03/READING_MATERIAL.md[Material]
 | link:sessions/session_03/Slides.md[Intro to testing, CI/CD, and first design reflections]
 | link:sessions/session_03/README_PROJECT.md[Futher refactoring, add testing and CI/CD]

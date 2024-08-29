@@ -124,7 +124,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |13/11/2024
 |Helge
 | link:sessions/session_11/READING_MATERIAL.md[Material]
-| Guest lecture on GDPR and "Privacy by Design" link:sessions/session_11/Slides.md[Requirements and Intro to visual languages for design and architecture]
+| link:sessions/session_11/Slides.md[Requirements and Intro to visual languages for design and architecture]
 | link:sessions/session_11/README_PROJECT.md[Add (un-)follow feature, harden and secure _Chirp!_]
 |
 |12
@@ -132,7 +132,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |20/11/2024
 |Helge
 | link:sessions/session_12/READING_MATERIAL.md[Material]
-| link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
+| Guest lecture on GDPR and "Privacy by Design" link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
 a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
    * *Project Review 3 (19/11)*
 |
@@ -158,8 +158,8 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |=======================================================================
 
 * Exam dates:
-  - Hand-in of project reports: 21/12/23 (latest at 14:00)
-  - Written exams (on premises): 3/1/24 (9:00 - 11:00)
+  - Hand-in of project reports: 19/12/24 (latest at 14:00)
+  - Written exams (on premises): 3/1/25 (9:00 - 11:00)
 
 === TA Supervision
 

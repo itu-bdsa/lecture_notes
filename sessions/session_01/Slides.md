@@ -620,7 +620,7 @@ _header: 10 minutes
 - Set a break point next to line 5
 - Click Run -> Debug (or press the Alt+Shift+F9) and start the debugger
 - Click the Step Over button (F10) to execute the program line by line
-  - After each click, inspect the state of your program under the `VARIABLES` view on the left-hand side.
+  - After each click, inspect the state of your program under the variables view on the bottom center.
 
 
 ## Why to Use the Rider Debugger?

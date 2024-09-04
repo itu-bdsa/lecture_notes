@@ -489,7 +489,7 @@ _header: 10 minutes
 - Navigate to your project group organization on GitHub, e.g., `https://github.com/ITU-BDSA2024-GROUP<no>/Chirp`.
 - Click `Projects` on top of the page, and then create a new project (green button in the center).
 - Call the project `ITU-BDSA2024-GROUP<no> Chirp`, where `<no>` is your group's number.
-- Choose to create a project board from the `Team backlog` project template (to the left).
+- Choose to create a project board from the `Team planning` project template (to the left).
 - Add the issues that you already have in your repository, e.g., the one from the previous task by clicking the command palette (`>_` icon on the top) followed by `Add items`
 
 <!--

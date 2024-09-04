@@ -25,7 +25,7 @@ Not one big one per task, as suggested by Mark Seeman in the [reading material](
   - Each co-author is registered on a separate line in the commit message, see [feedback in lecture notes](Slides.md#feedback-III).
   - Make all these small commits in short-lived feature branches, which you merge with main (at least once per day).
 * From now on, use a GitHub project board to organize your work and to make your work status visible.
-  - Use the project template called _"Team backlog"_, i.e., use the _board layout_ (not the table or project layout).
+  - Use the project template called _"Team planning"_, i.e., use the _board layout_ (not the table or project layout).
   - Add all issues that you might have already created to the project board, this can be done [manually](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-items-in-your-project/adding-items-to-your-project#bulk-adding-issues-and-pull-requests) or [automatically](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically).
   - Make sure that the status of the issues is properly reflected in the project board, i.e., move issues that are work-in-progress to the respective column, etc.
 

@@ -7,6 +7,7 @@ client.BaseAddress = new Uri(baseURL);
 var watch = System.Diagnostics.Stopwatch.StartNew();
 // first HTTP request
 var fstResponse = await client.GetAsync("/");
+Console.WriteLine((fstResponse));
 // second HTTP request
 var sndResponse = await client.GetAsync("/");
 watch.Stop();

@@ -418,7 +418,7 @@ public class TestAPI : IClassFixture<WebApplicationFactory<Program>>
     [Fact]
     public async void CanSeePublicTimeline()
     {
-        var response = await _client.GetAsync("/public");
+        var response = await _client.GetAsync("/");
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
 
@@ -443,6 +443,19 @@ public class TestAPI : IClassFixture<WebApplicationFactory<Program>>
 
 
 <!-- Third hour -->
+## Feedback
+
+> One database file is actually quite unpractical for testing and "production".
+
+👏👏👏
+
+Absolutely, that is true! I wanted you to experience that.
+What could you do to allow for testing and production ?
+
+Dependency Injection is one strategy to solve this problem. In your tests, you can inject a test database into your system.
+
+Later, you will learn about alternative strategies.
+
 
 ## Task: DI
 
@@ -519,19 +532,6 @@ builder.Services.AddSingleton<ICheepService, CheepService>();
 
 You will see the above example again and again in the following weeks.
 
-
-## Feedback
-
-> One database file is actually quite unpractical for testing and "production".
-
-👏👏👏
-
-Absolutely, that is true! I wanted you to experience that.
-What could you do to allow for testing and production ?
-
-Dependency Injection is one strategy to solve this problem. In your tests, you can inject a test database into your system.
-
-Later, you will learn about alternative strategies.
 
 
 <!-- ---------------------------------------------------------------------- -->

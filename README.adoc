@@ -74,16 +74,21 @@ a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp
 |02/10/2024
 |Adrian
 | link:sessions/session_06/READING_MATERIAL.md[Material]
-| link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, LINQ, and Repository pattern]
+a| * link:sessions/session_06/Slides.md[Intro to EF Core with SQLite, LINQ, and Repository pattern]
+   * link:[Video lecture]
+   * link:[Feedback] (**13:15** Aud. 1)
 | link:sessions/session_06/README_PROJECT.md[Refactor _Chirp!_ web app to support ORM]
 | link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-8?origin=product-toc[8], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-9?origin=product-toc[9], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-10?origin=product-toc[10], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-11?origin=product-toc[11], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-12?origin=product-toc[12]
 
 |7
 |41
 |09/10/2024
-|Adrian
+| Martin von Haller Grønbæk, Adrian
 | link:sessions/session_07/READING_MATERIAL.md[Material]
-| Guest lecture on Software Licenses + link:sessions/session_07/Slides.md[SW Licenses and Testing of EF Core Projects]
+ a| * Guest lecture on Software Licenses (**10:50** Aud. 1)
+   * link:sessions/session_07/Slides.md[Architecture and Testing of EF Core Projects]
+   * link:[Video lecture]
+   * link:[Feedback] (**13:15** Aud. 1)
 | link:sessions/session_07/README_PROJECT.md[Add testing with EF Core and SQLite in memory database]
 | link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-8?origin=product-toc[8], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-9?origin=product-toc[9], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-10?origin=product-toc[10] (link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-12?origin=product-toc[12], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-35?origin=product-toc[35], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-36?origin=product-toc[36])
 
@@ -104,10 +109,11 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |9
 |44
 |30/10/2024
-|Adrian
+|Martin Røpcke, Adrian
 | link:sessions/session_09/READING_MATERIAL.md[Material]
 | link:sessions/session_09/Slides.md[Forms and UI Testing]
-| Guest lecture on SE + link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and API & UI tests]
+a| * Guest lecture on SE@NetCompany
+   * link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and API & UI tests]
 |link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-16?origin=product-toc[16], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-17?origin=product-toc[17], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-18?origin=product-toc[18]
 
 |10
@@ -130,9 +136,10 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |12
 |47
 |20/11/2024
-|Helge
+| Jakob Krabbe, Helge
 | link:sessions/session_12/READING_MATERIAL.md[Material]
-| Guest lecture on GDPR and "Privacy by Design" link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
+a| * Guest lecture on GDPR and "Privacy by Design"
+   * link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
 a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
    * *Project Review 3 (19/11)*
 |

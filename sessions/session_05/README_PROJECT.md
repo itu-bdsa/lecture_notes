@@ -104,7 +104,7 @@ Due to their dependency on CLI parameters and output, the previous end-to-end te
 
 Add some new API tests.
 These should send `GET` requests to the endpoints for public and private timelines (`/` and  `/<username>` respectively) and assert that certain information is in the HTML text of the response in the HTTP body.
-For example, given the [example database dump](./data/dump.sql), a response body for a `GET` request send to `/` shall contain a cheep written by `Helge` and the content of a cheep shall be `Hello, BDSA students!`
+For example, given the [example database dump](./data/dump.sql), a response body for a `GET` request send to `/Helge` shall contain a cheep written by `Helge` and the content of a cheep shall be `Hello, BDSA students!`
 Similarly, a response body for a `GET` request send to `/Adrian` shall contain a cheep written by `Adrian` with the content `Hej, velkommen til kurset.`
 
 

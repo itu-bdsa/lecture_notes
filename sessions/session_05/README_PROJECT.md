@@ -125,6 +125,7 @@ Additionally , refactor the deployment workflow so that the new Razor Page _Chir
 Likely the easiest way to configure a respective GitHub Actions workflow, is to refactor the deployment workflow from last [weeks' exercise](../session_04/README_PROJECT.md#2-process).
 
 Make sure that your Razor Page web application is available online under the name `bdsagroup<no>chirprazor`, i.e., that it will be reachable under the URL `https://bdsagroup<no>chirprazor.azurewebsites.net/`.
+In case this name is taken already for some reason, choose another suitable name, e.g., `bdsa2024group<no>chirprazor`, and register the URL of your _Chirp!_ web-application under the column `Link to Chirp!` in the [group registration Excelsheet](https://ituniversity.sharepoint.com/:x:/r/sites/2024AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Groups.xlsx?d=w6776b670fe464ef09d2d4eb3f1a559b7&csf=1&web=1&e=VcFgPl)
 
 ### 2.c) Start using Pull-requests with code reviews
 

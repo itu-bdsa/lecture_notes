@@ -107,7 +107,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 |Adrian
 | link:sessions/session_09/READING_MATERIAL.md[Material]
 | link:sessions/session_09/Slides.md[Forms and UI Testing]
-| link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and API & UI tests]
+| Guest lecture on SE + link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and API & UI tests]
 |link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-16?origin=product-toc[16], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-17?origin=product-toc[17], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-18?origin=product-toc[18]
 
 |10
@@ -142,7 +142,7 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |27/11/2024
 |Helge
 | link:sessions/session_13/READING_MATERIAL.md[Material]
-| Guest lecture on SE + link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
+| link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
 | link:sessions/session_13/README_PROJECT.md[Wild style, implement your own features to _Chirp!_]
 |
 // Experiments with performance testing

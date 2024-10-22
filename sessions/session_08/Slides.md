@@ -1,0 +1,590 @@
+---
+theme: gaia
+_class: lead
+paginate: true
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+footer: '![width:300px](images/banner-transparent.png)'
+headingDivider: 1
+marp: true
+style: |
+  section {
+    font-size: 25px;
+  }
+  container {
+    height: 300px;
+    width: 100%;
+    display: block;
+    justify-content: right;
+    text-align: right;
+  }
+  header {
+    float: right;
+  }
+
+  a {
+    color: blue;
+    text-decoration: underline;
+    background-color: lightgrey;
+    font-size: 80%;
+  }
+
+  table {
+    font-size: 22px;
+  }
+
+  div.mermaid { all: unset; }
+---
+
+# BDSA: Session 8
+## User Authentication
+#### Cookies, ASP.NET Core Identity, and OAuth
+
+Adrian Hoff
+Postdoctoral Researcher
+ITU
+
+
+
+# Todays's lecture
+
+&emsp;
+## 👤 User Authentication!
+
+- How do we manage users?
+  - Registration
+  - Logging in
+  - Managing accounts
+- How do we _not_ mess up security related issues, e.g., storing passwords?
+- What about advanced security measures, e.g., confirmation emails and MFA?
+
+
+
+# Authentication vs. Authorization
+
+&emsp;
+- ### 👤 Authentication!
+  - Who are you?
+&emsp;
+- ### 🔐 Authorization
+  - What are you allowed to do / access?
+
+&emsp;
+* **Authorization requires Authentication!**
+
+
+
+# Authentication over HTTP
+
+&emsp;
+
+> HTTP is a **stateless protocol**. By default, HTTP requests are independent messages that don't retain user values.
+<span style="font-size: 0.6em;">Source: <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state?view=aspnetcore-7.0">Session and state management in ASP.NET Core (microsoft.com)</a></span>
+
+&emsp;
+
+### After logging users into our system,
+### how do we keep track of them when they send _subsequent_ requests??
+
+
+
+# 🍪 Cookies 🍪
+
+![bg right:54% width:100%](images/cookie-basic-example.png)
+
+> A cookie (also known as a web cookie or browser cookie) is a **small piece of data a server sends to a user's web browser**. The browser may store cookies, create new cookies, modify existing ones, and send them back to the same server with later requests. Cookies enable web applications to store limited amounts of data and **remember state information**; by default the HTTP protocol is stateless.
+
+<span style="font-size: 0.6em;">Text and Image Source: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">Using HTTP cookies (mozilla.org)</a></span>
+
+
+
+# 🍪 Where are my cookies!?
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 5 minutes
+-->
+
+- Open your browser and access `https://github.com/`
+  - Log out if you are logged in (or open a private browser tab)
+- Open the developer tools in your browser (probably by pressing `F12`)
+- Navigate to the tab "Network" and reload the page (`F5`)
+- Select the root HTTP request-response-pair (first in the list)
+  - Inspect the headers of both the request and the response: **Do they contain cookies?**
+&emsp;
+* In a separate tab, log into your Github account and access `https://github.com/`
+  - Again inspect the HTTP headers and compare them with your logged-out results
+    - What additional cookie data is sent from your browser?
+    - What does Github prompt your browser to store?
+
+<img style="font-size: 0.6em; position:absolute; right: 10px; bottom: -1000px; z-index: -1; opacity: 0.2; width: 80%" src="images/cookie-monster.png">
+
+
+
+# Authentication: What are the options?
+
+- ### Option A: We manage users in our own database
+  - ⚠️ In this case, _we_ are responsible for very sensitive user data
+  - Example technology: **ASP.NET Core Identity**
+
+* ### Option B: We use an external service for managing users
+  - We leave the responsibility over user data to a third party
+    - This means that, to some degree, we depend on that third party
+  * Different kinds of solutions exist
+    - login via external authentification service (e.g., Auth0)
+    - login via third party account (e.g., GitHub or Facebook)
+  * Open protocols exist, e.g., **OAuth** and OpenID
+
+
+
+# Option A: Self-managed authentication - Challenges
+
+- Storing passwords in the database
+  - **must not** be stored as cleartext
+  - how else??
+- Providing advanced security features, e.g., Multi-Factor-Authentication (MFA)
+- Enabling users to update their information
+- ...
+&emsp;
+* All of this requires (a lot of) source code
+  - It is easy to introduce bugs and security flaws
+&emsp;
+* ⚠️ **We should not implement our own authentication system from scratch!**
+  - It is a _lot_ of work and it is ☠️ **<span style="color:#bb2222">dangerous</span>**: mistakes can cause severe security disasters
+
+
+
+# Managing user data: Password hashing
+
+... as an example challenge in user authentication - you do **not** want to implement this yourself!
+
+- **Storing passwords in cleartext is not smart**
+  - Can be read by everyone with access to database (e.g., malicious engineer in a company)
+
+* **Better**: Passing them through a function that...
+  - calculates a derived value (a "**hash**"):
+  `Unhackable123` -> `Pc9QceViJCRLTIX8HcN5`
+  - is extremely hard to reverse (derived value cannot be converted back to password):
+  `Pc9QceViJCRLTIX8HcN5` -> ???
+
+* **Even better**: obfuscating the hashes further by adding random noise to the password
+  - this is called "**salting the hash**" 🧂 - same passwords receive different hashes
+
+If you want to learn more, you could start with these articles on [hashing](https://auth0.com/blog/hashing-passwords-one-way-road-to-security/) and [adding salt to hashes](https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/)!
+
+
+
+# ASP.NET Core Identity
+
+- Often simply referred to as "Identity" (don't be confused by online resources)
+
+- Out-of-the-box support for (most of) what we discovered in previous slides
+
+* Notion of users is integrated into ASP.NET
+  - requests receive an `HttpContext` containing information, i.a., on the user sending it
+  - based on that, ASP.NET Core Identity provides a solution for authorization
+
+* Identity + EF Core =<span style="font-size:3rem;">❤️</span>
+  - user information (name, email, password, ...) need to be stored in our database
+    - passwords must be hashed (with salt! 🧂)
+  - Identity provides us with a secure solution to achieve this
+
+
+
+# ASP.NET Core Identity - Claims-based authentication
+
+![bg right:51% width:100%](images/claims_principle.png)
+
+- Claims store data on who a user _is_
+  - Authentication
+- Can be used to determine what the user is allowed to _do_
+  - Authorization
+
+<span style="font-size: 0.6em;">Image source: <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a></span>
+
+
+
+# <span style="position:absolute; top:5%; right: 5%; font-size:0.75em;">Identity: Handling of a Log-In Request</span>
+
+![bg w: 75%](images/authentication_login.png)
+
+<span style="position:absolute; bottom: 2%; right: 10%; font-size: 0.6em;">
+Image source: Section 23 of <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a>
+</span>
+
+
+
+# <span style="position:absolute; top:5%; right: 5%; font-size:0.75em;">Identity: Authenticated Request</span>
+
+![bg w: 70%](images/authentication_subsequent.png)
+
+<span style="position:absolute; bottom: 2%; right: 10%; font-size: 0.6em;">
+Image source: Section 23 of <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a>
+</span>
+
+
+
+# Try it out: Create a project and inspect the files
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 10 minutes
+-->
+
+- Create a new ASP.NET Core web app project: `dotnet new webapp -au Individual`
+  - the argument `-au Individual` adds Identity to the project setup, including a lot of UI templates (which, unfortunately, are hidden from you!)
+  - there are other options besides `Individual`, we discuss those later
+
+* Inspect the generated project:
+  - The general structure should look familiar
+  - Have a look at the `Areas` folder
+    - this is a special folder with special semantics!
+  - Have a look at the `Data` folder
+    - the template comes with a default db context, a migration is already created
+    - note that the db context inherits from `IdentityDbContext`, providing functionality
+  - Have a look at the `Pages` folder, look into `Pages/Shared/_LoginPartial.cshtml`
+
+
+
+# Try it out: Run the project and play around
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 15 minutes
+-->
+
+- Run the project and play around with the launched website.
+  - create a user
+    - note that, per default, Identity is configured with email confirmation
+      - the part of sending an email needs to be implemented manually (not now)
+  - log into the website
+  - inspect your user data and how to change information, e.g., email or password
+
+* Note that these authentication features all work out of the box!
+
+* Open the app's SQLite database with an SQLite analysis tool, e.g., [DB Browser for SQLite](https://sqlitebrowser.org/)
+  - the `ASPNetUsers` table is generated by Identity and contains data for registered users
+  - inspect the `ASPNetUsers` table:
+    - are the passwords hashed?
+
+
+
+# How to add Identity to an existing project
+
+Follow the instructions in the book: **Chapter 23**
+
+General tipps:
+  - use the example project from earlier for orientation
+  - the `Microsoft.AspNetCore.Identity.UI` package adds a _lot_ of razor pages to your application
+    - however, these won't show in your folder structure
+      - once again, Microsoft is trying to hide complexity
+    - you can use "[scaffolding](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-7.0&tabs=visual-studio#scaffold-identity-into-a-razor-project-with-authorization-1)" to override hidden pages with custom content where needed
+      - the book provides very useful tips here!
+
+
+
+# How to add Identity to an existing project (ctd.)
+
+Utilize Identity by re-using their `IdentityUser` class. Change your current domain model...
+![](images/domain_model.svg)
+
+... to inherit from `IdentityUser`:
+![](images/domain_model_with_identity.svg)
+
+Similarly, your `DBContext` requires adaption (cf. book):
+`public class ChirpDbContext : IdentityDbContext<Author, IdentityRole<int>, int> { ... }`
+
+
+
+# Option B: Third-party authentication
+![bg right:30% width:100%](images/arduino-login.png)
+
+- #### Authentication through external service
+  - full-blown (usually paid) service that takes care of authentication (e.g., [Auth0](https://auth0.com/))
+  - can be seamlessly integrated into an application
+
+* #### Authentication through third-party account
+  - authorize users through their user accounts with other services, e.g., Google, GitHub, Facebook, Apple, etc.
+
+* #### How??
+  - a plathora of protocols exist
+  - notable open standards are **OAuth** and OpenID
+
+
+
+# OAuth
+
+![bg right:50% width:50%](images/Oauth_logo.svg)
+
+> OAuth (short for **open authori-zation**) is an open standard for **access delegation**, commonly used as a way for internet users to grant websites or applications access to their information on other websites but **without giving them the passwords**.
+
+[Wikipedia](https://en.wikipedia.org/wiki/OAuth)
+
+
+
+
+
+# The OAuth dance
+![bg right:47% height:100%](images/oauth_dance.png)
+<span style="font-size: 4em;">🕺🕺💃💃</span>
+
+In our Chirp! project, actor roles are:
+- Resource Owner = User (Chirp! and GH)
+  - User Agent = their browser
+- Client = Chirp!
+- Authorization Server = GitHub
+- Resource Server (not used) = GitHub
+
+<span style="font-size: 0.8em;">Image source: <a href="https://www.manning.com/books/oauth-2-in-action">J. Richer et al. <i>OAuth2 in Action</i></a></span>
+
+# The OAuth dance
+![bg right:47% height:100%](images/oauth_dance-redirect.png)
+- <span style="background-color: #ffd40055;">Chirp > User</span>: "To authenticate, go here"
+
+# The OAuth dance
+![bg right:47% height:100%](images/oauth_dance-user-authenticate.png)
+- Chirp > User: "To authenticate, go here"
+- <span style="background-color: #ffd40055;">User > GitHub</span>: "Hey, it's me!"
+- <span style="background-color: #ffd40055;">User & GitHub</span>: "Allow this app?" - "Yes!"
+- <span style="background-color: #ffd40055;">GitHub > User</span>: "Go here with this code"
+
+# The OAuth dance
+![bg right:47% height:100%](images/oauth_dance-chirp-authenticate.png)
+- Chirp > User: "To authenticate, go here"
+- User > GitHub: "Hey, it's me!"
+- User & GitHub: "Allow this app?" - "Yes!"
+- GitHub > User: "Go here with this code"
+- <span style="background-color: #ffd40055;">User > Chirp</span>: "Here I am, use this code"
+- <span style="background-color: #ffd40055;">Chirp > GitHub</span>:
+  - "The user authorized me!"
+  - "I am the real Chirp!" (client secret)
+
+# The OAuth dance
+![bg right:47% height:100%](images/oauth_dance-resource-access.png)
+- Chirp > User: "To authenticate, go here"
+- User > GitHub: "Hey, it's me!"
+- User & GitHub: "Allow this app?" - "Yes!"
+- GitHub > User: "Go here with this code"
+- User > Chirp: "Here I am, use this code"
+- Chirp > GitHub:
+  - "The user authorized me!"
+  - "I am the real Chirp!" (client secret)
+- <span style="background-color: #ffd40055;">GitHub > Chirp</span>: "Here is your token"
+- <span style="background-color: #ffd40055;">Chirp > GitHub</span>: "Give me this resource, here is my access token"
+
+
+
+# The OAuth dance
+![bg right:47% height:100%](images/oauth_dance.png)
+
+&emsp;
+> Oh my, this looks complicated!
+Do I have to implement this myself??
+
+&emsp;
+## No 😊
+There exist NuGeT packages for ASP.NET Core Identity for many services.
+Among these: GitHub!
+
+Repository: [AspNet.Security.OAuth.GitHub](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers?tab=readme-ov-file)
+
+
+
+# Register an Auth0 app with GitHub
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 10 minutes
+-->
+- Go to github.com
+- Click on your profile picture (upper right corner)
+  - Go to Settings
+- In the left-hand side panel, go to Developer Settings
+- Go to OAuth Apps
+- Create a new App for your Chirp! application
+
+### Take a close look at the information GitHub demands from you:
+* What is the "Authorization callback URL"?
+  - Look for it in the OAuth dance diagram shown on the previous slides
+* What should you fill in here?
+
+
+
+# GitHub Auth0 app - example settings
+![bg right:50% height:95%](images/github-oauth-settings.png)
+
+The shown configuration works for:
+- local setup (in development)
+- HTTPS
+- port 5000
+
+
+
+# OAuth in ASP.NET Core - GitHub
+
+GitHub provides you with a **Client ID** and **Client secret** for your Chirp! app.
+You use these to configure the authentication:
+
+```csharp
+builder.Services
+    .AddAuthentication(options =>
+    {
+        options.RequireAuthenticatedSignIn = true;
+    })
+    .AddGitHub(options =>
+    {
+        options.ClientId = githubClientId; // GitHub Client ID
+        options.ClientSecret = githubClientSecret; // GitHub Client secret
+    });
+```
+
+### DO NOT HARD CODE YOUR CLIENT SECRET INTO THE SOURCE CODE!
+### 🚨 DO NOT CHECK IT INTO YOUR GIT REPOSITORY AT ALL!!! 🚨
+
+
+
+# .NET Secret Manager
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 10 minutes
+-->
+
+Microsoft developed a [minimalistic tool](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows) for storing secrets **FOR DEVELOPMENT** outside the repository environment, so that these are accessible as if defined in `appsettings.json` (where secrets will **NEVER** be included because that file is checked into Git!)
+
+* Initialize the tool (from within project folder): `dotnet user-secrets init`
+  - Inspect the resp. `.csproj` file. There should be a new tag `<UserSecretsId>8g5s...</>`
+  - The tool will create a file `~/.microsoft/usersecrets/8g5s.../secrets.json`
+    - The file is empty right now, we can fill it with secrets
+* Enter your GitHub Client ID and Client secret
+  `dotnet user-secrets set "GitHub:ClientID" "TWTt8z9RhTQjGa7jpL1q"`
+  `dotnet user-secrets set "GitHub:ClientSecret" "ibep0j74ddatc3fdrpbtm627zhulvjmvgjsln6gx"`
+  - Again inspect the secret file `~/.microsoft/usersecrets/8g5s.../secrets.json` and see if the entries were added
+  - Note that the secret is stored in cleartext on your harddrive!
+
+
+
+# Testing ASP.NET Core Identity apps
+
+Of course, you should test your Identity setup.
+Example: Checking whether clients get redirected when trying to access a protected resource
+
+```csharp
+// Arrange
+HttpClientHandler httpClientHandler = new HttpClientHandler();
+httpClientHandler.AllowAutoRedirect = false; // prevent redirects
+client = new HttpClient(httpClientHandler);
+// ... configuring the client and starting the server omitted
+
+// Act
+HttpResponseMessage resp = await client.GetAsync("/ProtectedPage");
+string content = await resp.Content.ReadAsStringAsync();
+
+// Assert
+Assert.Equal(HttpStatusCode.Redirect, resp.StatusCode);
+Assert.StartsWith("https://localhost/Identity/Account/Login", resp.Headers.Location.OriginalString);
+```
+
+Read more: https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0
+
+
+
+# Summary
+
+* ### 🍪 Cookies make the web stateful
+  - Are carried from request to request to authenticate user
+  - Do never contain sensitive data as they are stored in cleartext and can be read freely
+  - Instead, services use cryptic session ids that are mapped to user sessions in backend
+
+* ### We can manage user credentials in our own database
+  - **ASP.NET Core Identity** provides a secure foundation for implementing this
+  - However, we (server owners) are responsible for sensitive user data
+
+* ### We can authenticate users via third parties
+  - **OAuth** is an open standard for handling user authentication and access to resources without sharing passwords between services
+  - This is great, because we do not have responsibility over sensitity data
+
+
+
+# What to do now?
+
+![w:400px](https://25.media.tumblr.com/47f546206bf9a8b5dc97e7fe1b6714b3/tumblr_mi7nkgP6NH1qmegz6o1_500.gif)
+
+- If not done, complete the Tasks (blue slides) from this class
+- Check the [reading material](./READING_MATERIAL.md)
+- Work on the [project](./README_PROJECT.md)
+
+- <font color="#cecdce">If you feel you want prepare for next session, read chapters 16, 17, and 18 in [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) </font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Feedback: 😎😎😎
+
+As I hear from the TAs and can see, all of you have working _Chirp!_ applications up and running!
+
+<iframe src="http://209.38.208.62/report_razor_apps.html" width="100%" height=500 scrolling="auto"></iframe>
+
+
+# Feedback: We feel stressed by the ever growing backlog
+
+- Focus on the tasks in this week
+- Try to work only on these things.
+  - Not more, nothing else, nothing that is not explicitly stated in the project description file for that week.
+- Old issues:
+  - If it gives you mental peace, close them for now.
+  - **OBS**: when closing issues that are about previous versions, add a respective comment that explains that the issue is about a previous version, state which one, e.g. CLI version, Razor page with direct SQLite integration, etc., and state explicitly what is missing.
+  - The latter is described so that you know what to do in case you reopen the issue eventually.
+- Now, focus on a Razor Page _Chirp!_ application, that uses EF Core, and for which you enable authentication (this week's task).
+
+
+# Feedback: One Repository to rule them all?
+
+- Remember that Rasmus showed you and mentioned that usually, you create one repository class per entity.
+
+
+# Info: The written exam???
+
+  > The exam consists of two parts. The two parts are:
+  > a) the project, which is covered via the final submission (report) and which covers important aspects of the project work.
+  > b) a written exam (two hours), which covers generic course contents.
+  >
+  > Each part is graded separately, i.e., students receive a grade for the project and another grade for the written exam.
+  > Final grades are computed based on the two grades from the two parts. The precise weight of each part's grade will be communicated to all students in class at the start of the course. To pass the exam, both parts need to receive a passing grade. That is, the project has to be passed and the written exam needs to be passed.
+
+The **grading weight** is: project 2/3 written exam 1/3.
+
+see [LearnIT](https://learnit.itu.dk/local/coursebase/view.php?ciid=1241)
+
+
+# Info: The written exam???
+
+* On premises Wed. January 3rd 2024, 09:00 - 11:00
+* Pen and paper exam.
+* No other books, tools, etc.
+* Two hours.
+* In person
+
+* The exam will be similar to last year's. That is, there will be free form, multiple choice, and sketching answers.
+* You can find last year's exam [here](https://ituniversity.sharepoint.com/:b:/r/sites/2023AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Documents/2022-itu-bdsa-exam.pdf?csf=1&web=1&e=DbwOM5)
+* Note, use it to get an idea of the structure and some contents of the exam.
+  - Since course contents changed, not all contents of the exam apply. Good examples of kinds of questions to be prepared for are: Question 1 a-d, Question 2 a-b, Question 4 j-l, Question 6 a-g
+
+
+
+
+

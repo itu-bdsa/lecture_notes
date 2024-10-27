@@ -52,11 +52,10 @@ Such a navigation bar may be implemented in a Razor View via code similar to the
 
 In the CSS file that you have in your _Chirp!_ projects, there is a style for a navigation element, which you should use, e.g., `<div class=navigation>`.
 In case a user is authenticated, the navigation bar should display links to `my timeline` (links to endpoint `/<username_of_authenticated_user>`), `public timeline` (links to endpoint `/`), and `logout`.
-In case a user is not authenticated, the navigation bar should display links to the `public timeline` (links to endpoint `/`), `register` (only relevant if you choose option 1.a) from below) and `login`.
+In case a user is not authenticated, the navigation bar should display links to the `public timeline` (links to endpoint `/`), `register` and `login`.
 
-Note, the precise structure of the links depends on which of the following solutions you choose to implement.
-For example, when choosing option 1.a), they look likely more like `<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">register</a>`.
-When choosing 1.b), you do not have a link to a `register` endpoint, since you accept any user that is registered at GitHub.
+Note, the link to the register endpoint, likely something like `<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">register</a>`, is relevant for registering a user with ASP.NET Core Identity. That is, task 1.a).
+For task 1.b), you do not provide a register endpoint, since users register themselves at GitHub.
 
 
 ### 1.a) ASP.NET Core Identity

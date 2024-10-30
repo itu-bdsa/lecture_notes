@@ -115,6 +115,7 @@ a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!
 a| * Guest lecture on Software Engineering@Netcompany (**10:00** Aud. 1)
    * link:sessions/session_09/Slides.md[Forms and UI Testing]
    * link:sessions/session_09/Feedback.md[Feedback] (**11:15** Aud. 1)
+   * link:https://ituniversity.sharepoint.com/:v:/r/sites/2024AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Recordings/Session09.mp4?csf=1&web=1&e=rxqNJ3[Video lecture]
 | link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and UI tests]
 |link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-16?origin=product-toc[16], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-17?origin=product-toc[17], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-18?origin=product-toc[18]
 

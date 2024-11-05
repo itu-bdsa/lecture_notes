@@ -125,6 +125,7 @@ a| * Guest lecture on Software Engineering@Netcompany (**10:00** Aud. 1)
 |Adrian, David S.
 | link:sessions/session_10/READING_MATERIAL.md[Material]
 a| * link:sessions/session_10/Slides.md[Security of web applications]
+   * link:https://ituniversity.sharepoint.com/:v:/r/sites/2024AnalysisDesignandSoftwareArchitecture-TA/Shared%20Documents/TA/Adrian%20Video%20Lectures/Session10.mp4?csf=1&web=1&e=UExPFC[Video lecture]
    * link:[Feedback, Git Concepts and Usage] (**13:00** Aud. 1)
 | link:sessions/session_10/README_PROJECT.md[Complete login and sending of cheeps. Check security]
 |link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-28?origin=product-toc[28], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-29?origin=product-toc[29]

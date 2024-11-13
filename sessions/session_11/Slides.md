@@ -648,7 +648,7 @@ section {
 
 | Group| Comment |
 |:-----:|:------|
-|1 | Cannot login with Github |
+|1 | I cannot login with Github |
 |2 | I cannot login via GitHub. After login, I have to register an email address and no cheep box appears? |
 |3 | I cannot login via GitHub. After login, I have to register a username/email address and no cheep box appears? |
 |4 | I cannot register via GH OAuth. I can login via GH but no cheepbox appears? |
@@ -684,7 +684,7 @@ section {
 
 Let's agree on the requirements:
 
-- An author on your chirp application has always a name and an email address.
+- An author on your _Chirp!_ application has always a name and an email address.
 - An email address **is not** the name.
 - For login: be specific if you want the user to insert a name or an email address.
 
@@ -698,6 +698,9 @@ Where should you validate that a cheep is maximal 160 characters long?
 a) Via a constraint on the view code?
 b) Via a constraint on the data model?
 c) Via a constraint on the endpoint?
+
+
+## Feedback Validation of user input?
 
 How to handle too long cheeps?
 

@@ -62,7 +62,7 @@ When visiting her own private timeline (`/Anna`), `Anna`'s timeline displays now
 
 ### Assure requirements for users of _Chirp!_
 
-- An author on your chirp application has always a name and an email address.
+- An author on your _Chirp!_ application has always a name and an email address.
 - An email address **is not** the name.
 - For login: be specific if you want the user to insert a name or an email address.
 

@@ -154,8 +154,8 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |27/11/2024
 |Helge
 | link:sessions/session_13/READING_MATERIAL.md[Material]
-| link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]
-| link:sessions/session_13/README_PROJECT.md[Wild style, implement your own features to _Chirp!_]
+| [line-through]#link:sessions/session_13/Slides.md[Reflection on design and architecture & wrap-up]#
+| link:sessions/session_13/README_PROJECT.md[Wild style, implement your own features to _Chirp!_, Refactoring design]
 |
 // Experiments with performance testing
 |14
@@ -163,6 +163,7 @@ a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget m
 |04/12/2024
 |Helge
 |
+|link:sessions/session_14/Slides.md[Reflection on design and architecture & wrap-up]
 |link:sessions/session_13/README_PROJECT.md#3-demo-day[Project demo day]
 |link:sessions/session_12/README_REPORT.md[Complete projects and write reports]
 |

@@ -12,7 +12,7 @@ You have to work on the following topics.
 
 
 Remember, you have to perform work on each topic and on **each** bullet point.
-Be done with the project work before we meet again next Thursday.
+Be done with the project work before we meet again next week.
 
 
 ## 1) Software Development
@@ -54,24 +54,24 @@ Each group has 10 minutes to present. The remaining time in the time slots is us
 
 Tuesday 3/12/24
 
-| Time        | Room   | Groups         | TA         |
-|-------------|--------|----------------|------------|
-| 14:00-14:40 | 4A56   | 1,2,3          | TBA |
-|             | 4A58   | 4,5,6          | TBA |
-|             | 5A60   | 7,8,9          | TBA |
-| 14:45-15:25 | 4A56   | 10,11,12       | TBA |
-|             | 4A58   | 13,14,15       | TBA |
-|             | 5A60   | 16,17,18       | TBA |
+| Time        | Room   | Groups         | TA     |
+|-------------|--------|----------------|--------|
+| 14:00-14:40 | 4A56   | 1,2,3          | Phi Va |
+|             | 4A58   | 4,5,6          | Rasmus |
+| 14:45-15:25 | 5A60   | 7,8,9          | Phi Va |
+|             | 4A56   | 10,11,12       | Rasmus |
+
 
 Wednesday 4/12/24
 
-
-| Time        | Room   | Groups         | TA         |
-|-------------|--------|----------------|------------|
-| 14:15-14:55 | 2A12   | 19,20,21       | TBA |
-|             | 2A14   | 22,23,24       | TBA |
-|             | 2A52   | 25,26,28       | TBA |
-| 15:00-15:40 | 2A12   | 29,30,31       | TBA |
+| Time        | Room   | Groups         | TA      |
+|-------------|--------|----------------|---------|
+| 14:15-14:55 | 2A12   | 13,14,15       | Patrick |
+|             | 2A14   | 16,17,18       | David F |
+|             | 2A52   | 19,20,21       | David S |
+| 15:00-15:40 | 2A12   | 22,23,24       | Patrick |
+|             | 2A14   | 25,26,28       | David F |
+|             | 2A52   | 29,30,31       | David S |
 
 
 ### What to present?

@@ -83,3 +83,24 @@ Wednesday 4/12/24
   - How are additional features implemented?
 - Overview of tests.
 - If you already have some and want to show them, some of the visualizations that you intend to use in the report.
+
+
+### How to provide feedback in the presentations?
+
+In the following you find a kind of checklist that you may use as inspiration when providing peer-feedback to the presentations of your fellow groups.
+
+
+- Functionality:
+  - Is functionality complete or are major features missing?
+  - Login with GitHub works without prompting for additional information?
+- Tests:
+  - Are there any tests presented?
+  - Are there different kinds of tests, like unit tests, integration tests, UI-tests, end-to-end tests?
+  - Are the presented tests sensible?
+  - The presented tests are well designed? (There was a pattern we discussed in class that test cases should adhere to.)
+- Visualizations:
+  - Are the presented visualizations syntactically correct?
+  - Are relation ends on the correct side of relations?
+  - Are cardinalities correct?
+  - Are the correct diagram types used?
+  - Are there separate illustrations of structure and behaviour of the _Chirp!_ system or are they mixed?

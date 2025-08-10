@@ -1,24 +1,17 @@
-The following describes what we would like you to do before the first session of the course _Analysis, Design and Software Architecture_ on Wednesday, Aug. 28th (10:00).
+The following describes what we would like you to do before the first session of the course _Analysis, Design and Software Architecture_ on Wednesday, Aug. 27th.
 
 We would like that you prepare the following three things:
 
-  * [A) Survey](#A-survey)
-  * [B) Register accounts](#B-register-accounts)
-  * [C) Setup workstation](#C-setup-workstation)
+  * [A) Register accounts](#A-register-accounts)
+  * [B) Setup workstation](#B-setup-workstation)
 
-In case you have problems with installation of any of the tools, do not despair.
-You will be able to ask the TAs for help during the first exercise session on Wednesday, Aug. 28th (14:00).
+In case you have problems with installation of any of the tools, do not worry.
+You will be able to ask the TAs for help during the first exercise session on Wednesday, Aug. 27th, after the lecture.
 
--------------------------------------------------------------------------------
-
-# A) Survey
-
-Please fill out the survey on menti.com, which will allow us to better adapt our teaching to you.
-The link is shared with you in a message that you received via LearnIT and via our Teams channel.
 
 -------------------------------------------------------------------------------
 
-# B) Register accounts
+# A) Register accounts
 
 ## Create an account on [GitHub](https://github.com)
 
@@ -35,7 +28,7 @@ Some of which, we will use later in the course.
 
 --------------------------------------------------------------------------------
 
-# C) Setup workstation
+# B) Setup workstation
 
 ## Install a package manager
 

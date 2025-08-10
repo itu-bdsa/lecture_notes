@@ -136,9 +136,9 @@ The old versions from 2023 and 2024 are saved as (link:https://github.com/itu-bd
 |Sven
 
 .2+|9
-|44
+.2+|44
 |29.10.2025
-.2+|Sven
+|Sven
 .2+| link:sessions/session_09/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_09/Slides.md[Forms and UI Testing]
 .2+| link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and UI tests]

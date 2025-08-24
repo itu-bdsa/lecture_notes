@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="2193.1133 9521.033 2416 2060" width="2416" height="2060">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="30" panose-1="2 0 8 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="975.0061" descent="-216.99524" font-weight="700">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="24" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Menlo" font-size="24" panose-1="2 11 6 9 3 8 4 2 2 4" units-per-em="1000" underline-position="-63.47656" underline-thickness="43.94531" slope="0" x-height="546.875" cap-height="729.0039" ascent="928.2227" descent="-235.83984" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Menlo-Regular"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.18.6\n2024-08-27 10:07:35 +0000</metadata>
+  <g id="Canvas_1" fill="none" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="2193.1133" y="9521.033" width="2416" height="2060"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_694">
+        <rect x="2193.1133" y="9521.033" width="2416" height="2060" fill="white"/>
+      </g>
+      <g id="Group_672">
+        <g id="Graphic_693">
+          <rect x="2203.706" y="10924.033" width="571.6211" height="365.9346" fill="#c0ffc0"/>
+          <rect x="2203.706" y="10924.033" width="571.6211" height="365.9346" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_692">
+          <rect x="2217.0107" y="10944.566" width="118.21" height="46.87021" fill="#c0ffc0"/>
+          <text transform="translate(2222.0107 10949.566)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="30" font-weight="700" fill="black" x="0" y="29">commit</tspan>
+          </text>
+        </g>
+        <g id="Graphic_691">
+          <rect x="2345.6892" y="10924.098" width="429.5994" height="85.93458" fill="#c0ffc0"/>
+          <rect x="2345.6892" y="10924.098" width="429.5994" height="85.93458" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_690">
+          <rect x="2345.6892" y="11010.033" width="429.5994" height="51" fill="#c0ffc0"/>
+          <rect x="2345.6892" y="11010.033" width="429.5994" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_689">
+          <rect x="2345.6892" y="11060.765" width="429.5994" height="51" fill="#c0ffc0"/>
+          <rect x="2345.6892" y="11060.765" width="429.5994" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_688">
+          <rect x="2345.6892" y="11111.847" width="429.5994" height="51" fill="#c0ffc0"/>
+          <rect x="2345.6892" y="11111.847" width="429.5994" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_687">
+          <rect x="2345.6892" y="11162.58" width="429.5994" height="51" fill="#c0ffc0"/>
+          <rect x="2345.6892" y="11162.58" width="429.5994" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_686">
+          <rect x="2203.706" y="11010.033" width="141.52231" height="51" fill="#c0ffc0"/>
+          <rect x="2203.706" y="11010.033" width="141.52231" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_685">
+          <rect x="2203.706" y="11060.765" width="141.52231" height="51" fill="#c0ffc0"/>
+          <rect x="2203.706" y="11060.765" width="141.52231" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_684">
+          <rect x="2203.706" y="11111.847" width="141.52231" height="51" fill="#c0ffc0"/>
+          <rect x="2203.706" y="11111.847" width="141.52231" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_683">
+          <rect x="2203.706" y="11162.58" width="141.52231" height="51" fill="#c0ffc0"/>
+          <rect x="2203.706" y="11162.58" width="141.52231" height="51" stroke="#a5a5a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_682">
+          <rect x="2204.1669" y="11010.033" width="571.1601" height="279.93458" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_681">
+          <text transform="translate(2254.5564 11021.533)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="24" font-weight="400" fill="black" x="31974423e-20" y="23">tree</tspan>
+          </text>
+        </g>
+        <g id="Graphic_680">
+          <text transform="translate(2241.4602 11072.265)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="24" font-weight="400" fill="black" x="7887024e-19" y="23">parent</tspan>
+          </text>
+        </g>
+        <g id="Graphic_679">
+          <text transform="translate(2241.2487 11123.716)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="24" font-weight="400" fill="black" x="0" y="23">author</tspan>
+          </text>
+        </g>
+        <g id="Graphic_678">
+          <text transform="translate(2221.2547 11174.429)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="24" font-weight="400" fill="black" x="7531753e-19" y="23">committer</tspan>
+          </text>
+        </g>
+        <g id="Graphic_677">
+          <text transform="translate(2525.706 10954.033)" fill="black">
+            <tspan font-family="Menlo" font-size="24" font-weight="400" fill="black" x="0" y="22">f40beda2</tspan>
+          </text>
+        </g>
+        <g id="Graphic_676">
+          <text transform="translate(2227.706 11236.968)" fill="#666">
+            <tspan font-family="Menlo" font-size="24" font-weight="400" fill="#666" x="0" y="22">Initial commit</tspan>
+          </text>
+        </g>
+        <g id="Graphic_675">
+          <text transform="translate(2376.706 11022.033)" fill="black">
+            <tspan font-family="Menlo" font-size="24" font-weight="400" fill="black" x="0" y="22">359b5b4a</tspan>
+          </text>
+        </g>
+        <g id="Graphic_674">
+          <text transform="translate(2376.706 11123.716)" fill="black">
+            <tspan font-family="Menlo" font-size="24" font-weight="400" fill="black" x="0" y="22">HelgeCPH &lt;ropf@itu.dk&gt;</tspan>
+          </text>
+        </g>
+        <g id="Graphic_673">
+          <text transform="translate(2376.706 11175.033)" fill="black">
+            <tspan font-family="Menlo" font-size="24" font-weight="400" fill="black" x="0" y="22">HelgeCPH &lt;ropf@itu.dk&gt;</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

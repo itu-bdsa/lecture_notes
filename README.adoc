@@ -106,7 +106,7 @@ The old versions from 2023 and 2024 are saved as (link:https://github.com/itu-bd
 .2+|7
 .2+|41
 |08.10.2025
-| Eduard
+| tba (guest lecture)
 .2+| link:sessions/session_07/READING_MATERIAL.md[Material]
 .2+a| * link:sessions/session_07/Slides.md[Architecture and Testing of EF Core Projects]
    * Feedback, Deploying to Azure 
@@ -150,7 +150,7 @@ The old versions from 2023 and 2024 are saved as (link:https://github.com/itu-bd
 
 .2+|10
 .2+|45
-|05.10.2025
+|05.11.2025
 |Sven
 .2+| link:sessions/session_10/READING_MATERIAL.md[Material]
 .2+a| * link:sessions/session_10/Slides.md[Security of web applications]
@@ -159,7 +159,7 @@ The old versions from 2023 and 2024 are saved as (link:https://github.com/itu-bd
 .2+|link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-28?origin=product-toc[28], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-29?origin=product-toc[29]
 
 
-|07.10.2025
+|07.11.2025
 |Sven
 
 .2+|11
@@ -172,7 +172,7 @@ The old versions from 2023 and 2024 are saved as (link:https://github.com/itu-bd
 .2+|
 
 |14.11.2025
-|Sven
+|tba (guest lecture)
 
 .2+|12
 .2+|47

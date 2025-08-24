@@ -15,7 +15,7 @@ The old versions from 2023 and 2024 are saved as (link:https://github.com/itu-bd
 
 === Schedule
 
-
+Before the first lecture, please read (and install the software from link:sessions/session_00/README.md[here])
 
 *OBS*: We expect you to be present during lectures and exercise sessions.
 

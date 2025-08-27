@@ -4,7 +4,6 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: '![width:300px](https://github.com/itu-bdsa/lecture_notes/blob/main/images/banner.png?raw=true)'
 headingDivider: 2
 marp: true
 style: |
@@ -40,6 +39,16 @@ style: |
 Week 1
 [Eduard Kamburjan](eduard.kamburjan@itu.dk)
 
+
+## What are we going to do in this course?
+
+  - You know how to program in the object-oriented language Java (1st semester)
+  - You executed a first software development project (2nd semester)
+  - Now, you get an introduction to object-oriented programming in C♯ and ASP.NET together with fundamental software engineering practices.
+
+  - Focus I : Introduction to **Software Engineering**, the structured development of software
+  - Presenting relevant aspects of software engineering that are representative for your future professional tasks in a practical way
+  - Focus II : Code- and project-driven course
 
 ## Welcome!
 
@@ -87,21 +96,20 @@ Will say hello next week!
 ![bg right:20% w:80%](https://peldszus.com/wp-content/uploads/2021/12/Peldszus-B2021-08-01-cropped-scaled-1600x1600.jpg)
 
 
+## Intended Learning Outcomes
 
-## What are we going to do in this course?
+ - Explain and reflect on software development process, practices, and techniques that are covered in the course.
+ - Explain and be able to execute software engineering activities including agile, iterative, and continuous analysis, design, implementation, testing, build, and deployment.
+ - Design and implement software using the C# programming language, [...]
+ - Apply changes (re-factor) to a software system through adjustments in its architecture or refinements in its configuration and reflect on their implications.
+ - Construct useful, coherent, large-scale systems of up to approx. 10 KLOC in size in the C# programming language, including the ability to [...] propose an appropriate software architecture, [...].
+ - Effectively test large-scale systems. [...]
+ - ... details see learnit
 
-  - You know how to program in the object-oriented language Java (1st semester)
-  - You executed a first software development project (2nd semester)
-  - Now, you get an introduction to object-oriented programming in C♯ and ASP.NET together with fundamental software engineering practices.
-
-  - Focus I : Introduction to **Software Engineering**, the structured development of software
-  - Presenting relevant aspects of software engineering that are representative for your future professional tasks in a practical way
-  - Focus II : Code- and project-driven course
 
 ## Our Expectations
 
-  * That you work for about **20-24 hours** per week on this course.
-    * [According to ITU](https://itustudent.itu.dk/Your-Programme/BSc-Programmes/BSc-in-Software-Development/Courses-Projects-and-Electives), this is the amount of time corresponding to 15 ECTS.
+  * [According to ITU](https://itustudent.itu.dk/Your-Programme/BSc-Programmes/BSc-in-Software-Development/Courses-Projects-and-Electives) 15 ECTS at **20-24 hours** per week
   * That you support each other when working through the course material, on the assignments, and on the project.
   * That you work **continuously** on this course and on the project (also during the exercise classes).
   * That you work collaboratively in **public repositories on GitHub.com**.
@@ -122,7 +130,6 @@ Will say hello next week!
 - Introduction to yet another object-oriented language.
 - That you can pass this course without working on the project.
 - That you can pass this course with a single commit during project work.
-- That you can pass this course by only passing the written exam.
 - That all important information is on the lecture slides.
   - Pointers to the most important material is provided.
 - That you can pass this course without reading the course book or other relevant material.
@@ -178,9 +185,9 @@ Find on LearnIT (https://learnit.itu.dk/local/coursebase/view.php?ciid=1743):
 Lectures will be organized as follows: -
 
 - Wendesdays
-  - 14:15-15:00 (1st lecture hour, 45min)
-  - 15:15-15:00 (2nd lecture hour, 45min)
-  - 15:15 (Excercises)
+  - 12:15-13:00 (1st lecture hour, 45min)
+  - 13:15-14:00 (2nd lecture hour, 45min)
+  - 14:15 (Excercises)
 - Fridays
   - 08:15-09:00 (3rd lecture hour, 45min)
   - 09:15-10:00 (4th lecture hour, 45min)
@@ -301,16 +308,13 @@ This course is about _software engineering_:
 
 ### Software engineering is about risk
 
-> IT cost risk is found to be uniquely more risky than other project types. [...]
-> On the one hand, more IT projects are actually deliv-
-ered on budget than for most other project types. On the other
-hand, a substantial fraction of IT projects has larger cost over-
-runs than other projects. (Source: The Uniqueness of IT Cost Risk: A Cross-Group Comparison of 23 Project Types, Byvent et al., 2025)
+> IT cost risk is found to be uniquely more risky than other project types. [...] On the one hand, more IT projects are actually delivered on budget than for most other project types. On the other hand, a substantial fraction of IT projects has larger cost over runs than other projects. 
+(Source: The Uniqueness of IT Cost Risk: A Cross-Group Comparison of 23 Project Types, Byvent et al., 2025)
 
- - If software project fail, they fail big more often than other projects
- (Source: The Empirical Reality of IT Project Cost Overruns: Discovering A
-Power-Law Distribution, Byvent et al., 2022)
- - Structure development helps to control risk
+ > If software project fail, they fail big more often than other projects
+ (Source: The Empirical Reality of IT Project Cost Overruns: Discovering A Power-Law Distribution, Byvent et al., 2022)
+
+ - Structure development helps to assess and control risk
 
 ---
 

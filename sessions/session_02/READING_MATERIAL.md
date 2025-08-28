@@ -2,7 +2,7 @@
 
 ## Collaborative Work (on GitHub)
 
-* Read [chapter 9 on Teamwork from Mark Seemann's _Code That Fits in Your Head_](https://ituniversity.sharepoint.com/:b:/r/sites/2024AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Documents/code-that-fits-your-head_ch9_scan.pdf?csf=1&web=1&e=LSaXUp)
+* Read [chapter 9 on Teamwork from Mark Seemann's _Code That Fits in Your Head_](https://ituniversity.sharepoint.com/:b:/r/sites/2025AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Documents/code-that-fits-your-head_ch9_scan.pdf?csf=1&web=1&e=QWdCw6)
 * How to use [issues](https://docs.github.com/issues) and [projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) on GitHub
   * More details [about GitHub issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
   * More details [about GitHub projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)

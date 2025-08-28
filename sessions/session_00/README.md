@@ -1,15 +1,15 @@
-The following describes what we would like you to do before the first session of the course _Analysis, Design and Software Architecture_ on Wednesday, Aug. 27th.
+The following describes what we would like you to do before the first session of the course _Analysis, Design and Software Architecture_ on Wednesday, Aug. 27th (12:00).
 
 We would like that you prepare the following three things:
 
   * [A) Register accounts](#A-register-accounts)
   * [B) Setup workstation](#B-setup-workstation)
 
-In case you have problems with installation of any of the tools, do not worry.
-You will be able to ask the TAs for help during the first exercise session on Wednesday, Aug. 27th, after the lecture.
-
+In case you have problems with installation of any of the tools, do not despair.
+You will be able to ask the TAs for help during the first exercise session on Wednesday, Aug. 27th (14:00).
 
 -------------------------------------------------------------------------------
+
 
 # A) Register accounts
 
@@ -50,8 +50,8 @@ Some of which, we will use later in the course.
     2. [Custom prompt](https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)
     3. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) with Ubuntu
 2. [Git](https://git-scm.com/downloads)
-3. [.NET **7**](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-    - If your operating, sytstem is Windows install .NET 7 in WSL
+3. [.NET **8**](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+    - If your operating, sytstem is Windows install .NET (8) in WSL
 4. A full IDE:
     - [JetBrains Rider](https://www.jetbrains.com/rider/) (all operating systems) Note, you can get a free student license for all JetBrais IDEs that you use during your education, see <https://www.jetbrains.com/community/education/#students>
     - *Optionally* [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (Windows and Mac only)

@@ -184,14 +184,14 @@ Find on LearnIT (https://learnit.itu.dk/local/coursebase/view.php?ciid=1743):
 
 Lectures will be organized as follows: -
 
-- Wendesdays
+- Wednesdays
   - 12:15-13:00 (1st lecture hour, 45min)
   - 13:15-14:00 (2nd lecture hour, 45min)
   - 14:15 (Excercises)
 - Fridays
   - 08:15-09:00 (3rd lecture hour, 45min)
   - 09:15-10:00 (4th lecture hour, 45min)
-  - 10:15 (Exercises)
+  - 10:15 (ExcCercises)
 
 
 ## What are we going to do in this course?
@@ -314,7 +314,7 @@ This course is about _software engineering_:
  > If software project fail, they fail big more often than other projects
  (Source: The Empirical Reality of IT Project Cost Overruns: Discovering A Power-Law Distribution, Byvent et al., 2022)
 
- - Structure development helps to assess and control risk
+ - Structured development helps to assess and control risk
 
 ---
 
@@ -398,11 +398,10 @@ _header: 10 minutes
 
 <!-- Third hour -->
 
-## Git CLI API
+## Git CLI API: Repetition
 
 ![bg right:50%](https://web.archive.org/web/20230808005215/https://nitter.net/pic/orig/media%2FFjJ62xKXkAYfFjt.jpg)
 
-You should know this from your previous two semesters.
 
 
 ## Intro to the Git Data Model
@@ -413,7 +412,7 @@ You have to understand how Git stores data and models history to be able to prop
 In this course we use Git as version control system (VCS). Keeping track of the history of continuously evolving software is part of the process in software engineering.
 
 
-## The Git Data Model
+## Git Data Model
 
 <!--
 
@@ -494,6 +493,13 @@ ropf,"Cheeping cheeps on Chirp :)",1690981487
 
 ![bg 60%](./images/BDSA_git_intro_06.png)
 
+---
+### Git data model
+ * No diffs! Git only saves snapshots
+   * All diffs you see are dynamically computed
+   * All "renamings" are dynamically computed
+ * Do not put binaries into git repositories, all version will be saved
+ * git patch/cherry-pick/rebase compute diffs
 
 ## Task: Attributions in Git History
 
@@ -524,7 +530,7 @@ _header: 15 minutes
 -->
 
 - Add the modified file to staging `git add Program.cs`
-- Attribute the work on the commit to you and a co-author (for this example me, you can choose any of your friends)
+- Attribute the work on the commit to you and a co-author 
 
 ```bash
 git commit -m "Refactor main to print CLI arguments.
@@ -533,7 +539,7 @@ Longer description...
 
 Co-authored-by: Eduard <edka@itu.dk>"
 ```
-- Inspect the history of this repository with `git log` and discuss the output with your neighbor.
+- Inspect the history of this repository with `git log`, your file manager, use `git hash-object` and discuss the output with your neighbor.
 
 
 More on the topic: <a href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"> GitHub documentation</a> and a good <a href="https://stackoverflow.com/a/7442255">StackOverlow Answer</a>
@@ -542,7 +548,8 @@ More on the topic: <a href="https://docs.github.com/en/pull-requests/committing-
 
 ## Attribute Commits
 
-From now on, and for sure for the project attribute your commits properly!
+ - From now on attribute your commits with all authors
+ - If any code within is LLM generated, add them as co-authors
 
 [See description of this week's project work](./README_PROJECT.md#4-ethics)
 
@@ -570,7 +577,7 @@ Source: Mark Seemann <i>"Code That Fits in Your Head"</i>)
 
 ## Git Commands Cheat Sheet
 
-Useful cheatsheet available from <a href="https://www.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf">Atlassian</a>
+Useful cheat sheet available from <a href="https://www.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf">Atlassian</a>
 
 
 <!-- Fourth hour -->

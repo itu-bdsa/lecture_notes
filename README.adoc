@@ -106,7 +106,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|7
 .2+|41
 |08.10.2025
-| tba (guest lecture)
+| Martin Stanly Watts (Netcompany, guest lecture)
 .2+| link:sessions/session_07/READING_MATERIAL.md[Material]
 .2+a| * link:sessions/session_07/Slides.md[Architecture and Testing of EF Core Projects]
    * Feedback, Deploying to Azure 
@@ -172,7 +172,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|
 
 |14.11.2025
-|tba (guest lecture)
+| Fioralba Ajazi (ITU, guest lecture)
 
 .2+|12
 .2+|47

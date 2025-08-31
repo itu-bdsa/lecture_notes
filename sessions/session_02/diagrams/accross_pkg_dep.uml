@@ -1,0 +1,13 @@
+@startuml
+package "SimpleDB" {
+  interface "IDatabaseRepository<T>" {
+    public IEnumerable<T> Read(int limit)
+    public void Store(T record)
+  }
+  "IDatabaseRepository<T>" <|.. "CSVDatabase<T>"
+}
+
+package Chirp.CLI.Client {
+  "IDatabaseRepository<T>" "database" <-- Program
+}
+@enduml

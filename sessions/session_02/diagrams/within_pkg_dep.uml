@@ -1,0 +1,5 @@
+@startuml
+package Chirp.CLI {
+  Program : string pathToCSVFile
+}
+@enduml

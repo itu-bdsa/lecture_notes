@@ -1,0 +1,3096 @@
+<!DOCTYPE html><html lang="en-US"><head><title>**Analysis, Design and Software Architecture (BDSA)**</title><meta property="og:title" content="**Analysis, Design and Software Architecture (BDSA)**"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#\:\$p > svg > foreignObject > section code.hljs{padding:3px 5px}div#\:\$p > svg > foreignObject > section .hljs{background:#000;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-comment,div#\:\$p > svg > foreignObject > section .hljs-quote{color:#aeaeae;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-keyword,div#\:\$p > svg > foreignObject > section .hljs-selector-tag,div#\:\$p > svg > foreignObject > section .hljs-type{color:#e28964}div#\:\$p > svg > foreignObject > section .hljs-string{color:#65b042}div#\:\$p > svg > foreignObject > section .hljs-subst{color:#daefa3}div#\:\$p > svg > foreignObject > section .hljs-link,div#\:\$p > svg > foreignObject > section .hljs-regexp{color:#e9c062}div#\:\$p > svg > foreignObject > section .hljs-name,div#\:\$p > svg > foreignObject > section .hljs-section,div#\:\$p > svg > foreignObject > section .hljs-tag,div#\:\$p > svg > foreignObject > section .hljs-title{color:#89bdff}div#\:\$p > svg > foreignObject > section .hljs-class .hljs-title,div#\:\$p > svg > foreignObject > section .hljs-doctag,div#\:\$p > svg > foreignObject > section .hljs-title.class_{text-decoration:underline}div#\:\$p > svg > foreignObject > section .hljs-bullet,div#\:\$p > svg > foreignObject > section .hljs-number,div#\:\$p > svg > foreignObject > section .hljs-symbol{color:#3387cc}div#\:\$p > svg > foreignObject > section .hljs-params,div#\:\$p > svg > foreignObject > section .hljs-template-variable,div#\:\$p > svg > foreignObject > section .hljs-variable{color:#3e87e3}div#\:\$p > svg > foreignObject > section .hljs-attribute{color:#cda869}div#\:\$p > svg > foreignObject > section .hljs-meta{color:#8996a8}div#\:\$p > svg > foreignObject > section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-selector-class{color:#9b703f}div#\:\$p > svg > foreignObject > section .hljs-selector-id{color:#8b98ab}div#\:\$p > svg > foreignObject > section .hljs-emphasis{font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-strong{font-weight:700}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){margin:.5em 0 0}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{font-weight:inherit}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6)::part(auto-scaling){max-height:580px}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:1.8em}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:1.5em}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.3em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1.1em}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-size:.9em}div#\:\$p > svg > foreignObject > section blockquote,div#\:\$p > svg > foreignObject > section p{margin:1em 0 0}div#\:\$p > svg > foreignObject > section ol>li,div#\:\$p > svg > foreignObject > section ul>li{margin:.3em 0 0}div#\:\$p > svg > foreignObject > section ol>li>p,div#\:\$p > svg > foreignObject > section ul>li>p{margin:.6em 0 0}div#\:\$p > svg > foreignObject > section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){display:block;margin:1em 0 0;overflow:visible}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{box-sizing:border-box;font-size:.7em;margin:0;min-width:100%;padding:.5em}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)::part(auto-scaling){max-height:calc(580px - 1em)}div#\:\$p > svg > foreignObject > section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#\:\$p > svg > foreignObject > section blockquote:before{left:0;top:0}div#\:\$p > svg > foreignObject > section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div#\:\$p > svg > foreignObject > section blockquote>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section mark{background:transparent}div#\:\$p > svg > foreignObject > section table{border-collapse:collapse;border-spacing:0;margin:1em 0 0}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-style:solid;border-width:1px;padding:.2em .4em}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section:after{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:66%;}div#\:\$p > svg > foreignObject > section header{top:0}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header{left:0;right:0}div#\:\$p > svg > foreignObject > section footer{bottom:0}div#\:\$p > svg > foreignObject > section{background-color:var(--color-background);background-image:linear-gradient(135deg, hsla(0,0%,53%,0), hsla(0,0%,53%,.02) 50%, hsla(0,0%,100%,0) 0, hsla(0,0%,100%,.05));color:var(--color-foreground);font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;font-size:35px;height:720px;letter-spacing:1.25px;line-height:1.35;padding:70px;width:1280px;word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1;}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:35px;}div#\:\$p > svg > foreignObject > section:after{bottom:0;font-size:80%;right:0}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:80%;}div#\:\$p > svg > foreignObject > section a,div#\:\$p > svg > foreignObject > section mark{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section code{background:var(--color-dimmed);color:var(--color-background)}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:var(--color-foreground)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)>code{background:transparent}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before,div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section section:after{color:var(--color-dimmed)}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-color:var(--color-foreground)}div#\:\$p > svg > foreignObject > section table thead th{background:var(--color-foreground);color:var(--color-background)}div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) td,div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe, transparent)}div#\:\$p > svg > foreignObject > section>:first-child,div#\:\$p > svg > foreignObject > section>header:first-child+*{margin-top:0}div#\:\$p > svg > foreignObject > section:where(.invert){--color-background:#455a64;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.gaia){--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.lead){align-items:stretch;flex-flow:column nowrap;place-content:safe center center}div#\:\$p > svg > foreignObject > section:where(.lead) :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h6, marp-h6){text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) p{text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h6, marp-h6),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) ol>li>p,div#\:\$p > svg > foreignObject > section:where(.lead) ul>li>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) table{margin-left:auto;margin-right:auto}div#\:\$p > svg > foreignObject > section{font-size:25px}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size: 25px;}div#\:\$p > svg > foreignObject > section container{height:300px;width:100%;display:block;justify-content:right;text-align:right}div#\:\$p > svg > foreignObject > section header{float:right}div#\:\$p > svg > foreignObject > section a{color:blue;text-decoration:underline;background-color:lightgrey;font-size:80%}div#\:\$p > svg > foreignObject > section table{font-size:22px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-cHubz9gp] :is(pre, marp-pre){font-size:20px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-cHubz9gp]{font-size:20px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-cHubz9gp]{--marpit-root-font-size: 20px;}div#\:\$p > svg > foreignObject > section[data-marpit-scope-rLHCR5Rt]{font-size:24px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-rLHCR5Rt]{--marpit-root-font-size: 24px;}div#\:\$p > svg > foreignObject > section[data-marpit-scope-Ps0kY5im] :is(pre, marp-pre){font-size:20px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-Ps0kY5im]{font-size:20px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-Ps0kY5im]{--marpit-root-font-size: 20px;}div#\:\$p > svg > foreignObject > section[data-marpit-scope-y6Z7AjWX]{font-size:20px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-y6Z7AjWX]{--marpit-root-font-size: 20px;}div#\:\$p > svg > foreignObject > section[data-marpit-scope-1LLJBByy] :is(pre, marp-pre){font-size:22px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-1LLJBByy]{font-size:22px}div#\:\$p > svg > foreignObject > section[data-marpit-scope-1LLJBByy]{--marpit-root-font-size: 22px;}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-class="lead" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" class="lead" data-marpit-pagination="1" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--class:lead;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h1 id="analysis-design-and-software-architecture-bdsa"><strong>Analysis, Design and Software Architecture (BDSA)</strong></h1>
+<p>Week 2<br />
+<a href="eduard.kamburjan@itu.dk">Eduard Kamburjan</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="plan-for-this-week">Plan for this week</h2>
+<ul>
+<li>Wednesday: Working together on software projects (Branching strategies and GitHub)</li>
+<li>Friday: Building Software, refactoring</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="reminder">Reminder</h2>
+<ul>
+<li>What is software engineering?</li>
+<li>Git data model</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="process-working-together-via-git-repositories">Process: Working together via Git Repositories</h2>
+<ul>
+<li><strong>Centralized</strong> (Source: <a href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows">https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows</a>)<br />
+<img src="https://git-scm.com/book/en/v2/images/centralized_workflow.png" alt="" /></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://git-scm.com/book/en/v2/images/integration-manager.png&quot;);background-size:80% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="content">
+<h2 id="process-working-together-via-git-repositories-1">Process: Working together via Git Repositories</h2>
+<ul>
+<li><strong>Integration-Manager</strong> (Source: <a href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows">https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows</a>)<br />
+</li>
+</ul>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="5" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="8" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="process-working-together-via-git-repositories-on-github">Process: Working together via Git Repositories on GitHub</h2>
+<p>One specific implementation of the Integration-Manager Workflow is The GitHub Flow:</p>
+<p>(Source: <a href="https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project">https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project</a>)</p>
+<ul>
+<li data-marpit-fragment="1">
+<ol>
+<li>Fork the project.</li>
+</ol>
+</li>
+<li data-marpit-fragment="2">
+<ol start="2">
+<li>Create a topic branch from <code>main</code> (or any other indicated branch).</li>
+</ol>
+</li>
+<li data-marpit-fragment="3">
+<ol start="3">
+<li>Make some commits to improve the project.</li>
+</ol>
+</li>
+<li data-marpit-fragment="4">
+<ol start="4">
+<li>Push this branch to your GitHub project.</li>
+</ol>
+</li>
+<li data-marpit-fragment="5">
+<ol start="5">
+<li>Open a Pull Request on GitHub.</li>
+</ol>
+</li>
+<li data-marpit-fragment="6">
+<ol start="6">
+<li>Discuss, and optionally continue committing.</li>
+</ol>
+</li>
+<li data-marpit-fragment="7">
+<ol start="7">
+<li>The project owner merges or closes the Pull Request.</li>
+</ol>
+</li>
+<li data-marpit-fragment="8">
+<ol start="8">
+<li>Sync the updated master back to your fork.</li>
+</ol>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-marpit-fragments="2" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="process-working-together-via-git-repositories-on-github-1">Process: Working together via Git Repositories on GitHub</h2>
+<ul>
+<li data-marpit-fragment="1">In your projects, you decide between Centralized and Integration-Manager Workflow.</li>
+<li data-marpit-fragment="2">Centralized Workflow may be more easy to start with</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-marpit-scope-cHubz9gp="" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>10 minutes</header>
+<h2 id="task-branches-in-git-what-was-that">Task: Branches in Git? What was that?</h2>
+
+<ul>
+<li>
+<p>To understand <code>git</code> branches, navigate your browser to <a href="https://onlywei.github.io/explain-git-with-d3/#branch">https://onlywei.github.io/explain-git-with-d3/#branch</a>, enter the following sequence of commands, and observe how the <code>git</code> history evolves in the visualization</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">git branch bug_fix
+git checkout bug_fix
+git commit -m<span class="hljs-string">&quot;Fix bug&quot;</span>
+git checkout master
+git branch feature_new
+git checkout feature_new
+git commit -m<span class="hljs-string">&quot;Add feature&quot;</span>
+git checkout master
+git merge feature_new
+git merge bug_fix
+</code></pre>
+</li>
+<li>
+<p>To understand merging of <code>git</code> branches, navigate your browser to <a href="https://onlywei.github.io/explain-git-with-d3/#merge">https://onlywei.github.io/explain-git-with-d3/#merge</a>, enter the following sequence of commands, and observe how the <code>git</code> history evolves in the visualization.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">git checkout ff
+git checkout dev
+git checkout master
+git merge ff
+git checkout dev
+git merge ff
+</code></pre>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-fragments="8" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:45%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/git_branching_strategies.jpeg&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="55%" height="720"><section id="9" data-marpit-fragments="8" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:45%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="process-branching-strategies">Process: Branching Strategies</h2>
+
+<ul>
+<li>
+<p>Main strategies</p>
+<ul>
+<li data-marpit-fragment="1">Feature-based strategy</li>
+<li data-marpit-fragment="2">Trunk-based strategy</li>
+<li data-marpit-fragment="3">Multi-branch strategies</li>
+</ul>
+</li>
+<li>
+<p>Main Concepts</p>
+<ul>
+<li data-marpit-fragment="4">Long-lived or short-lived branches</li>
+<li data-marpit-fragment="5">Isolation of features, merge risk, release rate</li>
+<li data-marpit-fragment="6">Rest of process, e.g.,
+<ul>
+<li data-marpit-fragment="7">Integration-manager vs. centralized</li>
+<li data-marpit-fragment="8">Code reviews vs. CI/CD</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-marpit-fragments="8" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="9" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="trunk-based-development">Trunk-based Development</h2>
+<blockquote>
+<p>A source-control branching model, where developers collaborate on code in a single branch called ‘trunk’, <strong>resist any pressure to create other long-lived development branches</strong> by employing documented techniques. They therefore avoid merge hell, do not break the build, and live happily ever after.</p>
+</blockquote>
+<p>Source: <a href="https://trunkbaseddevelopment.com/#one-line-summary">Paul Hammant</a></p>
+<blockquote>
+<p>... trunk-based development, where each developer divides their own work into small batches and merges that work into trunk at least once (and potentially several times) a day. The key difference between [feature branches and trunk-based development] is scope. Feature branches typically involve multiple developers and take days or even weeks of work. In contrast, branches in trunk-based development typically last no more than a few hours, with many developers merging their individual changes into trunk frequently.</p>
+</blockquote>
+<p>Source: <a href="https://dora.dev/devops-capabilities/technical/trunk-based-development/">DevOps Research and Assessment (DORA)</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="trunk-based-development-1">Trunk-based Development</h2>
+<ul>
+<li>For your project, use trunk-based branching</li>
+</ul>
+<p><img src="https://trunkbaseddevelopment.com/trunk1a.png" alt="" style="width:600px;" /></p>
+<p><img src="https://trunkbaseddevelopment.com/trunk1b.png" alt="" style="width:600px;" /></p>
+<p>(Image source: <a href="https://trunkbaseddevelopment.com/#">trunkbaseddevelopment.com, Paul Hammant</a>)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://photos.watchmedier.dk/watchmedier/resize:fill:3840:0:0/plain/https://photos.watchmedier.dk/Images/article10929405.ece/ALTERNATES/schema-16_9/EJW%2520Metro%2520Cityringen%2520CMT%2520K%25C3%25B8benhavn.jpg&quot;);"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="process-make-work-visible">Process: Make work visible</h2>
+<ul>
+<li>One problem with software and its development, it is and intagible and invisible artifact.</li>
+<li>One does not know how far we are in its construction and how much work there is left to its completion.</li>
+<li>In physical engineering projects that is more easily accessed.</li>
+<li>Solution for us software engineers: make work visible via suitable project planning tools.</li>
+</ul>
+
+<p>Image Source: <a href="https://policywatch.dk/nyheder/christiansborg/article11254367.ece">PolicyWatch</a></p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="12" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-fragments="4" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;w=2000&quot;);"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="13" data-marpit-fragments="4" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="process-organizing-work-on-github-with-issues">Process: Organizing work on GitHub with Issues</h2>
+<ul>
+<li data-marpit-fragment="1">
+<p>Despite the name, an issue usually describes a <em>requirement</em> to a software system. They can describe <em>new features</em>, <em>bugs</em>, nice to have <em>enhancements</em>, etc.</p>
+</li>
+<li data-marpit-fragment="2">
+<p>For us, one issue is one unit of work.</p>
+</li>
+<li data-marpit-fragment="3">
+<p>Sometimes issues are called <em>tickets</em>.</p>
+</li>
+<li data-marpit-fragment="4">
+<p>Many issue trackers are available, e.g., <a href="https://www.atlassian.com/jira">Jira</a>, we use GitHub issues</p>
+</li>
+</ul>
+
+<p>Image Source: <a href="https://medevel.com/top-12-free-and-open-source-project-management-systems/">MEDevel.com</a></p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-marpit-fragments="4" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="13" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="14" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="process-how-to-write-an-issue">Process: How to write an Issue?</h2>
+<p>Describe User Stories.</p>
+<blockquote>
+<p>the common structure for a user story addresses the “who, what, and why” of a feature:</p>
+<p>As a (user type), I want to (task) so that (goal).<br />
+...<br />
+We suggest sticking that user story in the issue’s title.</p>
+<p>The point is to make the GitHub issue well-defined for everyone involved: it identifies <strong>the audience</strong> (or user), <strong>the action</strong> (or task), and <strong>the outcome</strong> (or goal) as simply as possible.</p>
+</blockquote>
+<p>Source: <a href="https://blog.zenhub.com/best-practices-for-github-issues/">https://blog.zenhub.com/best-practices-for-github-issues/</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="15" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="how-to-write-an-issue">How to write an Issue?</h2>
+<ul>
+<li>
+<p><code>As a &lt;role&gt;, I want &lt;goal&gt; [, so that &lt;benefit&gt;].</code><br />
+Source: <a href="https://research.utwente.nl/files/5122998/REFSQ2016_Proceedings_Springer_Book_-Editors_Maya_Daneva_and_Oscar_Pastor.pdf#page=209">Lucassen, Garm, et al. &quot;The use and effectiveness of user stories in practice.&quot;</a></p>
+</li>
+<li>
+<p><code>In order to &lt;receive benefit&gt; as a &lt;role&gt;, I can &lt;goal/desire&gt;</code><br />
+Source: <a href="http://antonymarcano.com/blog/2011/03/fi_stories/">Antony Marcano</a></p>
+</li>
+<li>
+<p><code>As &lt;who&gt; &lt;when&gt; &lt;where&gt;, I want &lt;what&gt; because &lt;why&gt;</code><br />
+Source: <a href="https://t2informatik.de/en/smartpedia/user-story/">Blog from t2informatik GmbH</a></p>
+</li>
+</ul>
+<p>-No matter which template you use, let the user story be followed by an <em>acceptance criteria</em>.</p>
+<p>For example:</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>As a user, I can log in through a third-party account.
+
+Acceptance criteria:
+  * Can log in through Microsoft
+  * Can log in through Google
+  * Can log in through GitHub
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="16" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="writing-good-issues">Writing <em>Good</em> Issues</h2>
+<blockquote>
+<p>Ask yourself if it…</p>
+<ul>
+<li>is something of value to customers.</li>
+<li>avoids jargon or mumbo jumbo. A non-expert should be able to understand it.</li>
+<li>“slices the cake,” which means it goes end-to-end to deliver something of value.</li>
+<li>is independent of other issues if possible. Dependent issues reduce the flexibility of scope.</li>
+<li>is negotiable, meaning there are usually several ways to get to the stated goal.</li>
+<li>is small and easily estimable in terms of time and resources required.</li>
+<li>is measurable; you can test for results.</li>
+</ul>
+</blockquote>
+<p>Source: <a href="https://blog.zenhub.com/best-practices-for-github-issues/">https://blog.zenhub.com/best-practices-for-github-issues/</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-fragments="6" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="17" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="writing-good-issues-1">Writing <em>Good</em> Issues</h2>
+<p>Use the <em>INVEST</em> acronym:</p>
+<blockquote>
+<ul>
+<li data-marpit-fragment="1">Independent: The User Story stands for itself and is independent of other stories.</li>
+<li data-marpit-fragment="2">Negotiable: The content is negotiable and is gradually described in more detail until it can be implemented.</li>
+<li data-marpit-fragment="3">Valuable: It is valuable and offers the user or customer an added value or benefit.</li>
+<li data-marpit-fragment="4">Estimable: The effort to realise it must be estimable by the developers.</li>
+<li data-marpit-fragment="5">Small: It is so small that it can be realised within one iteration or sprint.</li>
+<li data-marpit-fragment="6">Testable: It has acceptance criteria and can be tested.</li>
+</ul>
+</blockquote>
+<p>Sources: <a href="https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/">Original article by Bill Wake</a>, <a href="https://t2informatik.de/en/smartpedia/user-story/">Blog from t2informatik GmbH&quot;</a>, alternative good description from <a href="https://community.atlassian.com/t5/Jira-articles/Definition-of-Ready-Keeping-Your-Backlog-in-Check/ba-p/1828324">Atlassian</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://miro.medium.com/v2/resize:fit:4800/format:webp/1*GsArHUT6dzhy5WR-sXeKdw.png&quot;);background-size:260%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="18" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="writing-good-issues-2">Writing <em>Good</em> Issues</h2>
+
+<p>Other practitioners have other but similar opinions on the characteristics of a <em>good</em> issue, which you might want to skim:</p>
+<ul>
+<li><a href="https://medium.com/nyc-planning-digital/writing-a-proper-github-issue-97427d62a20f">https://medium.com/nyc-planning-digital/writing-a-proper-github-issue-97427d62a20f</a></li>
+<li><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests</a></li>
+<li><a href="https://developers.google.com/blockly/guides/contribute/get-started/write_a_good_issue">https://developers.google.com/blockly/guides/contribute/get-started/write_a_good_issue</a></li>
+<li><a href="https://rewind.com/blog/best-practices-for-using-github-issues/">https://rewind.com/blog/best-practices-for-using-github-issues/</a></li>
+<li><a href="https://hackernoon.com/45-github-issues-dos-and-donts-dfec9ab4b612">https://hackernoon.com/45-github-issues-dos-and-donts-dfec9ab4b612</a></li>
+</ul>
+<p>Image Source: <a href="https://medium.com/nyc-planning-digital/writing-a-proper-github-issue-97427d62a20f">medium.com</a></p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="18" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-scope-rLHCR5Rt="" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="15 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="19" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:15 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>15 minutes</header>
+<h2 id="task-write-an-issue">Task: Write an Issue</h2>
+
+<p>With your neighbors, navigate to your groups repository and create an issue (use the link with your group number <code>&lt;no&gt;</code> replaced <code>https://github.com/ITU-BDSA2025-GROUP&lt;no&gt;/Chirp/issues/new/choose</code>)<br />
+Choose one of the tasks of this week's project work and describe it in an issue, e.g., choose <a href="./README_PROJECT.md#2d-refactor-chirpclis-programcs-to-use-an-external-library-cli-interface">task 2.d)</a>.</p>
+<ul>
+<li>Use the user story template <code>In order to &lt;receive benefit&gt; as a &lt;role&gt;, I can &lt;goal/desire&gt;</code>.</li>
+<li>Write a suitable acceptance criteria.</li>
+<li>Is the issue you describe a <em>feature</em>, a <em>bug</em>, an <em>enhancement</em> or something else? Label it accordingly.</li>
+<li>Once done, post a link to your issue in our Teams chat so that we can discuss some examples.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://docs.github.com/assets/cb-167219/mw-1440/images/help/projects-v2/example-board.webp&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="20" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="collaboration-how-to-work-together">Collaboration; How to Work Together?</h2>
+
+<p>With work explicitely described in issues, it is clear <em>what</em> you have to work on. But it is not clear which work tasks are more important than others, which are currently worked on, which are already completed, etc.</p>
+<p>Consequently, software projects use often some form of project board to make the status of a project visible.</p>
+<p>Image Source: <a href="https://docs.github.com/assets/cb-167219/mw-1440/images/help/projects-v2/example-board.webp">docs.github.com</a></p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="20" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>10 minutes</header>
+<h2 id="task-project-board-on-github">Task: Project Board on GitHub</h2>
+
+<ul>
+<li>Navigate to your project group organization on GitHub, e.g., <code>https://github.com/ITU-BDSA2025-GROUP&lt;no&gt;/Chirp</code>.</li>
+<li>Click <code>Projects</code> on top of the page, and then create a new project (green button in the center).</li>
+<li>Call the project <code>ITU-BDSA2025-GROUP&lt;no&gt; Chirp</code>, where <code>&lt;no&gt;</code> is your group's number.</li>
+<li>Choose to create a project board from the <code>Team planning</code> project template (to the left).</li>
+<li>Add the issues that you already have in your repository, e.g., the one from the previous task by clicking the command palette (<code>&gt;_</code> icon on the top) followed by <code>Add items</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="22" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Integration workflows</li>
+<li>Branching strategies</li>
+<li>Issues and project boards on github</li>
+<li>Exercise sessions: Finish tasks from this lecture and project task from last week</li>
+<li>Friday: Details on building .net software</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-marpit-fragments="3" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="5 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="23" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:5 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>5 minutes</header>
+<h2 id="building-net-projects">Building .NET Projects</h2>
+<ul>
+<li data-marpit-fragment="1">
+<p>So far, you invoked your programs via <code>dotnet run</code>, which calls internally <code>dotnet build</code></p>
+</li>
+<li data-marpit-fragment="2">
+<p>Why does it matter how to build software?</p>
+</li>
+<li data-marpit-fragment="3">
+<p>What is software?</p>
+<blockquote>
+<p>Software is the collection of <strong>all artifacts</strong>, which allows <strong>suitably educated persons</strong> with access to specified and suitable <strong>hardware</strong> to <strong>instantiate</strong> a running system.</p>
+<p>Additionally, the collection of such artifacts allows such suitably persons to <strong>understand</strong> and <strong>reason</strong> about a systems' working and properties and let them <strong>understand</strong> why the system is as it is and why it behaves the way it does.</p>
+</blockquote>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-scope-Ps0kY5im="" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="15 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="24" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:15 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>15 minutes</header>
+<h2 id="task-build-a-program">Task: Build a program</h2>
+
+<ul>
+<li>Navigate to the .NET/C♯ project in today's lecture notes <a href="./bdsa_greeter"><code>bdsa_greeter</code></a></li>
+<li>There (<code>cd bdsa_greeter</code>), build the project with <code>dotnet build</code>, and inspect the results of the build with <code>ls -ltrh bin/Debug/net8.0/</code>.</li>
+<li>Now, run <code>dotnet publish</code>, and compare the results in <code>ls -ltrh bin/Release/net8.0/&lt;RID&gt;/publish</code> to the results of the build step <code>ls -ltrh bin/Debug/net8.0/</code>
+<ul>
+<li>Replace <code>&lt;RID&gt;</code> with either <code>win-x64</code>, <code>osx-64</code>, <code>osx-arm64</code>, or <code>linux-x64</code> depending on your operating system.</li>
+<li>What do you see in the <code>publish</code> directory?</li>
+</ul>
+</li>
+<li>Now, toggle the <code>PublishSingleFile</code> property of the project file <a href="./bdsa_greeter/bdsa_greeter.csproj"><code>bdsa_greeter.csproj</code></a> to false, i.e., line 10 becomes <code>&lt;PublishSingleFile&gt;false&lt;/PublishSingleFile&gt;</code>
+<ul>
+<li>Run <code>dotnet publish</code> again, and compare its results in <code>ls -ltrh bin/Release/net8.0/publish/</code> with the previous results.</li>
+<li>What happens when you run <code>dotnet bin/Release/net8.0/publish/hello.dll</code>?</li>
+</ul>
+</li>
+<li>Lastly, toggle the <code>SelfContained</code> property of the project file <a href="./bdsa_greeter/bdsa_greeter.csproj"><code>bdsa_greeter.csproj</code></a> to true, i.e., line 11 becomes <code>&lt;SelfContained&gt;true&lt;/SelfContained&gt;</code>
+<ul>
+<li>Run <code>dotnet publish</code> again, and compare its results in <code>ls -ltrh bin/Release/net8.0/&lt;RID&gt;/publish</code> with the previous results.</li>
+</ul>
+</li>
+</ul>
+<p>Describe to each other what you are seeing in the different publishing steps.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="25" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h3 id="how-to-build-net-software">How to build .NET software?</h3>
+<blockquote>
+<p>Applications you create with .NET can be published in two different modes, and the mode affects how a user runs your app.</p>
+<p>Publishing your app as <strong>self-contained</strong> produces an <strong>application that includes the .NET runtime and libraries</strong>, and your application and its dependencies. Users of the application can run it on a machine that doesn't have the .NET runtime installed.</p>
+<p>Publishing your app as <strong>framework-dependent</strong> produces an <strong>application that includes only your application itself and its dependencies</strong>. Users of the application have to separately install the .NET runtime.</p>
+</blockquote>
+<p>Source: <a href="https://learn.microsoft.com/en-us/dotnet/core/deploying">Microsoft</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-marpit-fragments="4" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h3 id="how-to-build-net-software-1">How to build .Net software?</h3>
+<blockquote>
+<p><code>dotnet publish</code> compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The output includes the following assets:</p>
+<ul>
+<li data-marpit-fragment="1">Intermediate Language (IL) code in an assembly with a <code>dll</code> extension.</li>
+<li data-marpit-fragment="2">A .deps.json file that includes all of the dependencies of the project.</li>
+<li data-marpit-fragment="3">A .runtimeconfig.json file that specifies the shared runtime that the application expects, as well as other configuration options for the runtime (for example, garbage collection type).</li>
+<li data-marpit-fragment="4">The application's dependencies, which are copied from the NuGet cache into the output folder.</li>
+</ul>
+<p>Publishing an app as framework-dependent produces a cross-platform binary as a <code>dll</code> file, and a platform-specific executable that targets your current platform. The <code>dll</code> is cross-platform while the executable isn't.</p>
+</blockquote>
+<p>Source: <a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-framework-dependent">Microsoft</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h3 id="dynamically-linked-binaries">Dynamically linked binaries</h3>
+<ul>
+<li>The .NET compiler creates dynamically linked binaries (see previous example)</li>
+<li>Other languages, e.g., Go, create statically linked binaries.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h3 id="static-vs-dynamic-linking">Static vs. dynamic linking</h3>
+<p><img src="https://www.baeldung.com/wp-content/uploads/sites/4/2021/01/StaticVsDynamicLinking-1536x1223-1.png" alt="" style="width:600px;" /></p>
+<p>Image Source: <a href="https://www.baeldung.com/cs/dynamic-linking-vs-dynamic-loading">Baeldung</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h3 id="fat-statically-linked-binaries">&quot;Fat&quot; statically linked binaries</h3>
+<ul>
+<li>A statically linked binary (for a single file applications) does not necessarily contain everything we need to run a program</li>
+<li>Some languages, e.g., Go, allow to build &quot;Fat&quot; statically linked binaries</li>
+<li>Fat binaries include all static artifacts that a program may need during execution.</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-go"><span class="hljs-keyword">import</span> _ <span class="hljs-string">&quot;embed&quot;</span>
+
+<span class="hljs-comment">//go:embed hello.txt</span>
+<span class="hljs-keyword">var</span> s <span class="hljs-type">string</span>
+<span class="hljs-built_in">print</span>(s)
+</code></pre>
+<p>Source: <a href="https://pkg.go.dev/embed">Official documentation</a> and <a href="http://www.inanzzz.com/index.php/post/1rwm/including-and-reading-static-files-with-embed-directive-at-compile-time-in-golang">a blog post on that topic</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="30" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="intro-to-make-and-makefiles">Intro to <code>make</code> and <code>Makefile</code>s</h2>
+<ul>
+<li>Building software requires multiple commands, executed in a correct order to build the final binaries</li>
+<li>These commands and their order form another artifact: a build file</li>
+<li>Build systems handle the building of software, based on build files</li>
+<li>Build systems <a href="https://www.microsoft.com/en-us/research/uploads/prod/2018/03/build-systems.pdf">are non-trivial software in themselves</a>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="31" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="intro-to-make-and-makefiles-1">Intro to <code>make</code> and <code>Makefile</code>s</h2>
+<ul>
+<li>
+<p>One of the oldest and most widely build tools is the <code>make</code> tool.</p>
+<blockquote>
+<p>Make originated with a visit from Steve Johnson (author of yacc, etc.), storming into my office, cursing the Fates that had caused him to waste a morning debugging a correct program (bug had been fixed, file hadn't been compiled, cc *.o was therefore unaffected). [... It] began with an elaborate idea of a dependency analyzer, boiled down to something much simpler, and turned into Make that weekend. Use of tools that were still wet was part of the culture. Makefiles were text files, not magically encoded binaries, because that was the Unix ethos: printable, debuggable, understandable stuff.</p>
+</blockquote>
+</li>
+</ul>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Make_(software)">Stuart Feldman, The Art of Unix Programming, Eric S. Raymond 2003</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="32" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="the-make-tool">The <code>make</code> Tool</h2>
+<p><img src="https://makefiletutorial.com/assets/dependency_graph.png" alt="" /></p>
+<p>Source: <a href="https://makefiletutorial.com/">https://makefiletutorial.com/</a></p>
+<p>-Let's investigate a <code>Makefile</code>  for the previous example <a href="bdsa_greeter/Makefile">.NET project <code>Makefile</code></a></p>
+<ul>
+<li>A good introduction of <code>Makefile</code>s and their syntax can be found <a href="https://makefiletutorial.com/">here</a> and <a href="https://ocw.mit.edu/courses/1-124j-foundations-of-software-engineering-fall-2000/pages/lecture-notes/makefile_primer">here</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="33" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="parsing-cli-arguments-and-options">Parsing CLI arguments and options</h2>
+<ul>
+<li>Last session, we extracted command line arguments and options that are passed to your program on invocation from the <code>args[]</code> property</li>
+<li>CLI APIs can be complicated, and are hard to document</li>
+<li>Use CLI argument libraries</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="34" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h3 id="example-parsing-cli-arguments-and-options-with-docoptnet">Example: Parsing CLI arguments and options with <code>docopt.net</code></h3>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp"><span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> usage = <span class="hljs-string">@&quot;Chirp CLI version.
+
+Usage:
+  chirp read &lt;limit&gt;
+  chirp cheep &lt;message&gt;
+  chirp (-h | --help)
+  chirp --version
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+&quot;</span>;
+
+<span class="hljs-keyword">var</span> arguments = <span class="hljs-keyword">new</span> Docopt().Apply(usage, <span class="hljs-keyword">args</span>, version: <span class="hljs-string">&quot;1.0&quot;</span>, exit: <span class="hljs-literal">true</span>)!;
+</code></pre>
+<ul>
+<li data-marpit-fragment="1">install the <code>docopt.net</code> library, a third-party dependency into your project, e.g., via <code>dotnet add package docopt.net</code>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #deb887, #d17e12)" data-color="white" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="35" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #deb887, #d17e12);--color:white;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #deb887, #d17e12);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="design-review-of-your-current-chirp-systems">Design: Review of your current <em>Chirp!</em> systems</h2>
+
+<ul>
+<li>So far the design of your <em>Chirp!</em> applications is as simple as it can get:<br />
+<img src="images/within_pkg_dep.png" alt="" />
+<ul>
+<li>One package contains the all the code in one single class, likely with two methods</li>
+<li>Note the above is illustrated as an <a href="https://www.uml-diagrams.org/package-diagrams-overview.html">UML Package diagram</a> combined with a <a href="https://www.uml-diagrams.org/class-diagrams-overview.html">UML class diagram</a>. A package in .NET terms is a <em>project</em></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li data-marpit-fragment="1">What is good about this design and what could be improved/changed?</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="36" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>10 minutes</header>
+<h2 id="task-identify-potential-refactorings">Task: Identify potential refactorings</h2>
+
+<ul>
+<li>
+<p>We realize that storing and retrieving data to/from a CSV file is a generally useful feature that we might want to use independently of <em>Chirp!</em>.</p>
+</li>
+<li>
+<p>Sketch a potential refactoring of the source code of your current <em>Chirp!</em> CLI tool that would allow to reuse a CSV file-based database in other applications too.</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-marpit-scope-y6Z7AjWX="" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #deb887, #d17e12)" data-color="white" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="37" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #deb887, #d17e12);--color:white;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #deb887, #d17e12);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="design-refactor-the-design-of-your-current-chirp-systems">Design: Refactor the design of your current <em>Chirp!</em> systems</h2>
+
+<p>We realize that our current implementation is tightly coupled to our <em>Chirp!</em> CLI tools. This coupling is two-dimensional:</p>
+<ol>
+<li>Reading and writing of CSV files has to be factored out of the <em>Chirp!</em> CLI tools.</li>
+<li>Reading and writing of other data than <code>cheeps</code> should be supported to be generally useful</li>
+</ol>
+
+<ul>
+<li data-marpit-fragment="1">Therefore, in your project work, you will refactor the &quot;database&quot; engine of <em>Chirp!</em> so that it looks as in the following<br />
+<img src="images/accross_pkg_dep.png" alt="" /></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="38" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="the-worlds-simplest-database">The World's Simplest Database</h2>
+<p>Actually, in last week's project work, you built a database that is similar to <em>&quot;the world's simplest database&quot;</em>:</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-meta">#!/usr/bin/env bash</span>
+<span class="hljs-function"><span class="hljs-title">db_set</span></span> () {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>&quot;</span> &gt;&gt; database
+}
+<span class="hljs-function"><span class="hljs-title">db_get</span></span> () {
+    grep <span class="hljs-string">&quot;^<span class="hljs-variable">$1</span>,&quot;</span> database | sed -e <span class="hljs-string">&quot;s/^<span class="hljs-variable">$1</span>,//&quot;</span> | <span class="hljs-built_in">tail</span> -n 1
+}
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>$ db_set 123456 '{&quot;name&quot;:&quot;London&quot;,&quot;attractions&quot;:[&quot;Big Ben&quot;,&quot;London Eye&quot;]}'
+$ db_set 42 '{&quot;name&quot;:&quot;San Francisco&quot;,&quot;attractions&quot;:[&quot;Golden Gate Bridge&quot;]}'
+$ db_get 42
+</code></pre>
+<p>Source: Martin Kleppmann <i>Designing Data-Intensive Applications_ ch.3, p.69ff</i></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-marpit-scope-1LLJBByy="" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="5 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="39" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:5 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>5 minutes</header>
+<h2 id="task-understanding-generics-in-c%E2%99%AF">Task: Understanding Generics in C♯</h2>
+
+<ul>
+<li>What is the meaning and purpose of <code>T</code> in that interface? Discuss with your neighbors.</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">SimpleDB</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IDatabaseRepository</span>&lt;<span class="hljs-title">T</span>&gt;
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> IEnumerable&lt;T&gt; <span class="hljs-title">Read</span>(<span class="hljs-params"><span class="hljs-built_in">int</span>? limit = <span class="hljs-literal">null</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Store</span>(<span class="hljs-params">T <span class="hljs-keyword">record</span></span>)</span>;
+}
+</code></pre>
+<p>Hint: Think about a client program, i.e., a program that uses <code>SimpleDB</code> for persistence, where a client <code>Program.cs</code> could contain the following:</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp">IDatabaseRepository&lt;Cheep&gt; database = <span class="hljs-keyword">new</span> CSVDatabase&lt;Cheep&gt;();
+...
+<span class="hljs-keyword">var</span> cheep = <span class="hljs-keyword">new</span> Cheep(<span class="hljs-string">&quot;Peter&quot;</span>, <span class="hljs-string">&quot;Hello!&quot;</span>, DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+database.Store(cheep);
+...
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">record</span> <span class="hljs-title">Cheep</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> Author, <span class="hljs-built_in">string</span> Message, <span class="hljs-built_in">long</span> Timestamp</span>)</span>;
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #deb887, #d17e12)" data-color="white" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="40" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #deb887, #d17e12);--color:white;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #deb887, #d17e12);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="design-depend-on-abstractions">Design: Depend on Abstractions</h2>
+
+<ul>
+<li>The general concern of storing and retrieving data is independent of the underlying technology.</li>
+<li>In future, we might decide that our data should not be stored in CSV files anymore but instead in a relational, document-oriented, etc. database</li>
+<li>We create an interface that specifies the generic concern of retrieving and storing data.</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">SimpleDB</span>;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title">IDatabaseRepository</span>&lt;<span class="hljs-title">T</span>&gt;
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> IEnumerable&lt;T&gt; <span class="hljs-title">Read</span>(<span class="hljs-params"><span class="hljs-built_in">int</span>? limit = <span class="hljs-literal">null</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Store</span>(<span class="hljs-params">T <span class="hljs-keyword">record</span></span>)</span>;
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-color="white" data-header="5 minutes" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="41" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--color:white;--header:5 minutes;--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>5 minutes</header>
+<h2 id="task-create-a-library-project">Task: Create a library project</h2>
+
+<ul>
+<li>
+<p>We realize that storing and retrieving data is something that is a separate concern that should be implemented independently from the <em>Chirp!</em> application.</p>
+</li>
+<li>
+<p>Therefore, in your project work, you will have to create a new library project that implements everything related to persisting data to and retrieving data from CSV files.</p>
+</li>
+<li>
+<p>Create a new library project: <code>dotnet new classlib -n SimpleDB</code></p>
+</li>
+<li>
+<p>In it create a file <code>IDatabaseRepository.cs</code>, e.g., via <code>touch IDatabaseRepository.cs</code></p>
+</li>
+<li>
+<p>Place the code from the previous task in it:</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">SimpleDB</span>;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title">IDatabaseRepository</span>&lt;<span class="hljs-title">T</span>&gt;
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> IEnumerable&lt;T&gt; <span class="hljs-title">Read</span>(<span class="hljs-params"><span class="hljs-built_in">int</span>? limit = <span class="hljs-literal">null</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Store</span>(<span class="hljs-params">T <span class="hljs-keyword">record</span></span>)</span>;
+}
+</code></pre>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-theme="gaia" data-heading-divider="2" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+" lang="en-US" data-marpit-pagination="42" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--theme:gaia;--heading-divider:2;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h2 id="summary-1">Summary</h2>
+<ul>
+<li>Workflows and branching</li>
+<li>Building and refactoring</li>
+<li>What now?
+<ul>
+<li>If not done, complete the Tasks (blue slides) from this class</li>
+<li>Check the <a href="./READING_MATERIAL.md">reading material</a></li>
+<li>Work on the <a href="./README_PROJECT.md">project</a></li>
+</ul>
+</li>
+<li>Next week: Testing, continuous building</li>
+</ul>
+<p>If you feel you want prepare for next session, read chapters 35 and 36 from <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <em>ASP.NET Core in Action, Third Edition</em></a></p>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>First hour</p></div><div class="bespoke-marp-note" data-index="8" tabindex="0"><p>Git Branching Strategies</p></div><div class="bespoke-marp-note" data-index="10" tabindex="0"><p>Second hour</p></div><div class="bespoke-marp-note" data-index="20" tabindex="0"><p>https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
+https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project
+https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects</p></div><div class="bespoke-marp-note" data-index="21" tabindex="0"><p>Third hour</p></div><div class="bespoke-marp-note" data-index="22" tabindex="0"><p>That is, software is first software once it can be **executed** (instantiated). To be able to run software you have to first build (and distribute) it</p><p>## Task: Download and run a program</p><p>- Download the following program: [`hello.zip`](./hello.zip).
+- Decompress the downloaded ZIP file, and run the program via:
+
+```bash
+cd ~/Downloads
+unzip hello.zip
+./hello
+```
+
+Can you actually run the program?
+
+- If yes, what do you see?
+- If not, what do you see?</p></div><div class="bespoke-marp-note" data-index="31" tabindex="0"><p>Fourth hour</p></div><div class="bespoke-marp-note" data-index="34" tabindex="0"><p>@Helge: illustrate that on Chirp example code from session 1.</p></div><div class="bespoke-marp-note" data-index="36" tabindex="0"><p>@Helge: illustrate that on Chirp example code!</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.2.2/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),a={},i=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){a[e]=(a[e]||[]).filter(function(e){return e!==t})},c=function(e,t){return(a[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},l=function(e,t){o[e]&&(n&&c("deactivate",i(n,t)),n=o[e],c("activate",i(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;c(e>0?"next":"prev",i(n,t))&&l(r,t)},u={off:s,on:function(e,t){return(a[e]||(a[e]=[])).push(t),s.bind(null,e,t)},fire:c,slide:function(e,t){if(!arguments.length)return o.indexOf(n);c("slide",i(o[e],t))&&l(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){c("destroy",i(n,e)),a={}}};return(t||[]).forEach(function(e){e(u)}),n||l(0),u}}),t),o=e(r);const a=document.body,i=(...e)=>history.replaceState(...e),s="",c="presenter",l="next",d=["",c,l],u="bespoke-marp-",f=`data-${u}`,m=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},g=()=>a.dataset.bespokeView,p=e=>new URLSearchParams(location.search).get(e),v=(e,t={})=>{const n={location,setter:i,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",m(r,n.location))}catch(e){console.error(e)}},h=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},w=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},k=e=>{e.parent.classList.add(`${u}parent`),e.slides.forEach(e=>e.classList.add(`${u}slide`)),e.on("activate",t=>{const n=`${u}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const a=t<r||t===r&&n<=o;e.setAttribute(`${f}fragment`,(a?"":"in")+"active");const i=`${f}current-fragment`;t===r&&n===o?e.setAttribute(i,"current"):e.removeAttribute(i)})}),e.fragmentIndex=o;const a={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",a)};e.on("next",({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}}),e.on("prev",({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},E=document,L=()=>!(!E.fullscreenEnabled&&!E.webkitFullscreenEnabled),S=()=>!(!E.fullscreenElement&&!E.webkitFullscreenElement),P=e=>{e.fullscreen=()=>{L()&&(async()=>{S()?(E.exitFullscreen||E.webkitExitFullscreen)?.call(E):((e=E.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!L()||(e.fullscreen(),t.preventDefault())})},_=`${u}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout(()=>{r.add(_),o()},e),r.contains(_)&&(r.remove(_),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},O=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${f}load`,e?"":"hideable")}})},A=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const c=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const l=Date.now()-o<e,d=c<=n;if(n=c,l||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},C=(e=`.${u}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${f}osc=${JSON.stringify(e)}]`).forEach(n)};return L()||n("fullscreen",e=>e.style.display="none"),h||n("presenter",e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."}),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n&&e.openPresenterView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),L()&&(e=>{for(const t of["","webkit"])E.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",L()&&S())))}},D=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}})};var N,B,q,K,F,j,V,U={exports:{}},X=(N||(N=1,U.exports=(B=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],q=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+K[e]+";"})},K={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},F="dangerouslySetInnerHTML",j={className:"class",htmlFor:"for"},V={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==F&&(r+=" "+(j[a]?j[a]:q(a))+'="'+q(t[a])+'"');r+=">"}if(-1===B.indexOf(e)){if(t[F])r+=t[F].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===V[i]?i:q(i)}r+=e?"</"+e+">":""}return V[r]=!0,r})),U.exports),H=e(X);const R=({children:e})=>H(null,null,...e),W=`${u}presenter-`,J={container:`${W}container`,dragbar:`${W}dragbar-container`,next:`${W}next`,nextContainer:`${W}next-container`,noteContainer:`${W}note-container`,noteWrapper:`${W}note-wrapper`,noteButtons:`${W}note-buttons`,infoContainer:`${W}info-container`,infoPage:`${W}info-page`,infoPageText:`${W}info-page-text`,infoPagePrev:`${W}info-page-prev`,infoPageNext:`${W}info-page-next`,noteButtonsBigger:`${W}note-bigger`,noteButtonsSmaller:`${W}note-smaller`,infoTime:`${W}info-time`,infoTimer:`${W}info-timer`},Y=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=J.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",H(R,null,H("div",{class:J.nextContainer},H("iframe",{class:J.next,src:"?view=next"})),H("div",{class:J.dragbar}),H("div",{class:J.noteContainer},H("div",{class:J.noteWrapper}),H("div",{class:J.noteButtons},H("button",{class:J.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),H("button",{class:J.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),H("div",{class:J.infoContainer},H("div",{class:J.infoPage},H("button",{class:J.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),H("span",{class:J.infoPageText}),H("button",{class:J.infoPageNext,tabindex:"-1",title:"Next"},"Next")),H("time",{class:J.infoTime,title:"Current time"}),H("time",{class:J.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(J.dragbar).addEventListener("mousedown",()=>{t=!0,r(J.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(J.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(J.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(J.nextContainer).addEventListener("click",()=>e.next());const n=r(J.next),o=(a=n,(e,t)=>a.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var a;n.addEventListener("load",()=>{r(J.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const i=document.querySelectorAll(".bespoke-marp-note");i.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(J.noteWrapper).appendChild(e)}),e.on("activate",()=>i.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const c=e=>{s=Math.max(-5,s+e),r(J.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},l=()=>c(1),d=()=>c(-1),u=r(J.noteButtonsBigger),f=r(J.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),l()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&l(),"-"===e.key&&d()},!0),e.on("activate",({index:t})=>{r(J.infoPageText).textContent=`${t+1} / ${e.slides.length}`});const m=r(J.infoPagePrev),g=r(J.infoPageNext);m.addEventListener("click",t=>{m.blur(),e.prev({fragment:!t.shiftKey})}),g.addEventListener("click",t=>{g.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1});let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(J.infoTime).textContent=e.toLocaleTimeString(),r(J.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(J.infoTimer).addEventListener("click",()=>{p=new Date})})(e)},z=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:G},presenterUrl:{enumerable:!0,get:Q}}),h&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function G(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,W+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function Q(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}const Z=e=>{const t=g();return t===l&&e.appendChild(document.createElement("span")),{[s]:z,[c]:Y,[l]:D}[t]},ee=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},te=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},ne=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?te(p("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),c=o(0,r(n||0,a[s].length-1));s===e.slide()&&c===e.fragmentIndex||e.slide(s,{fragment:c})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(te(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],a=r.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||v({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),v({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},re=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},v({},{setter:(e,...t)=>i({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),a(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&a(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const i=()=>{const{reference:e}=o();void 0===e||e<=1?w(n):a(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),i()}),e.on("destroy",i)}},{PI:oe,abs:ae,sqrt:ie,atan2:se}=Math,ce={passive:!0},le=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?a(e[0]):void 0},ce),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ie(ae(n)**2+ae(o)**2),r.radian=se(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+oe)%(2*oe)-oe;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},ce)},de=new Map;de.clear(),de.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ue={both:"",outgoing:"outgoing-",incoming:"incoming-"},fe={forward:"",backward:"-backward"},me=e=>`--marp-bespoke-transition-animation-${e}`,ge=e=>`--marp-transition-${e}`,pe=me("name"),ve=me("duration"),he=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ge("duration"));a&&Number.parseFloat(a)>=0&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),ye=async e=>de.has(e)?de.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ue))for(const[a,i]of Object.entries(fe)){const s=`marp-${o}transition${i}-${e}`;n.push(he(s).then(e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(de.set(e,t),t)),be=e=>Object.values(e).flatMap(Object.values).every(e=>!e),we=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[pe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[me("direction")]="reverse"),e}})();return!o&&n?we(e,{type:t,backward:!1}):o||{[pe]:"__bespoke_marp_transition_no_animation__"}},xe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ke="_tSId",$e="_tA",Ee="bespoke-marp-transition-warming-up",Le=window.matchMedia("(prefers-reduced-motion: reduce)"),Se="__bespoke_marp_transition_reduced_outgoing__",Pe="__bespoke_marp_transition_reduced_incoming__",_e={forward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}},backward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}}},Te=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ge("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>ye(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=xe(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>a=>{const i=t();if(i)return!!a[$e]||!("object"!=typeof i||(i.skipTransition(),!a.forSync));if(!o(a))return!0;const s=e.slides[e.slide()],c=()=>a.back??r,l="data-transition"+(c()?"-back":""),d=s.querySelector(`section[${l}]`);if(!d)return!0;const u=xe(d.getAttribute(l)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await ye(e);if(be(n)){if(!t)return;return n=await ye(`__builtin__${e}`),be(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(a)}finally{t(!1)}return}let r=e;Le.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=_e);const o=document.getElementById(ke);o&&o.remove();const i=document.createElement("style");i.id=ke,document.head.appendChild(i),((e,t)=>{const n=[`:root{${ge("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${ve}:${o};}`);const a=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${a(we(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${a(we(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:u.duration}).forEach(e=>i.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ee);let l=!1;const d=()=>{l||(n(a),l=!0,s.remove(Ee))},f=()=>{t(!1),i.remove(),s.remove(Ee)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[$e]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[$e]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[$e]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Ie;const Me=()=>(void 0===Ie&&(Ie="wakeLock"in navigator&&navigator.wakeLock),Ie),Oe=async()=>{const e=Me();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ae=async()=>{if(!Me())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Oe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Oe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=p("view");a.dataset.bespokeView=e===l||e===c?e:""})();const t=(e=>{const t=p(e);return v({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=d.findIndex(e=>g()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,0],re({key:t})],[[1,1,1],Z(e)],[[1,1,0],M],[[1,1,1],k],[[1,0,0],T()],[[1,1,1],O],[[1,1,1],ne({history:!1})],[[1,1,0],A()],[[1,1,0],P],[[1,0,0],ee],[[1,1,0],le()],[[1,0,0],C()],[[1,0,0],Te],[[1,1,1],$],[[1,1,0],Ae]))})()}();</script></body></html>

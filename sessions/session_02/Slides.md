@@ -306,7 +306,6 @@ Choose one of the tasks of this week's project work and describe it in an issue,
 - Use the user story template `In order to <receive benefit> as a <role>, I can <goal/desire>`.
 - Write a suitable acceptance criteria.
 - Is the issue you describe a _feature_, a _bug_, an _enhancement_ or something else? Label it accordingly.
-- Once done, post a link to your issue in our Teams chat so that we can discuss some examples.
 
 
 ## Collaboration; How to Work Together?

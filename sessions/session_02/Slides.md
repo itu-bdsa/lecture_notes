@@ -349,6 +349,16 @@ https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-a
 
 <!-- Third hour -->
 
+## Building Software
+   - What is software?
+
+   * [Software is ...] the programs, procedures, rules, and associated documentation of an information processing system (Source: ISO/IEC/IEEE 24765:2010)
+   * Software is the collection of all artifacts, which allows suitably educated persons with access to specified and suitable hardware to instantiate a running system. (Source: Pfeiffer, What Constitutes Software? 2020)
+
+   * Building software is to transform software into a form where it can be used
+   * Building software is not just compilation, and compilation is not a single step
+
+<!--
 ## Building .NET Projects
 
 * So far, you invoked your programs via `dotnet run`, which calls internally `dotnet build`
@@ -357,7 +367,7 @@ https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-a
 
     > Software is the collection of **all artifacts**, which allows **suitably educated persons** with access to specified and suitable **hardware** to **instantiate** a running system.
     >
-    > Additionally, the collection of such artifacts allows such suitably persons to **understand** and **reason** about a systems' working and properties and let them **understand** why the system is as it is and why it behaves the way it does.
+    > Additionally, the collection of such artifacts allows such suitably persons to **understand** and **reason** about a systems' working and properties and let them **understand** why the system is as it is and why it behaves the way it does.-->
 
   <!-- That is, software is first software once it can be **executed** (instantiated). To be able to run software you have to first build (and distribute) it -->
 
@@ -366,9 +376,6 @@ https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-a
 ## Task: Download and run a program
 -->
 <!--
-_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
-_color: white
-_header: 5 minutes
 -->
 
 <!--
@@ -428,6 +435,8 @@ Describe to each other what you are seeing in the different publishing steps.
   > Publishing your app as **framework-dependent** produces an **application that includes only your application itself and its dependencies**. Users of the application have to separately install the .NET runtime.
 
 Source: <a href="https://learn.microsoft.com/en-us/dotnet/core/deploying">Microsoft</a>
+
+ - PublishSingleFile controls how to package the dll components, not the runtime
 
 ---
 
@@ -492,7 +501,7 @@ Source: <a href="https://pkg.go.dev/embed">Official documentation</a> and <a hre
 
 - One of the oldest and most widely build tools is the `make` tool.
 
-  > Make originated with a visit from Steve Johnson (author of yacc, etc.), storming into my office, cursing the Fates that had caused him to waste a morning debugging a correct program (bug had been fixed, file hadn't been compiled, cc *.o was therefore unaffected). [... It] began with an elaborate idea of a dependency analyzer, boiled down to something much simpler, and turned into Make that weekend. Use of tools that were still wet was part of the culture. Makefiles were text files, not magically encoded binaries, because that was the Unix ethos: printable, debuggable, understandable stuff.
+  > Make originated with a visit from Steve Johnson (author of yacc, etc.), [...] waste a morning debugging a correct program (bug had been fixed, file hadn't been compiled, cc *.o was therefore unaffected). [... It] began with an elaborate idea of a dependency analyzer, boiled down to something much simpler, and turned into Make that weekend. Use of tools that were still wet was part of the culture. Makefiles were text files, not magically encoded binaries, because that was the Unix ethos: printable, debuggable, understandable stuff.
 
 Source: <a href="https://en.wikipedia.org/wiki/Make_(software)">Stuart Feldman, The Art of Unix Programming, Eric S. Raymond 2003</a>
 

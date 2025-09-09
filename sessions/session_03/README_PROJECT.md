@@ -1,6 +1,5 @@
 # Your turn now! -- Project Work
 
-<img src="https://media.giphy.com/media/13GIgrGdslD9oQ/giphy.gif" width=50%/>
 
 You have to work on the following topics.
 
@@ -10,7 +9,7 @@ You have to work on the following topics.
   - [4) Prepare for next session](#4-prepare-for-next-session)
 
 Remember, you have to perform work on each topic and on **each** bullet point.
-Be done with the project work before we meet again next Thursday.
+Be done with the project work before we meet again next Friday.
 
 
 ## 1) Process
@@ -21,7 +20,7 @@ Add GitHub Actions workflows to your projects.
 Likely, you will add two or more of them.
 
 * Start with adding an adapted version of  a [.NET starter workflow](https://github.com/actions/starter-workflows/blob/main/ci/dotnet.yml).
-  - When adapting it, make sure that you are using a .NET version 7, the same that we told you to install on your local computers.
+  - When adapting it, make sure that you are using a .NET version 8, the same that we told you to install on your local computers.
   - That workflow shall be executed on all pushes and merge of pull-requests in your repository.
 * Add a workflow that releases your `chirp` executable, i.e., a single file .NET application.
   - The workflow should build and test your project whenever you push a new version that is accordingly tagged ([`git tag`](https://git-scm.com/book/en/v2/Git-Basics-Tagging)) to your repository.
@@ -29,7 +28,7 @@ Likely, you will add two or more of them.
   - If you want to, publish executables for ARM processors too.
   - Each executable shall be distributed as compressed with `zip` file.
   - All of the above steps shall be executed in an `ubuntu-latest` environment, i.e., you want to cross-compile for the different targets.
-  - Since everybody in this course has .NET 7 installed it is sufficient to publish a platform-dependent single file application, i.e., not a self-contained application.
+  - Since everybody in this course has .NET 8 installed it is sufficient to publish a platform-dependent single file application, i.e., not a self-contained application.
 
 ### Hints:
 

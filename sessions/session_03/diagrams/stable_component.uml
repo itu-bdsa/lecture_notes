@@ -1,0 +1,12 @@
+@startuml
+package "CSVLib"
+
+package "A"
+package "B"
+package "C"
+
+A ..> CSVLib
+B ..> CSVLib
+C ..> CSVLib
+
+@enduml

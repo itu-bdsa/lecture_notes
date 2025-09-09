@@ -138,7 +138,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|9
 .2+|44
 |29.10.2025
-|Sven
+| Martin von Haller Groenbaek (Bird & Bird, guest lecture)
 .2+| link:sessions/session_09/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_09/Slides.md[Forms and UI Testing]
 .2+| link:sessions/session_09/README_PROJECT.md[Add sending of cheeps, and UI tests]
@@ -146,7 +146,7 @@ Before the first lecture, please read (and install the software from link:sessio
 
 
 |31.10.2025
-|Sven
+| Sven
 
 .2+|10
 .2+|45
@@ -177,7 +177,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|12
 .2+|47
 |19.11.2025
-| Sven
+| Jakob Krabbe (Comply Cloud, guest lecture)
 .2+| link:sessions/session_12/READING_MATERIAL.md[Material]
 .2+a| * "Privacy by Design"
    * link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
@@ -187,7 +187,7 @@ Before the first lecture, please read (and install the software from link:sessio
 
 
 |21.11.2025
-| tba (guest lecture)
+| Sven
 
 .2+|13
 .2+|48

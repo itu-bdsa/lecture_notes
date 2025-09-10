@@ -198,7 +198,6 @@ Unpublished demo: `Chirp.Demo/tests/`
 
 ## End-to-end (E2E) Tests of C♯ CLI Programs
 
-Unpublished demo: `Chirp.Demo/tests/`
 
 ```csharp
   [Fact]
@@ -213,9 +212,8 @@ Unpublished demo: `Chirp.Demo/tests/`
   }
 ```
 
-<font size=3>
 See for <a href="https://darthpedro.net/2021/02/15/lesson-1-10-cli-end-to-end-tests/">example</a>
-</font> 
+
 
 
 ## End-to-end (E2E) Tests of Arbitrary CLI Programs
@@ -507,6 +505,11 @@ section {
 (Source: <a href="https://blog.ploeh.dk/2021/06/14/new-book-code-that-fits-in-your-head/">Mark Seemann <i>Code That Fits in Your Head</i></a>)
 
 
+## Continuation
+
+- So far: different testing techniques
+- Today: stages, automated test case generation, GitHub actions
+
 ## Testing stages - Who is testing?
 
 
@@ -529,6 +532,248 @@ section {
 - Automate, automate, automate
 <!-- ---------------------------------------------------------------------- -->
 <!-- Fourth hour -->
+
+
+
+## Automated Test Case Generation
+
+ - Automated testing automates the testing procedure
+ - Automated test case generation automates writing tests
+
+![](images/quest.png)
+
+ ## Input Fuzzing
+   - How to generate valid inputs?
+   - Invalid inputs should be tested, but interesting (mis)behavior is from valid inputs
+   - How to generate structured inputs?
+
+   > Barton Miller was connected to his university computer via a 1200 baud telephone line. The thunderstorm caused noise on the line, and this noise in turn caused the UNIX commands on either end to get bad inputs – and crash. He crafted a programming exercise at the University of Wisconsin-Madison that would have his students create the first fuzzers.
+   > The goal of this project is to evaluate the robustness of various UNIX utility programs, given an unpredictable input stream. [...] First, you will build a fuzz generator. This is a program that will output a random character stream. Second, you will take the fuzz generator and use it to attack as many UNIX utilities as possible, with the goal of trying to break them. (<a href=https://pages.cs.wisc.edu/~bart/fuzz/CS736-Projects-f1988.pdf>Source</a>)
+
+ ---
+ ### Constrained and random fuzzing
+   - Just generate random data
+   - Surprisingly efficient, but imprecise because it is unconstrained
+   - Solvers can for example be used for numerical domains, e.g., Z3
+
+
+  ```csharp
+   public static IEnumerable<object[]> GetConstrainedIntegerPairs()
+   {
+    ...
+        // 0 < x < 20 && 0 < y < 20
+        IntExpr x = z3.MkIntConst("x"), y = ctx.MkIntConst("y");
+        z3.Add(ctx.MkGt(x, ctx.MkInt(0)), ctx.MkGt(y, ctx.MkInt(0)),
+               ctx.MkLt(x, ctx.MkInt(20)), ctx.MkLt(y, ctx.MkInt(20)),);
+
+        for (int i = 0; i < 5 && z3.Check() == Status.SATISFIABLE; i++)
+        {
+            var m = z3.Model;
+            int xv = ((IntNum)m.Evaluate(x)).Int, yv = ((IntNum)m.Evaluate(y)).Int;
+            solutions.Add(new object[] { xv, yv });
+            z3.Add(ctx.MkOr(x != ctx.MkInt(xv), y != ctx.MkInt(yv))); //block
+        }
+        ...
+   }
+  ```
+
+ ---
+
+ ### Constrained and random fuzzing
+```c#
+
+    [Theory]
+    [MemberData(nameof(GetConstrainedIntegerPairs))]
+    public void testAddition(int x, int y, int expectedSum)
+    {
+        // Verify the constraints are satisfied
+        Assert.True(x > 0 && x < 20, $"x={x} should be in range (0, 20)");
+        Assert.True(y > 0 && y < 20, $"y={y} should be in range (0, 20)");
+        
+        // Act
+        var actualSum = x + y;
+
+        // Assert
+        Assert.Equal(expectedSum, actualSum);
+    }
+```
+ ---
+
+ ### Mutation-based input fuzzing
+  - Take a valid input, and change is slightly
+  - Strings: swap one character, exchange two positions, add, delete ...
+
+```py
+inp = seed_input
+for i in range(mutations):
+    if i % 10 == 0:
+        print(i, "mutations:", repr(inp))
+    inp = mutate(inp)
+
+0 mutations: 'http://www.google.com/search?q=fuzzing'
+10 mutations: 'http:/L/www.ggoWglej.com/seaRchqfu:in'
+20 mutations: 'htt://wwggoVgle"j.som/seaR3hqf,u:in'
+30 mutations: 'htv://>fwggoVgle"j.qom/ea0Rd3hqf,u^:i'
+40 mutations: 'htv://>fwgeo6zTle"Bj.\'qom/eapRd[3hqf,tu^:i'
+```
+
+  - Requires some thought on the mutation operators for complex data types
+  - Also requires a generator/validator for valid inputs or an initial data set
+
+ ---
+
+ ### Grammar-based fuzzing
+  - Solver for languages and input formats
+  - Write grammar for inputs, fuzzing tools take care of randomness in generation
+  - Following grammer describes valid floating point literals
+
+```
+	<DOUBLE>	::=	[+-]? (([0-9]+ ('.' [0-9]*)?) | ('.' [0-9]+)) <EXPONENT>?
+	<EXPONENT>	::=	[eE] [+-]? [0-9]+
+```
+
+  -   -.7 broke Apache Jena's RDF parser
+
+
+ ## Oracle Problem 
+ - If the input is random, how do we now whether the behavior is correct?
+ - Three main approaches
+   - Only consider obviously wrong behavior: does it crash?
+   - Specify a property that should hold
+   - Compare to other system
+
+![](images/quest.png)
+
+ ---
+
+ ### Property-based testing 
+  - Describe property of the output that should always hold
+  - FsCheck's `[Property]` invoces internal generators, can be configured
+
+  ```c#
+    [Property]
+    public bool testAscendAndLength(int[] input)
+    {
+        if (input == null) return true; // Initial assert
+
+        //No arrange
+
+        //Act
+        var sorted = sort(input);
+        
+        //Assert: 1 Postcondition, 1 invariant
+        sorted.Should().BeInAscendingOrder().And().Should().HaveCount(input);
+    }
+  ```
+
+---
+
+  ### FsCheck (cont.)
+  - Extension: metamorphic testing considers properties that relate several calls
+
+  ```c#
+      [Property]
+        public bool testIdempotentProperty(int[] input)
+       {
+        ...
+        var sortedOnce = sort(input);
+        var sortedTwice = sort(sortedOnce);
+    
+        sortedOnce.Should().Equal(sortedTwice);
+        }
+  ```     
+
+---
+
+  ### FsCheck (cont.)
+   - Can also be used for constraints 
+
+  ```c#
+   public static Arbitrary<(int, int)> IntegerPairs() =>
+        from x in Gen.Choose(0, 20)
+        from y in Gen.Choose(0, 20)
+        select (x, y);
+
+    [Property(Arbitrary = new[] { typeof(IntegerPairTests) })]
+    public Property testCommutative((int x, int y) pair)
+    {
+        return (pair.x + pair.y == pair.y + pair.x)
+            .Label($"Testing with pair ({pair.x}, {pair.y})");
+    }
+  ```
+
+
+ 
+  ---
+
+
+ ### Differential testing 
+  - Use a different unit with the same behavior
+  - Preferably one you are more confident in, and written by others
+  
+  > We created Csmith, a randomized test-case generator that supports compiler bug-hunting using differential testing. Csmith generates a C program; a test harness then compiles the program using several compilers, runs the executables, and compares the outputs. [...] to date, we have found and reported more than 325 bugs in mainstream C compilers including GCC, LLVM, and commercial tools. (Yang et al., Finding and Understanding Bugs in C Compilers, 2011)
+
+  - Can be very useful if you are reimplementing functionality or rely on a standard interface
+
+ ## Considerations for Fuzzing 
+  * What kind of bugs does black-box fuzzing find?
+  * How to integrate random testing into test process?
+  * How good are my random tests?
+
+---
+
+ ### Depth and fuzzblockers
+ - Fuzzblockers are bugs encountered early in the execution path
+ ```c#
+    if(input.isCorrectPassword())
+    {
+      //interesting thing
+    }
+ ```
+
+ - If you using fuzzing on E2E tests, most input will trigger errors or short paths in the "frontend"
+ - Pure black-box fuzzing that does not consider code coverage can lead to shallow test suites 
+
+---
+
+ ### Quality of the test suite
+  - Code coverage argues about how many/which executions are considered
+  - Mutation-based testing argues about how precise the test suite is
+    - Generate mutants of the _SUT_, assume mutant-SUT is buggy
+    - If it still passes the test suite, it is an argument against its precision
+
+```c#
+    public class Comparer
+    {
+        public bool isBetween(int a, int b, int c) { return a < b && b < c}
+        public bool mutant1(int a, int b, int c) { return a > b && b < c}
+        public bool mutant2(int a, int b, int c) { return a <= b && b < c}
+    }
+        [Theory]
+        [InlineData(1, 1, 1, false)]
+        [InlineData(1, 2, 3, true)]
+        public void test(int a, int b, int c, bool expected)
+        {
+            var sut = new Comparer();
+            Assert.Equal(expected, comparer.isBetween(first, second));
+        }
+```
+
+---
+
+### Testing campaigns
+ - Test can be integrated in workflow
+   - Pregenerate tests, or
+   - Fuzz with new tests everytime and use failures as regressions
+
+ - Alternative: testing campaigns
+   - Generate random inputs for a few hours/days
+   - Sometimes done externally, as part of bug bounties etc.
+
+ - Used to detect overflows, security problems etc.
+ - Often a challenge: If random input crashes the system, what is the bug?
+
+
 
 ## Process: GitHub Actions Workflows
 

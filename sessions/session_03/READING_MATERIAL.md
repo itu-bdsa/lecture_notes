@@ -6,6 +6,7 @@
 * [Introduction to Unit Testing from official documentation](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test)
 * [Organize .NET Project for testing](https://learn.microsoft.com/en-us/dotnet/core/tutorials/testing-with-cli)
 * [Testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices)
+* [Fuzzing book](https://www.fuzzingbook.org/)
 
 
 ## GitHub Actions

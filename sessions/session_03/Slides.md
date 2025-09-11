@@ -558,30 +558,6 @@ section {
 
 
   ```csharp
-   public static IEnumerable<object[]> GetConstrainedIntegerPairs()
-   {
-    ...
-        // 0 < x < 20 && 0 < y < 20
-        IntExpr x = z3.MkIntConst("x"), y = ctx.MkIntConst("y");
-        z3.Add(ctx.MkGt(x, ctx.MkInt(0)), ctx.MkGt(y, ctx.MkInt(0)),
-               ctx.MkLt(x, ctx.MkInt(20)), ctx.MkLt(y, ctx.MkInt(20)),);
-
-        for (int i = 0; i < 5 && z3.Check() == Status.SATISFIABLE; i++)
-        {
-            var m = z3.Model;
-            int xv = ((IntNum)m.Evaluate(x)).Int, yv = ((IntNum)m.Evaluate(y)).Int;
-            solutions.Add(new object[] { xv, yv });
-            z3.Add(ctx.MkOr(x != ctx.MkInt(xv), y != ctx.MkInt(yv))); //block
-        }
-        ...
-   }
-  ```
-
- ---
-
- ### Constrained and random fuzzing
-```c#
-
     [Theory]
     [MemberData(nameof(GetConstrainedIntegerPairs))]
     public void testAddition(int x, int y, int expectedSum)
@@ -596,6 +572,29 @@ section {
         // Assert
         Assert.Equal(expectedSum, actualSum);
     }
+  ```
+
+ ---
+
+ ### Constrained and random fuzzing
+```c#
+   public static IEnumerable<object[]> GetConstrainedIntegers()
+   {
+    ...
+        // 0 < x < 20 && 0 < y < 20
+        IntExpr x = z3.MkIntConst("x"), y = ctx.MkIntConst("y");
+        z3.Add(ctx.MkGt(x, ctx.MkInt(0)), ctx.MkGt(y, ctx.MkInt(0)),
+               ctx.MkLt(x, ctx.MkInt(20)), ctx.MkLt(y, ctx.MkInt(20)),);
+
+        for (int i = 0; i < 5 && z3.Check() == Status.SATISFIABLE; i++)
+        {
+            var m = z3.Model;
+            int xv = ((IntNum)m.Evaluate(x)).Int, yv = ((IntNum)m.Evaluate(y)).Int;
+            solutions.Add(new object[] { xv, yv, xv+yv });
+            z3.Add(ctx.MkOr(x != ctx.MkInt(xv), y != ctx.MkInt(yv))); //block
+        }
+        ...
+   }
 ```
  ---
 
@@ -604,11 +603,13 @@ section {
   - Strings: swap one character, exchange two positions, add, delete ...
 
 ```py
-inp = seed_input
-for i in range(mutations):
-    if i % 10 == 0:
-        print(i, "mutations:", repr(inp))
-    inp = mutate(inp)
+var inp = seedInput;
+for (int i = 0; i < mutations; i++) {
+    if (i % 10 == 0) {
+        Console.WriteLine($"{i} mutations: {inp}");
+    }
+    inp = Mutate(inp);
+}
 
 0 mutations: 'http://www.google.com/search?q=fuzzing'
 10 mutations: 'http:/L/www.ggoWglej.com/seaRchqfu:in'
@@ -632,7 +633,7 @@ for i in range(mutations):
 	<EXPONENT>	::=	[eE] [+-]? [0-9]+
 ```
 
-  -   -.7 broke Apache Jena's RDF parser
+  -   -.7 broke Apache Jena's RDF TTL parser
 
 
  ## Oracle Problem 
@@ -694,12 +695,26 @@ for i in range(mutations):
         from y in Gen.Choose(0, 20)
         select (x, y);
 
-    [Property(Arbitrary = new[] { typeof(IntegerPairTests) })]
+    [Property(MaxTest = 50, Arbitrary = new[] { typeof(IntegerPairTests) })]
     public Property testCommutative((int x, int y) pair)
     {
         return (pair.x + pair.y == pair.y + pair.x)
             .Label($"Testing with pair ({pair.x}, {pair.y})");
     }
+  ```
+
+  ---
+
+  ### FsCheck (cont.)
+   - Can also be used for regressions 
+
+  ```c#
+        [Property(Replay = "17234047130667642678,3215559178322092721")]
+        public bool ShouldFail_0(int i)
+        {
+            return i < 80;
+        }
+
   ```
 
 
@@ -782,7 +797,7 @@ for i in range(mutations):
 - For automating project boards and issue tracking
 - For merging to main -->
 
-Last time, we were discussing how to build .NET/C♯ software locally on your computers. There is a problem with this: _"It builds on my computer!?"_
+So far, we were discussing how to build .NET/C♯ software locally on your computers. There is a problem with this: _"It builds on my computer!?"_
 
 That can be solved by having the same build and test environment for the entire team.
 
@@ -824,7 +839,7 @@ Image Source: <a href=" https://learn.microsoft.com/en-us/training/modules/intro
 <!--
 _backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
 _color: white
-_header: 10 minutes
+_header: 15 minutes
 -->
 
 - Navigate your browser to the [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart) article.
@@ -996,6 +1011,52 @@ jobs:
 
 (Source: Adapted from <a href="https://github.com/actions/starter-workflows/blob/main/ci/dotnet.yml">GitHub Actions Starter Workflows</a>)
 
+## Trunk-based development
+- We cannot stop a push on main, as workflow is triggered by it
+- Run tests on push to short-lived feature-branch
+- Merges are handled through pull requests, pull requests are blocked if tests fail
+
+
+<!-- ---------------------------------------------------------------------- -->
+## Semantic Versioning
+
+<!--
+_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
+_color: white
+-->
+
+![bg right:40% 100% ](https://miro.medium.com/v2/resize:fit:720/format:webp/1*7h56wnp4mqlOqRm4aF9cTQ.png)
+
+  > Given a version number MAJOR.MINOR.PATCH, increment the:
+  >
+  >   MAJOR version when you make incompatible API changes
+  >   MINOR version when you add functionality in a backward compatible manner
+  >   PATCH version when you make backward compatible bug fixes
+  >
+  > Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+(Source: <a href="https://semver.org/">Semantic Versioning Specification</i></a>)
+
+(Image source: <a href="https://blog.greenkeeper.io/introduction-to-semver-d272990c44f2">I. J. Gebauer<i>Introduction to SemVer</i></a>)
+<!-- ---------------------------------------------------------------------- -->
+
+
+## Design: The Singleton Design Pattern
+
+<!--
+_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
+_color: white
+-->
+
+We want to assure that not every time we ask a `Database` object, we are overwriting the underlying data store, i.e., the corresponding CSV file.
+
+![bg right:45% 100%](https://refactoring.guru/images/patterns/diagrams/singleton/structure-en-2x.png?id=cae4853e43f06db09f249668c35d61a1)
+
+  > The Singleton class declares the static method `getInstance` that returns the same instance of its own class.
+  >
+  > The Singleton’s constructor should be hidden from the client code. Calling the `getInstance` method should be the only way of getting the Singleton object.
+(Source: <a href="https://refactoring.guru/design-patterns/singleton">A. Shvets <i>Dive Into DESIGN PATTERNS</i></a>)
+
+
 ## Task: Add a .NET Build and Test Workflow to Your Project
 
 <!--
@@ -1044,53 +1105,15 @@ jobs:
 ```
 
 
-<!-- ---------------------------------------------------------------------- -->
-## Semantic Versioning
-
-![bg right:40% 100% ](https://miro.medium.com/v2/resize:fit:720/format:webp/1*7h56wnp4mqlOqRm4aF9cTQ.png)
-
-  > Given a version number MAJOR.MINOR.PATCH, increment the:
-  >
-  >   MAJOR version when you make incompatible API changes
-  >   MINOR version when you add functionality in a backward compatible manner
-  >   PATCH version when you make backward compatible bug fixes
-  >
-  > Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
-(Source: <a href="https://semver.org/">Semantic Versioning Specification</i></a>)
-
-(Image source: <a href="https://blog.greenkeeper.io/introduction-to-semver-d272990c44f2">I. J. Gebauer<i>Introduction to SemVer</i></a>)
-<!-- ---------------------------------------------------------------------- -->
 
 
 <!--## Design: The Singleton Design Pattern
 -->
 
-<!--
-_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
-_color: white
--->
-
-
-<!--@Helge: Explain the purpose on the black board and illustrate with example from _Chirp!_ implementation.
--->
 
 
 
-## Design: The Singleton Design Pattern
 
-<!--
-_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
-_color: white
--->
-
-We want to assure that not every time we ask a `Database` object, we are overwriting the underlying data store, i.e., the corresponding CSV file.
-
-![bg right:45% 100%](https://refactoring.guru/images/patterns/diagrams/singleton/structure-en-2x.png?id=cae4853e43f06db09f249668c35d61a1)
-
-  > The Singleton class declares the static method `getInstance` that returns the same instance of its own class.
-  >
-  > The Singleton’s constructor should be hidden from the client code. Calling the `getInstance` method should be the only way of getting the Singleton object.
-(Source: <a href="https://refactoring.guru/design-patterns/singleton">A. Shvets <i>Dive Into DESIGN PATTERNS</i></a>)
 
 
 ## Summary

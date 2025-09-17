@@ -242,6 +242,40 @@ curl -v --header "accept: application/json" https://chirpremotedb.azurewebsites.
 - If in doubt about the meaning of the provided options, read the corresponding documentation via `man curl` in the terminal.
 - Discuss with your neighbors the output of the `curl` command and compare it to what you saw in the browser's network tool in the previous task.
 
+
+## Inspecting Example HTTP Request and Response
+
+```
+$ curl -v localhost:5012/public
+* Host localhost:5012 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:5012...
+* Connected to localhost (::1) port 5012
+* using HTTP/1.x
+> GET /public HTTP/1.1
+> Host: localhost:5012
+> User-Agent: curl/8.12.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: text/plain; charset=utf-8
+< Date: Tue, 16 Sep 2025 17:23:42 GMT
+< Server: Kestrel
+< Transfer-Encoding: chunked
+< 
+Hello World!
+* Connection #0 to host localhost left intact
+```
+<!--notes:
+Accept: */* : Accept any content type in the response.
+Blank line > ends the HTTP request headers.
+Server: Kestrel : The web server is Kestrel, typically used in ASP.NET Core apps.
+Transfer-Encoding: chunked : Response is sent in chunks instead of a single block.
+-->
+
+
 # **15 Minute Break**
 
 After the break:
@@ -388,38 +422,6 @@ dotnet new web -o Chirp.CSVDBService
 - Repeat the process with the development tools of your browser
 - Once done, stop the web service by pressing `CTRL+C`.
 
-
-## Inspecting Example HTTP Request and Response
-
-```
-$ curl -v localhost:5012/public
-* Host localhost:5012 was resolved.
-* IPv6: ::1
-* IPv4: 127.0.0.1
-*   Trying [::1]:5012...
-* Connected to localhost (::1) port 5012
-* using HTTP/1.x
-> GET /public HTTP/1.1
-> Host: localhost:5012
-> User-Agent: curl/8.12.1
-> Accept: */*
-> 
-* Request completely sent off
-< HTTP/1.1 200 OK
-< Content-Type: text/plain; charset=utf-8
-< Date: Tue, 16 Sep 2025 17:23:42 GMT
-< Server: Kestrel
-< Transfer-Encoding: chunked
-< 
-Hello World!
-* Connection #0 to host localhost left intact
-```
-<!--notes:
-Accept: */* : Accept any content type in the response.
-Blank line > ends the HTTP request headers.
-Server: Kestrel : The web server is Kestrel, typically used in ASP.NET Core apps.
-Transfer-Encoding: chunked : Response is sent in chunks instead of a single block.
--->
 
 ## Building Web APIs
 

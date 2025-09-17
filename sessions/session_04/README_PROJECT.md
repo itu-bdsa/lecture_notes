@@ -56,7 +56,7 @@ Once you are sure that your CSV Database Web Service and _Chirp!_ CLI client can
 
 ```bash
 az login
-az webapp up --sku F1 --name bdsagroup<no>chirpremotedb --os-type Linux --location westeurope --runtime DOTNETCORE:7.0
+az webapp up --sku F1 --name bdsagroup<no>chirpremotedb --os-type Linux --location westeurope --runtime DOTNETCORE:8.0
 ```
 
 **OBS**: replace `<no>` in the `--name` option above with the number of your group **before** executing the command.
@@ -89,7 +89,7 @@ An illustrated guide of the following steps is accessible [here](https://app.tan
 * Click the following sequence: top tab `App Services` → `+ Create` → choose `Web App`
 * Set `Name` to `bdsagroup<no>chirpremotedb`, where `<no>` has to be replaced with the number of your group.
 * Set `Region` to `North Europe`
-* Set `Runtime stack` to `.NET 7 (STS)`
+* Set `Runtime stack` to `.NET 8 (LTS)`
 * Choose `Operating system` `Linux`
 * Choose `Pricing Plan` `Free F1 (Shared infrastructure)`
 * In the bottom, click the button `Review + create`

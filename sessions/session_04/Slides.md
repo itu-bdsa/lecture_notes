@@ -729,7 +729,7 @@ section {
   ```
 - After login, execute the following command. **OBS:** Replace `<no>` with the number of your group. This command deploys the current web application to Azure App Service.
   ```bash
-  az webapp up --sku F1 --name bdsagroup<no>chirpremotedb --os-type Linux --location westeurope --runtime DOTNETCORE:7.0
+  az webapp up --sku F1 --name bdsagroup<no>chirpremotedb --os-type Linux --location westeurope --runtime DOTNETCORE:8.0
   ```
 - Once the commands completes, it should return a URL for your web application. It is likely `https://bdsagroup<no>chirpremotedb.azurewebsites.net` (again replace `<no>` with the number of your group.)
 - Now, either with your web browser or with `curl`, send an HTTP GET request to `https://bdsagroup<no>chirpremotedb.azurewebsites.net/cheeps`.
@@ -738,6 +738,13 @@ section {
   new Cheep("me", "Hej!", 1684229348)
   ```
 
+## Disclaimer: .NET Version
+
+Azure has updated its minimum API requirements to .NET 8.
+
+- In previous iterations of the course, we used .NET 7.
+- We've now updated everything to .NET 8.
+- However, there is a chance we may have missed a spot—so if you notice anything still referencing .NET 7, please let us know!
 
 ## Manually Deploy to Azure App Service
 
@@ -782,7 +789,7 @@ section {
           shell: bash
           run: |
             az login
-            az webapp up --sku F1 --name bdsagroup<no>chirpremotedb --os-type Linux --location westeurope --runtime DOTNETCORE:7.0
+            az webapp up --sku F1 --name bdsagroup<no>chirpremotedb --os-type Linux --location westeurope --runtime DOTNETCORE:8.0
             az logout
   ```
 
@@ -870,7 +877,7 @@ _color: white
 >  - Chooses whether to pass the request to the next component in the pipeline.
 >  - Can perform work before and after the next component in the pipeline.
 
-<span style="font-size:14px;">Source and image source: <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0">R. Anderson et al. <i>ASP.NET Core Middleware</i></a>
+<span style="font-size:14px;">Source and image source: <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-8.0">R. Anderson et al. <i>ASP.NET Core Middleware</i></a>
 </span>
 
 

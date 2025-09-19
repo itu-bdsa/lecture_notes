@@ -2681,7 +2681,7 @@ div.mermaid { all: unset; }
 <table>
 <tr>
 <td>
-&lt;marp-pre is="marp-pre" data-auto-scaling="downscale-only"&gt;<code class="language-csharp"><span class="hljs-keyword">using</span> HttpClient client = <span class="hljs-keyword">new</span>();
+<marp-pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp"><span class="hljs-keyword">using</span> HttpClient client = <span class="hljs-keyword">new</span>();
 client.BaseAddress = <span class="hljs-keyword">new</span> Uri(<span class="hljs-string">"http://localhost:5088"</span>);
 <span class="hljs-comment">// Sequential execution</span>
 <span class="hljs-keyword">var</span> watch = System.Diagnostics.Stopwatch.StartNew();
@@ -2690,10 +2690,10 @@ client.BaseAddress = <span class="hljs-keyword">new</span> Uri(<span class="hljs
 <span class="hljs-comment">// second HTTP request</span>
 response = <span class="hljs-keyword">await</span> client.GetAsync(<span class="hljs-string">"/"</span>);
 watch.Stop();
-Console.WriteLine(<span class="hljs-string">$"Done after <span class="hljs-subst">{watch.ElapsedMilliseconds}</span>ms"</span>);</code>&lt;/marp-pre&gt;
+Console.WriteLine(<span class="hljs-string">$"Done after <span class="hljs-subst">{watch.ElapsedMilliseconds}</span>ms"</span>);</code></marp-pre>
 </td>
 <td>
-&lt;marp-pre is="marp-pre" data-auto-scaling="downscale-only"&gt;<code class="language-csharp"><span class="hljs-comment">// Concurrent execution</span>
+<marp-pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-csharp"><span class="hljs-comment">// Concurrent execution</span>
 watch = System.Diagnostics.Stopwatch.StartNew();
 <span class="hljs-comment">// first HTTP request</span>
 <span class="hljs-keyword">var</span> fstRequestTask = client.GetAsync(<span class="hljs-string">"/"</span>);
@@ -2703,7 +2703,7 @@ watch = System.Diagnostics.Stopwatch.StartNew();
 <span class="hljs-keyword">var</span> sndResponse = <span class="hljs-keyword">await</span> sndRequestTask;
 watch.Stop();
 Console.WriteLine(<span class="hljs-string">$"Done after <span class="hljs-subst">{watch.ElapsedMilliseconds}</span>ms"</span>);
-</code>&lt;/marp-pre&gt;
+</code></marp-pre>
 </td>
 </tr>
 </table>

@@ -1,0 +1,19 @@
+@startuml
+":__Browser__" -> ":__Server__" : GET "/"
+activate ":__Server__"
+":__Server__" -> ":__Server__" : OnGet()
+activate ":__Server__"
+":__Server__" -> ":__DB__" : GetCheeps()
+
+activate ":__DB__"
+":__Server__" <-- ":__DB__" : List<Cheeps>
+deactivate ":__DB__"
+":__Browser__" <--  ":__Server__" : 200
+deactivate ":__Server__"
+deactivate ":__Server__"
+
+note right of ":__Browser__"
+HTML
+end note
+
+@enduml

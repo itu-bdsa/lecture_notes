@@ -1,0 +1,12 @@
+@startuml
+
+class Informer {
+
+}
+
+class StdIoWriter {
+
+}
+
+Informer --> "_messageWriter" StdIoWriter
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+class Informer {
+}
+
+interface IWriter {
+    +Write(string msg)
+}
+
+class StdIoWriter implements IWriter {
+}
+
+class FileWriter implements IWriter {
+}
+
+Informer --> "_messageWriter" IWriter
+@enduml

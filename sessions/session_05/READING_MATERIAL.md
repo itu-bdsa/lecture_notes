@@ -5,7 +5,7 @@
 
 ## ASP.NET
 
-* [Intro to Razor Page applications](https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-7.0&tabs=visual-studio-code) (only this page is relevant for this week, the following become relevant next week)
+* [Intro to Razor Page applications](https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-8.0&tabs=visual-studio-code) (only this page is relevant for this week, the following become relevant next week)
 * [Use SQLite database](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/?tabs=netcore-cli)
 
 

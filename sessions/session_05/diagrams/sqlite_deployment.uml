@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+node Host {
+package Application.dll
+package SQLite.dll
+database {
+  artifact app.db
+}
+Application.dll ..> SQLite.dll : <<use>>
+SQLite.dll ..> app.db : <<read/write>>
+}
+@enduml

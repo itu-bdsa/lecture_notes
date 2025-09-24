@@ -41,12 +41,15 @@ Week 5
 
 <!-- First hour -->
 
-
+## This week
+ - Razor Pages
+ - Design Patterns: MVC, DI
+ - SQLite
+ - Pair Programming and Pull Requests
 
 ## What is the difference between a Web API/Web App?
 
  - The web service last week exposed a JSON web API. ASP.NET automatically converts the result into JSON objects that are serialized into the respective strings in HTTP message bodies.
- - A web app directly returns HTML
 
 - ```csharp
   var htmlText = @"<h1>Hello World!</h1>
@@ -131,10 +134,6 @@ section {
 }
 </style>
 
-- Manually creating strings that contain well-formed and correct HTML, is difficult, error-prone, and violates the single-responsibility pattern in that logic is likely mixed with UI code.
-- Consequently, web applications are often created with respective frameworks that support the creation of HTML responses and "filling-in" of data.
-- The framework that we are discussing in this course is [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio).
-
 ```csharp
 IResult GetCheepsHTML(int? limit = null)
 {
@@ -151,6 +150,11 @@ IResult GetCheepsHTML(int? limit = null)
     return Results.Content(htmlPage, "text/html; charset=utf-8");
 }
 ```
+
+- Manually creating strings that contain well-formed and correct HTML, is difficult, error-prone, and violates the single-responsibility pattern in that logic is likely mixed with UI code.
+- Consequently, web applications are often created with respective frameworks that support the creation of HTML responses and "filling-in" of data.
+- The framework that we are discussing in this course is [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio).
+
 
 ## Razor Page
 
@@ -366,8 +370,8 @@ public class TestAPI : IClassFixture<WebApplicationFactory<Program>>
     }
 
     [Theory]
-    [InlineData("Helge")]
-    [InlineData("Adrian")]
+    [InlineData("Sven")]
+    [InlineData("Eduard")]
     public async void CanSeePrivateTimeline(string author)
     {
         var response = await _client.GetAsync($"/{author}");
@@ -395,7 +399,7 @@ public class TestAPI : IClassFixture<WebApplicationFactory<Program>>
 <!--
 _backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
 _color: white
-_header: 10 minutes
+_header: 15 minutes
 -->
 
 - Inspect the file `DIExample/Writer.cs`

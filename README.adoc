@@ -83,7 +83,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+| link:sessions/session_05/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_05/Slides.md[Intro to Razor web apps, Server-side Rendering, MVC pattern, and SQLite]
 .2+a| * link:sessions/session_05/README_PROJECT.md[Reading cheeps with first _Chirp!_ web app]
-    * *Project Review 1 (tba)*
+    * *Project Review 1 (Friday, see teams)*
 .2+| link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-13?origin=product-toc[13], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-14?origin=product-toc[14], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-15?origin=product-toc[15]
 
 

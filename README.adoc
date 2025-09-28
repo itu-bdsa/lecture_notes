@@ -8,7 +8,6 @@ image:https://github.com/itu-bdsa/lecture_notes/blob/main/images/banner.png?raw=
 
 === Content
 
-*OBS: Due to illness, the 26.09 lecture is cancelled. We will go over the material next lecture, but use the slides to prepare for the project.*
 
 This page contains information on the schedule, material, exam, etc. for the BSc course "Analysis, Design and Software Architecture" at IT University of Copenhagen, fall 2025 (link:https://learnit.itu.dk/local/coursebase/view.php?ciid=1743[Course description on LearnIT]).
 

@@ -4,7 +4,6 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: '![width:300px](images/banner-transparent.png)'
 headingDivider: 1
 marp: true
 style: |
@@ -350,7 +349,7 @@ builder.Services.AddDbContext<ChatDBContext>(options => options.UseSqlite(connec
 
 
 
-# What is data migration??
+# What is a data migration?
 
 > Data migration is the process of **transferring data from one storage system or computing environment to another**.
 
@@ -644,7 +643,7 @@ public class ChatRepository : IChatRepository
 
 # 5. Writing database queries - final steps (ctd.)
 
-Finally, we can use our database context to start querying - example **read** query:
+Finally, we can use our database context to start querying - example read query:
 
 ```csharp
 public async Task<List<MessageDTO>> ReadMessages(string userName)
@@ -666,7 +665,7 @@ Beware that the first statement specifies a query, while the second statement ex
 
 # 5. Writing database queries - final steps (ctd.)
 
-Example **create** method:
+Example create method:
 
 ```csharp
 public async Task<int> CreateMessage(MessageDTO message)
@@ -679,7 +678,7 @@ public async Task<int> CreateMessage(MessageDTO message)
 }
 ```
 
-**Update** and **delete** operations work similarly.
+Update and delete operations work similarly.
 
 Note: The above method persists the changes directly. Depending on your use-case, you might want to deviate from that approach. For instance, when creating multiple elements, you might want to add them first (e.g., multiple `_dbContext.Message.Add(...)`) and eventually persist the changes (`_dbContext.SaveChanges()`, e.g., in another method of your repository).
 
@@ -715,7 +714,6 @@ Entity Framework Core = Object-Relational Mapper
     - LINQ allows to formulate queries (i.a., for quering from relational databases)
     via C# language constructs (e.g., extension methods)
 
-... *Life happens, your domain model requires changes*
 
 6. ✅ Update your migration
     - goto Step 4
@@ -724,67 +722,11 @@ Entity Framework Core = Object-Relational Mapper
 
 # What to do now?
 
-![w:400px](https://25.media.tumblr.com/47f546206bf9a8b5dc97e7fe1b6714b3/tumblr_mi7nkgP6NH1qmegz6o1_500.gif)
 
 - If not done, complete the Tasks (blue slides) from this class
 - Check the [reading material](./READING_MATERIAL.md), **esp. Chapter 12 in the book!**
 - Work on the [project](./README_PROJECT.md)
 
-- <font color="#cecdce">If you feel you want prepare for next session, read chapters 23, 24 [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) </font>
+- If you feel you want prepare for next session, read chapters 23, 24 [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) 
 
 
-
-
----
-
-## Feedback
-
-![bg right:70% 100%](images/commit_freqs.png)
-
-All groups are working on their projects!
-
----
-
-## Feedback
-
-<iframe src="http://209.38.208.62/report_razor_apps.html" width="100%" height=600 scrolling="auto"></iframe>
-
----
-
-## Feedback
-
-- Have **one** main branch called `main`.
-- Remember, we do trunk-based development in this course. That is, you do not have a long-lived `dev` branch (as in last semester's project). That would be another branching strategy.
-- You have short-lived feature branches. That is, at latest after a day your changes land on the main branch and thereby automatically in production (your deployment workflows deploy all changes from main, right?)
-
-What do we do if we cannot finish our feature during a day?
-
-- Good observation, that means likely that your task descriptions in your issues are too coarse grained. Over time you should train to make them smaller so that you can complete your tasks in max. a day.
-
----
-
-## Feedback
-
-- Have **one** main branch called `main`.
-- It is not advisable to have a `main2.0` branch.
-- Likely, it is also not a good idea to call a branch `origin` since it is confusing when pointing to remote repositories in git commands.
-
-
-
-# Process: Scientific problem solving
-
-Starting this week, you are going to work more independently.
-Tasks will be less guided and you will need to research on your own.
-
-How to do this systematically:
-> 1. Identify the problem
-> 2. Gather information
-> 3. Iterate potential solutions
-> 4. Test your solution
-
-<font size=3>
-Source: <a href="https://www.oreilly.com/content/4-steps-to-solving-any-software-problem/">E. Cain <i>4 steps to solving any software problem</i></a>
-</font>
-
-Use the book!
-Use the internet, e.g., Microsoft documentation!

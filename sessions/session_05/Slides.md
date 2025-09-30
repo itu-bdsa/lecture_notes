@@ -541,9 +541,9 @@ _color: white
 ## Task: Using SQLite from C♯
 
 <!--
-_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
-_color: white
-_header: 10 minutes
+b-ackgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+c-olor: white
+h-eader: 10 minutes
 -->
 
 <style scoped>
@@ -635,10 +635,6 @@ using var sr = new StreamReader(reader);
 var query = sr.ReadToEnd();
 ```
 
-<!-- @Helge: Demo and explain the following:
-  - Reflection: `Assembly.GetExecutingAssembly()`
-  - [`EmbeddedFileProvider`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider?view=dotnet-plat-ext-8.0)
-  - [`StreamReader`](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-8.0) -->
 
 
 
@@ -695,9 +691,9 @@ Source: R. Martin <i>"Agile Principles, Patterns, and Practices in C♯"</i></a>
 
 ## Process: Pair programming — How?
 
-![](https://unruly.co/wp-content/uploads/2019/08/Screenshot-2019-08-13-at-16.09.46.png)
+![](https://martinfowler.com/articles/on-pair-programming/driver_navigator.png)
 
-Image source: <a href="https://unruly.co/blog/article/2019/08/27/what-is-pair-programming/">Unruly Blog <i>What is Pair Programming?</i></a>
+Image source: <a href="https://martinfowler.com/articles/on-pair-programming/">Martin Fowler <i>On Pair Programming?</i></a>
 
 
 ## Pair programming in Rider
@@ -749,7 +745,7 @@ _header: 5 minutes
 - Call it `pr_test`
 - Switch to that branch and make an arbitrary change anywhere in your code.
 - Now send a pull-request to the `main` branch.
-- Click <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-git-pull-request" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <strong>Pull requests</strong>
+- Click <strong>Pull requests</strong>
 - Choose the pull-request you just created
 - Under `Reviewers`, click `Request` next to a group member's username.
 
@@ -807,7 +803,7 @@ The following five slides give examples of what Trisha Gee from JetBrains consid
 
 Her advice is based on Robert C. Martin's SOLID principles.
 
-These slides are based on her [material from JetBrains](https://blog.jetbrains.com/upsource/2015/08/31/what-to-look-for-in-a-code-review-solid-principles-2/).
+These slides are based on [material from JetBrains](https://blog.jetbrains.com/upsource/2015/08/31/what-to-look-for-in-a-code-review-solid-principles-2/).
 
 
 ## Design: Single Responsibility Principle (SRP)
@@ -845,7 +841,9 @@ _color: white
 
   > Functions that use references to base classes must be able to use objects of derived classes without knowing it.
 
-* ![w:600px](https://blog.ndepend.com/wp-content/uploads/Liskov-1-768x473.png) Image source: <a href="https://blog.ndepend.com/solid-design-the-liskov-substitution-principle/">NDepend Blog</a>
+- Alternative formulation: Each subclass S must adhere to the contract of its superclass T
+  - No strenghtening of preconditions: if T.m accepts all positive numbers, S.m must accept at least all positive numbers
+  - No weakening of postconditions: if T.m retuns positive numbers, S.m returns at most postitive number
 
 ## Design: Interface Segregation Principle (ISP)
 

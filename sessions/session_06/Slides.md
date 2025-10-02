@@ -287,14 +287,14 @@ _header: 5 minutes
 <!--
 _backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
 _color: white
-_header: 5 minutes
+_header: 10 minutes
 -->
 
 Provide EF Core with a database context class exposing top-level db entities.
 - extends EF Core's `DbContext` class
-- has a constructor with parameter of type `DbContextOptions<ChatDBContext>`
+- constructor with parameter of type `DbContextOptions<ChatDBContext>`
   - needs to call parent constructor
-- has auto-properties (`{ get; set; }`) of type `DbSet<T>` for each top-level db entity T
+- auto-properties (`{ get; set; }`) of type `DbSet<T>` for each top-level db entity T
 
 (We use this context class later when querying from the database)
 
@@ -306,7 +306,7 @@ Provide EF Core with a database context class exposing top-level db entities.
 <!--
 _backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
 _color: white
-_header: 5 minutes
+_header: 10 minutes
 -->
 
 Register your database context in the application builder.
@@ -385,7 +385,7 @@ _header: 5 minutes
 <!--
 _backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
 _color: white
-_header: 5 minutes
+_header: 10 minutes
 -->
 
 ![bg right:50% width:100%](images/CS-to-db.svg)
@@ -555,8 +555,8 @@ Find information about differences between anonymous types and tuples [here](htt
 
 ```csharp
 IEnumerable<User> users = new[] {
-    new User(1, "Adrian"),
-    new User(2, "Helge")
+    new User(1, "Sven"),
+    new User(2, "Eduard")
 };
 ```
 
@@ -572,6 +572,23 @@ Message[] messages = new Message[] {
 ```
 
 
+# Data Transfer Objects (DTOs)
+
+  - From an MVC perspective, User and Message are the (domain) model
+  - Should all part of the application have the same, full information? No!
+  - Some parts of the application should not have all information about users
+
+  - A Data Transfer Object (DTO) defines how data is transfered between application layers
+  - Best practice: no logic in DTOs
+
+  > - Remove circular references [...].
+  > - Hide particular properties that clients are not supposed to view.
+  > - Omit some properties in order to reduce payload size.
+  > - Flatten object graphs with nested objects, to make them more convenient for clients.
+  > - Avoid "over-posting" vulnerabilities. [...]
+  > - Decouple your service layer from your database layer.
+  >
+  > [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/web-api/overview/data/using-web-api-with-entity-framework/part-5)
 
 # Repository Pattern
 <!--
@@ -596,13 +613,14 @@ One repository per aggregate
 <!--
 _backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
 _color: white
-_header: 5 minutes
+_header: 10 minutes
 -->
 
 ![bg right:35% 100%](images/Repository.svg)
 
 - Create a message repository, i.e., interface and class
   - For now, you may leave the methods empty
+  - Create a dummy class MessageDTO
 
 - Register the repository in your Razor app via DI
 
@@ -720,8 +738,18 @@ Entity Framework Core = Object-Relational Mapper
 
 
 
-# What to do now?
+## Next Week: Guest Lecture
 
+[Martin von Haller Grønbæk](https://www.twobirds.com/en/people/m/martin-von-haller-groenbaek), one of Denmark's leading IT lawyers, will give a guest lecture on _Software Licenses and Software License Compatibility_.
+
+ - The lecture will start at 12:00. After the lecture there will be time for questions.
+ - Afterwards (ca. last 30 min) we will have an extra session for Azure problems
+
+# Conclusion
+
+- ORMs and EF Core
+- LINQ, migrations and patterns for database access
+- Next week: Onion architecture
 
 - If not done, complete the Tasks (blue slides) from this class
 - Check the [reading material](./READING_MATERIAL.md), **esp. Chapter 12 in the book!**

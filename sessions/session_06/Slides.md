@@ -737,11 +737,9 @@ Entity Framework Core = Object-Relational Mapper
     - goto Step 4
 
 
+---
 
 ## Next Week: Guest Lecture
-
-[Martin von Haller Grønbæk](https://www.twobirds.com/en/people/m/martin-von-haller-groenbaek), one of Denmark's leading IT lawyers, will give a guest lecture on _Software Licenses and Software License Compatibility_.
-
  - The lecture will start at 12:00. After the lecture there will be time for questions.
  - Afterwards (ca. last 30 min) we will have an extra session for Azure problems
 

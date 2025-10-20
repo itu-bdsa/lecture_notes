@@ -1,0 +1,15 @@
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/bin/Debug/net8.0/Client
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/bin/Debug/net8.0/Client.deps.json
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/bin/Debug/net8.0/Client.runtimeconfig.json
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/bin/Debug/net8.0/Client.dll
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/bin/Debug/net8.0/Client.pdb
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.AssemblyInfoInputs.cache
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.AssemblyInfo.cs
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.csproj.CoreCompileInputs.cache
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.sourcelink.json
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.dll
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/refint/Client.dll
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.pdb
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/Client.genruntimeconfig.cache
+/home/sven/Documents/git/teaching/AnalysisDesignAndSoftwareArchitecture/lecture_notes/sessions/session_04/AsyncAwaitHTTP/src/Client/obj/Debug/net8.0/ref/Client.dll

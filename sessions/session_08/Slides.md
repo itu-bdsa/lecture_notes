@@ -42,6 +42,24 @@ style: |
 
 [Sven Peldszus](svpe@itu.dk)
 
+# Motivation
+
+
+![bg w: 40%](images/cartoon.png)
+
+
+# Security Features
+
+Security features are functionalities of a software system that protect assets, prevent attacks, or mitigate the damage caused by attacks.
+
+E.g., Access Control
+- Authentication
+- Authorization
+
+![bg 80% align right](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10664-025-10649-7/MediaObjects/10664_2025_10649_Fig5_HTML.png)
+
+<br/><br/>
+<sub><small>Hermann et al.: [A taxonomy of functional security features and how they can be located](https://doi.org/10.1007/s10664-025-10649-7), EMSE, 2025</small></sub>
 
 
 
@@ -56,19 +74,6 @@ style: |
   - Managing accounts
 - How do we _not_ mess up security related issues, e.g., storing passwords?
 - What about advanced security measures, e.g., confirmation emails and MFA?
-
-# Security Features
-
-Security features are functionalities of a software system that protect assets, prevent attacks, or mitigate the damage caused by attacks.
-
-E.g., Access Control
-- Authentication
-- Authorization
-
-![bg 80% align right](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10664-025-10649-7/MediaObjects/10664_2025_10649_Fig5_HTML.png)
-
-<br/><br/>
-<sub><small>Hermann et al.: [A taxonomy of functional security features and how they can be located](https://doi.org/10.1007/s10664-025-10649-7), EMSE, 2025</small></sub>
 
 # Authentication vs. Authorization
 
@@ -100,11 +105,11 @@ E.g., Access Control
 
 # 🍪 Cookies 🍪
 
-![bg right:54% width:100%](images/cookie-basic-example.png)
+![bg right:54% width:105%](images/cookie-basic-example.png)
 
 > A cookie (also known as a web cookie or browser cookie) is a **small piece of data a server sends to a user's web browser**. The browser may store cookies, create new cookies, modify existing ones, and send them back to the same server with later requests. Cookies enable web applications to store limited amounts of data and **remember state information**; by default the HTTP protocol is stateless.
 
-<span style="font-size: 0.6em;">Text and Image Source: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">Using HTTP cookies (mozilla.org)</a></span>
+<small><sub>Text and Image Source: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">Using HTTP cookies (mozilla.org)</a></sub></small>
 
 
 
@@ -199,9 +204,37 @@ If you want to learn more, you could start with these articles on [hashing](http
     - passwords must be hashed (with salt! 🧂)
   - Identity provides us with a secure solution to achieve this
 
+<!--
+❤️ Identity + EF Core = A Perfect Match
+
+ASP.NET Core Identity handles all the security logic:
+user registration, login, password hashing, roles, claims, etc.
+
+Entity Framework Core (EF Core) handles all the data persistence:
+automatically creates and manages tables like AspNetUsers, AspNetRoles, etc.
+
+Together, they give you a complete, database-backed authentication system —
+secure, extensible, and ready to use out of the box.
+
+💡 “You get users, roles, and login security — without writing SQL or auth logic yourself.”
+-->
+
+# Termology &mdash;  Principal
+
+👤 What is a Principal?
+
+- A Principal represents the **current user** (or system entity) that is interacting with the application.
+
+It answers the question: 
+
+> Who is making this request?
+
+In short:
+
+- A **Principal** is the security object that represents the **current user and their rights** within an application.
 
 
-# ASP.NET Core Identity - Claims-based authentication
+# ASP.NET Core Identity &mdash; Claims-based authentication
 
 ![bg right:51% width:100%](images/claims_principle.png)
 
@@ -213,26 +246,46 @@ If you want to learn more, you could start with these articles on [hashing](http
 <span style="font-size: 0.6em;">Image source: <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a></span>
 
 
+# Summary of Authentication Terminology
+<br/>
+<br/>
+<table>
+<tr>
+<th>Term</th>	<th>Meaning</th>
+<tr><td>Identity</td>	<td>Describes who the user is (e.g., username, authentication method).</td></tr>
+<tr><td>Principal</td>	<td>Represents the user as a whole (can have multiple identities).</td></tr>
+<tr><td>Claims</td>	<td>Pieces of information about the user (e.g., email, role, permissions).</td>
+</tr>
+</table>
 
 # <span style="position:absolute; top:5%; right: 5%; font-size:0.75em;">Identity: Handling of a Log-In Request</span>
 
-![bg w: 75%](images/authentication_login.png)
+![bg bottom w: 62%](images/authentication_login.png)
 
-<span style="position:absolute; bottom: 2%; right: 10%; font-size: 0.6em;">
-Image source: Section 23 of <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a>
-</span>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<sub>
+<small>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Image source: Section 23 of <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a>
+</small>
+</sub>
 
 
 
 # <span style="position:absolute; top:5%; right: 5%; font-size:0.75em;">Identity: Authenticated Request</span>
 
-![bg w: 70%](images/authentication_subsequent.png)
-
-<span style="position:absolute; bottom: 2%; right: 10%; font-size: 0.6em;">
-Image source: Section 23 of <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action, Third Edition</i></a>
-</span>
+![bg w: 55%](images/authentication_subsequent.png)
 
 
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<sub>
+<small>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Image source: Section 23 of 
+<a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">
+Andrew Lock <i>ASP.NET Core in Action, Third Edition</i>
+</a>
+</small>
+</sub>
 
 # Try it out: Create a project and inspect the files
 <!--
@@ -254,6 +307,24 @@ _header: 10 minutes
     - note that the db context inherits from `IdentityDbContext`, providing functionality
   - Have a look at the `Pages` folder, look into `Pages/Shared/_LoginPartial.cshtml`
 
+<!--
+Areas/Identity
+Contains (mostly hidden) Identity UI for login, registration, etc.
+→ Can be scaffolded if you want to customize pages.
+
+Data/
+Holds ApplicationDbContext (inherits from IdentityDbContext)
+and initial migration for the Identity tables in app.db.
+
+Pages/
+Main Razor Pages of the app.
+Shared/_LoginPartial.cshtml shows login/logout links depending on user state.
+
+wwwroot/
+Static files (CSS, JS, Bootstrap, jQuery).
+
+When you run the app: users can register, log in, and logout — all powered by Identity and EF Core.
+-->
 
 
 # Try it out: Run the project and play around
@@ -524,4 +595,4 @@ Read more: https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?
 - Check the [reading material](./READING_MATERIAL.md)
 - Work on the [project](./README_PROJECT.md)
 
-- <font color="#cecdce">If you feel you want prepare for next session, read chapters 16, 17, and 18 in [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition) </font>
+- If you feel you want prepare for next session, read chapters 16, 17, and 18 in [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition)

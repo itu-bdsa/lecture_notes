@@ -570,7 +570,7 @@ Read more: https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?
 
 
 
-# Summary
+# Authentication Summary
 
 * ### 🍪 Cookies make the web stateful
   - Are carried from request to request to authenticate user
@@ -585,7 +585,19 @@ Read more: https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?
   - **OAuth** is an open standard for handling user authentication and access to resources without sharing passwords between services
   - This is great, because we do not have responsibility over sensitity data
 
+# Access Control: From Identity to Authorization
 
+- ### 👤 Authentication!
+  - Identifies who the user is
+  - Based on *Identity*, *Principal*, and *Claims*
+
+- ### ❓ What happens after authentication?
+
+- ### 🔐 Authorization
+  - Decide what a principal is allowed to do / access?
+
+- ### 🛡️ Access Control ### 
+  - It is the bridge between **authentication** and **authorization**.
 
 # What to do now?
 

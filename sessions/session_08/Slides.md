@@ -592,12 +592,134 @@ Read more: https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?
   - Based on *Identity*, *Principal*, and *Claims*
 
 - ### ❓ What happens after authentication?
+  - Once the identity of a principal is verified, we must decide what it is allowed to do.
 
-- ### 🔐 Authorization
-  - Decide what a principal is allowed to do / access?
+
+  - ### 🔐 Authorization
+    - Decide what a principal is allowed to do / access?
 
 - ### 🛡️ Access Control ### 
   - It is the bridge between **authentication** and **authorization**.
+
+
+# 🛡️ Access Control
+
+- The mechanism that enforces authorization decisions.
+- It acts as the bridge between authentication and authorization.
+<br>
+- Implemented through models such as:
+
+  - DAC (Discretionary Access Control)
+  - MAC (Mandatory Access Control)
+  - RBAC (Role-Based Access Control)
+  - ABAC (Attribute-Based Access Control)
+  - (Rule-Based Access Control)
+  - ...
+
+# Access Control in *Chirp!*
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 5 minutes
+-->
+
+![bg right w:50%](images/menti.png)
+
+- Where do we already have access control in *Chirp!*&nbsp;?
+<br>
+- Think about
+  - Software components
+  - Development processes and workflows
+  - ...
+<br>
+- Join at menti.com  | 
+  use code 2562 4460
+
+
+# Discretionary Access Control (DAC)
+
+**Definition:** The owner of a resource (e.g., a file) decides who can access it and what kind of access they have.
+- Authorization Implication:
+
+  - Users have control over their own resources.
+  - Permissions can be easily shared, which can lead to security risks if not managed carefully.
+
+
+**Example:** In Unix/Linux, file owners can set read/write/execute permissions for others.
+
+
+# Mandatory Access Control (MAC)
+
+**Definition:** Access decisions are made based on security labels (e.g., classification levels like "Confidential", "Secret").
+- Authorization Implication:
+
+  - Users cannot change access permissions.
+  - Enforced by the system based on policies.
+  - Common in military and government systems.
+
+- Security levels are typically defined in a lattice model
+  - Confidential ≤ Secret: This means "Secret" dominates "Confidential".
+
+**Example:** A user with "Confidential" clearance cannot access "Secret" documents.
+
+
+#  Role-Based Access Control (RBAC)
+
+**Definition:** Access is granted based on a user's role within an organization.
+- Authorization Implication:
+
+  - Simplifies management by grouping permissions into roles.
+  - Users inherit permissions from their roles.
+  - Common in enterprise systems.
+
+
+**Example:** A "Manager" role might have access to employee records, while a "Staff" does not.
+
+
+# Attribute-Based Access Control (ABAC)
+
+**Definition:** Access is determined by evaluating attributes of the user, resource, and environment.
+- Authorization Implication:
+
+  - Highly flexible and dynamic.
+  - Policies can include conditions like time of day, location, or user department.
+
+
+**Example:** A user can access a document only if they are in the "Finance" department and it's during business hours.
+
+
+# Rule-Based Access Control
+
+**Definition:** Access is controlled by predefined rules, often in the form of "if-then" statements.
+- Authorization Implication:
+
+  - Similar to ABAC but typically simpler.
+  - Often used in firewalls or network access control.
+
+
+**Example:** "If user IP is from internal network, allow access."
+
+
+
+# Access Control for *Chirp!*
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 5 minutes
+-->
+
+![bg right w:50%](images/menti.png)
+
+- Which of the access control mechanisms could be usable in *Chirp!*&nbsp;?
+  - Discretionary Access Control
+  - Mandatory Access Control
+  - Role-Based Access Control
+  - Attribute-Based Access Control
+  - Rule-Based Access Control
+- For what would you use them?
+
+- Join at menti.com  | 
+  use code 2562 4460
 
 # What to do now?
 

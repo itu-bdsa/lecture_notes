@@ -139,12 +139,13 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|44
 |29.10.2025
 | Martin von Haller Groenbaek (Bird & Bird, guest lecture)
-|31.10.2025
-| Sven
 .2+| link:sessions/session_10/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_10/Slides.md[Forms and UI Testing]
 .2+| link:sessions/session_10/README_PROJECT.md[Add sending of cheeps, and UI tests]
 .2+|link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-16?origin=product-toc[16], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-17?origin=product-toc[17], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-18?origin=product-toc[18]
+
+|31.10.2025
+| Sven
 
 .2+|10
 .2+|45
@@ -155,7 +156,6 @@ Before the first lecture, please read (and install the software from link:sessio
    * link:sessions/session_09/Git_Crash_Course_by_daso.pdf[Feedback, Git Concepts and Usage] 
 .2+| link:sessions/session_09/README_PROJECT.md[Complete login and sending of cheeps. Check security]
 .2+|link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-28?origin=product-toc[28], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-29?origin=product-toc[29]
-
 
 
 |07.11.2025

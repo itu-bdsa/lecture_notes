@@ -37,9 +37,7 @@ style: |
 # BDSA: Session 9
 ## HTML Forms, Tag Helpers, and UI Testing
 
-Adrian Hoff
-Postdoctoral Researcher
-ITU
+[Sven Peldszus](mailto:svpe@itu.dk)
 
 
 
@@ -568,13 +566,13 @@ _header: 10 minutes
 -->
 
 - Create a new testing project. Playwright is compatible with the test frameworks `MSTest` and `NUnit` - we will choose the latter!
-  - `dotnet new nunit -n PlaywrightTests`
+  - `dotnet new nunit -n PlaywrightTests --framework net8.0`
 - Add the `Microsoft.Playwright.NUnit` package to your new project
-  - `dotnet add package Microsoft.Playwright.NUnit`
+  - `dotnet add package Microsoft.Playwright.NUnit --version 1.43.0`
 - Build your project:
   - `dotnet build`
 - Install PlayWright:
-  - `pwsh bin/Debug/net7.0/playwright.ps1 install --with-deps`
+  - `pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps`
     - (this is a PowerShell script - it _might_ need execution permissions: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`)
 - Include the test case shown on the previous slide and execute it
   - Play around: NUnit follows a slightly different style for defining tests than XUnit
@@ -628,10 +626,10 @@ await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
 
 * Creating Playwright test code can be simplified:
   - Playwright comes with a code generator that enables you to "record" test cases:
-  `pwsh bin/Debug/net7.0/playwright.ps1 codegen https://some-address:8080/`
+  `pwsh bin/Debug/net8.0/playwright.ps1 codegen https://some-address:8080/`
 &emsp;
 * ## Try it out: 🎥🔴 Record a test case!
-  - `pwsh bin/Debug/net7.0/playwright.ps1 codegen  demo.playwright.dev/todomvc`
+  - `pwsh bin/Debug/net8.0/playwright.ps1 codegen  demo.playwright.dev/todomvc`
 
 ---
 

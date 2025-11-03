@@ -151,10 +151,10 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|45
 |05.11.2025
 |Sven
-.2+| link:sessions/session_09/READING_MATERIAL.md[Material]
+.2+| link:sessions/session_10/READING_MATERIAL.md[Material]
 .2+a| * link:sessions/session_10/Slides.md[Security of web applications]
-   * link:sessions/session_09/Git_Crash_Course_by_daso.pdf[Feedback, Git Concepts and Usage] 
-.2+| link:sessions/session_09/README_PROJECT.md[Complete login and sending of cheeps. Check security]
+   * link:sessions/session_10/Git_Crash_Course_by_daso.pdf[Feedback, Git Concepts and Usage] 
+.2+| link:sessions/session_10/README_PROJECT.md[Complete login and sending of cheeps. Check security]
 .2+|link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-28?origin=product-toc[28], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-29?origin=product-toc[29]
 
 

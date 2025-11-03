@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 226.6 274">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-3 {
+        font-size: 12px;
+      }
+
+      .cls-4 {
+        fill: #fefece;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 1.5px;
+      }
+
+      .cls-4, .cls-6, .cls-7 {
+        stroke: #a80036;
+      }
+
+      .cls-2 {
+        font-size: 11px;
+      }
+
+      .cls-2, .cls-8, .cls-3, .cls-9 {
+        font-family: ArialMT, Arial;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5, .cls-11, .cls-12 {
+        stroke: #000;
+      }
+
+      .cls-5, .cls-12, .cls-7 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #e5b7c7;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        stroke-width: 2.5px;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-16 {
+        fill: #a80036;
+      }
+
+      .cls-17 {
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Layer_1">
+      <g>
+        <line class="cls-7" x1="124" y1="20.3" x2="124" y2="37.3"/>
+        <polygon class="cls-16" points="124 45.2 119.5 34 124 36.7 128.6 34 124 45.2"/>
+      </g>
+      <g>
+        <line class="cls-7" x1="124" y1="80.1" x2="124" y2="90.9"/>
+        <polygon class="cls-16" points="124 98.9 119.5 87.7 124 90.3 128.6 87.7 124 98.9"/>
+      </g>
+      <g>
+        <line class="cls-7" x1="124" y1="122.9" x2="124" y2="139.8"/>
+        <polygon class="cls-16" points="124 147.8 119.5 136.6 124 139.3 128.6 136.6 124 147.8"/>
+      </g>
+      <g>
+        <line class="cls-7" x1="124" y1="231.5" x2="124" y2="243.6"/>
+        <polygon class="cls-16" points="124 251.5 119.5 240.3 124 243 128.6 240.3 124 251.5"/>
+      </g>
+      <g>
+        <polyline class="cls-7" points="41.6 110.9 4.2 110.9 4.2 221.3 21.1 221.3"/>
+        <polygon class="cls-16" points="29 221.3 17.9 225.9 20.5 221.3 17.9 216.8 29 221.3"/>
+      </g>
+      <g>
+        <polyline class="cls-7" points="25 159.8 9.4 159.8 9.4 210 21.1 210"/>
+        <polygon class="cls-16" points="29 210 17.9 214.6 20.5 210 17.9 205.4 29 210"/>
+      </g>
+      <g>
+        <circle class="cls-11" cx="124" cy="16.6" r="10"/>
+        <rect class="cls-4" x="55" y="45.2" width="138" height="35.1" rx="12.5" ry="12.5"/>
+        <text class="cls-3" transform="translate(65 67.7)"><tspan x="0" y="0">Do</tspan><tspan class="cls-14" x="15.3" y="0"> </tspan><tspan x="18.9" y="0">you</tspan><tspan class="cls-15" x="38.2" y="0"> </tspan><tspan x="41.8" y="0">need</tspan><tspan class="cls-14" x="68.5" y="0"> </tspan><tspan x="72" y="0">HTTPS?</tspan></text>
+        <polygon class="cls-6" points="36 147.8 212 147.8 224 159.8 212 171.8 36 171.8 24 159.8 36 147.8"/>
+        <text class="cls-2" transform="translate(36 164.3)"><tspan x="0" y="0">Do you care about your users at all?</tspan></text>
+        <polygon class="cls-6" points="47.5 98.9 200.5 98.9 212.5 110.9 200.5 122.9 47.5 122.9 35.5 110.9 47.5 98.9"/>
+        <text class="cls-2" transform="translate(128 133.7)"><tspan x="0" y="0">no</tspan></text>
+        <g>
+          <line class="cls-7" x1="124" y1="171.8" x2="124" y2="188"/>
+          <polygon class="cls-16" points="124 196 119.5 184.8 124 187.4 128.6 184.8 124 196"/>
+        </g>
+        <text class="cls-2" transform="translate(128 182.6)"><tspan x="0" y="0">no</tspan></text>
+        <text class="cls-2" transform="translate(47.5 115.4)"><tspan x="0" y="0">Do</tspan><tspan class="cls-10" x="14.1" y="0"> </tspan><tspan x="17.2" y="0">you</tspan><tspan class="cls-10" x="34.9" y="0"> </tspan><tspan x="38" y="0">process</tspan><tspan class="cls-10" x="76.5" y="0"> </tspan><tspan x="79.6" y="0">sensitive</tspan><tspan class="cls-10" x="122.4" y="0"> </tspan><tspan x="125.5" y="0">data?</tspan></text>
+        <text class="cls-2" transform="translate(20.1 105.5)"><tspan class="cls-13" x="0" y="0">ye</tspan><tspan x="12.5" y="0">s</tspan></text>
+        <text class="cls-2" transform="translate(7.8 154.7)"><tspan class="cls-13" x="0" y="0">ye</tspan><tspan x="12.5" y="0">s</tspan></text>
+        <rect class="cls-4" x="29" y="196.4" width="190" height="35.1" rx="12.5" ry="12.5"/>
+        <text class="cls-1" transform="translate(39 218.9)"><tspan class="cls-17" x="0" y="0">Yes</tspan><tspan class="cls-8" x="21.4" y="0">,</tspan><tspan class="cls-9" x="24.7" y="0"> </tspan><tspan class="cls-8" x="27.8" y="0">you</tspan><tspan class="cls-9" x="47.2" y="0"> </tspan><tspan class="cls-8" x="50.3" y="0">definitely</tspan><tspan class="cls-9" x="97.7" y="0"> </tspan><tspan class="cls-8" x="100.8" y="0">need</tspan><tspan class="cls-9" x="127.5" y="0"> </tspan><tspan class="cls-8" x="130.7" y="0">HTTPS</tspan></text>
+        <circle class="cls-5" cx="124" cy="261.5" r="10"/>
+        <line class="cls-12" x1="117.9" y1="255.3" x2="130.2" y2="267.7"/>
+        <line class="cls-12" x1="130.2" y1="255.3" x2="117.9" y2="267.7"/>
+      </g>
+    </g>
+  </g>
+</svg>

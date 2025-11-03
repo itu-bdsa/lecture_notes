@@ -1,0 +1,17 @@
+@startuml https-decision-diagram
+
+'scale 2
+skin rose
+
+start
+:Do you need HTTPS?;
+if (Do you process sensitive data?) then (yes)
+else (no)
+    if (Do you care about your users at all?) then (yes)
+    else (no)
+    endif
+endif
+:Yes, you definitely need HTTPS;
+end
+
+@enduml

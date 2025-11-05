@@ -39,9 +39,7 @@ style: |
 # BDSA: Session 10
 ## HTTPS, Attacks on Websites, and Load Testing
 
-Adrian Hoff
-Postdoctoral Researcher
-ITU
+[Sven Peldszus](mailto:svpe@itu.dk)
 
 
 
@@ -175,14 +173,15 @@ If this causes problems, visit the [Microsoft trouble shooting page](https://lea
   - For a more detailed description, read Section 28 of the book (entirely)
 
 &emsp;
-<font color="#999">Side Note (unrelated to the course): Should you be a web admin and your website does still run on plain HTTP (despite all modern browser security warnings), now is the time to change that! Follow the above tutorial. It is a matter of 10 minutes.</font>
+<span style="color: #999;">Side Note (unrelated to the course): Should you be a web admin and your website does still run on plain HTTP (despite all modern browser security warnings), now is the time to change that! Follow the above tutorial. It is a matter of 10 minutes.</span>
 
 
 
 # Enforcing HTTPS: Redirecting from HTTP
 
-- By default, browsers use HTTP (not HTTPS)
-- (Very) good idea: redirect HTTP requests to HTTPS
+- By default, browsers used to use HTTP (not HTTPS)
+  - (Curently changing and HTTPS becoming the default)
+- Nevertheless, (Very) good idea: redirect HTTP requests to HTTPS
   - e.g., `http://chirp.com/` to `https://chirp.com/`
 
 &emsp;
@@ -355,7 +354,8 @@ Example: You implement a new website for online banking (`https://my-bank.dk/`).
 # CSRF: Bank Example
 
 ![bg w:70%](images/CSRF-1.png)
-<div style="font-size: 0.6em;position:absolute;left:40%;bottom:25px">Image source: <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action</i>, Chapter 29</a></div>
+<div style="font-size: 0.6em;position:absolute;left:40%;bottom:25px">
+Image source: <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action</i>, Chapter 29</a></div>
 
 # CSRF: Bank Example
 

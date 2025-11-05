@@ -891,7 +891,7 @@ div.mermaid { all: unset; }
 </li>
 </ul>
 <p> <br />
-&lt;font color="#999"&gt;Side Note (unrelated to the course): Should you be a web admin and your website does still run on plain HTTP (despite all modern browser security warnings), now is the time to change that! Follow the above tutorial. It is a matter of 10 minutes.&lt;/font&gt;</p>
+<span>Side Note (unrelated to the course): Should you be a web admin and your website does still run on plain HTTP (despite all modern browser security warnings), now is the time to change that! Follow the above tutorial. It is a matter of 10 minutes.</span></p>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
@@ -949,8 +949,12 @@ div.mermaid { all: unset; }
 ;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
 <h1 id="enforcing-https-redirecting-from-http">Enforcing HTTPS: Redirecting from HTTP</h1>
 <ul>
-<li>By default, browsers use HTTP (not HTTPS)</li>
-<li>(Very) good idea: redirect HTTP requests to HTTPS
+<li>By default, browsers used to use HTTP (not HTTPS)
+<ul>
+<li>(Curently changing and HTTPS becoming the default)</li>
+</ul>
+</li>
+<li>Nevertheless, (Very) good idea: redirect HTTP requests to HTTPS
 <ul>
 <li>e.g., <code>http://chirp.com/</code> to <code>https://chirp.com/</code></li>
 </ul>
@@ -1366,7 +1370,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:60%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/XSS-attack.png&quot;);background-size:95% auto;"></figure></div></section></foreignObject><foreignObject width="40%" height="720"><section id="17" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/xkcd-bobby-tables.png&quot;);background-size:89% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -1393,6 +1397,276 @@ table {
 
 div.mermaid { all: unset; }
 " lang="en-US" data-marpit-pagination="17" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="content">
+<h1 id="sql-injection">SQL injection</h1>
+<div>Image source: <a href="https://xkcd.com/327/">xkcd.com</a></div>
+<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="17" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-footer="![width:300px](images/banner-transparent.png)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--footer:![width:300px](images/banner-transparent.png);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>10 minutes</header>
+<h1 id="what-happened-in-the-school-system">What happened in the school system?</h1>
+
+<p>Probably, the school's system contains a query implemented as a string expression with a few variable-filled gaps for student names similar to the following:<br />
+<code>&quot;INSERT INTO Students VALUES ('&quot; + FirstName + &quot;', '&quot; + LastName + &quot;')&quot;;</code></p>
+<ul>
+<li>What happens when we fill in Bobby's full firstname in the above query and why is this bad?</li>
+<li>How could the school's vulnerability be addressed?</li>
+</ul>
+<p> <br />
+For reference, bobby's firstname is: <code>Robert'); DROP TABLE Students;--</code><br />
+(Tip: <code>--</code> typically starts a comment in SQL)</p>
+<p> </p>
+<ul>
+<li data-marpit-fragment="1">For a thorough answer to all of the above, read through this <a href="https://stackoverflow.com/questions/332365/how-does-the-sql-injection-from-the-bobby-tables-xkcd-comic-work">StackOverflow post</a></li>
+</ul>
+<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="19" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h1 id="sql-injection---protection">SQL injection - protection</h1>
+<p>Attackers typically launch SQL injections through HTML forms and query strings.</p>
+<p>Protection: You need to <strong>safe-encode all user input</strong> - always!</p>
+<p> </p>
+<h3 id="because-you-use-ef-core-this-is-taken-care-for-you-%F0%9F%98%8C">Because you use EF Core, this is taken care for you <img class="emoji" draggable="false" alt="😌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60c.svg" data-marp-twemoji=""/></h3>
+<p>(unless you do funny stuff that circumvents the built-in measures, e.g., hand-crafting SQL as strings in a similar way to little Bobby Tables' school)</p>
+<ul>
+<li><strong>Security Feature:</strong> Prepared Statements</li>
+</ul>
+<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:60%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/XSS-attack.png&quot;);background-size:95% auto;"></figure></div></section></foreignObject><foreignObject width="40%" height="720"><section id="20" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -1452,7 +1726,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="17" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+" lang="en-US" data-marpit-pagination="20" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -1478,7 +1752,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -1504,7 +1778,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/XSS-result-unprotected.png&quot;);background-size:95% auto;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="18" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/XSS-result-unprotected.png&quot;);background-size:95% auto;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="21" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -1530,7 +1804,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -1562,289 +1836,6 @@ div.mermaid { all: unset; }
 </p>
 <p>User input is directly embedded <img class="emoji" draggable="false" alt="👎" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f44e.svg" data-marp-twemoji=""/></p>
 <p>This is <strong>extremely</strong> dangerous: Attackers (in the form of malicious users) can <em>easily</em> append arbitrary source code to your web page and thus steal other users' cookies, mine crypto, ask for bank logins, ...</p>
-<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
-</section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="18" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="19" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<h1 id="xss---how-to-protect-your-web-app">XSS - How to protect your web app</h1>
-<p> </p>
-<p><strong>Safe-encode all user input</strong> (HTML forms, query strings, ...) using <a href="https://www.w3schools.com/html/html_entities.asp">HTML Entities</a> instead of using raw characters before printing them on a page.</p>
-<ul>
-<li>
-<p>Example: <code>&amp;lt;</code> for <code>&lt;</code></p>
-</li>
-<li>
-<p>Razor Pages take care of this when using Tag Helpers, HTML Helpers, or the @ syntax</p>
-</li>
-</ul>
-<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-footer="![width:300px](images/banner-transparent.png)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--footer:![width:300px](images/banner-transparent.png);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<header>10 minutes</header>
-<h1 id="xss---is-your-chirp-app-protected">XSS - Is your Chirp! app protected??</h1>
-
-<ul>
-<li>Launch your Chirp! app locally</li>
-<li>Log in and create a new cheep:
-<ul>
-<li>
-<p>As text, use the following:</p>
-<p><code>Hello, I am feeling good!&lt;script&gt;alert('If you see this in a popup, you are in trouble!');&lt;/script&gt;</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<ul>
-<li>The new cheep should be printed to the timeline exactly as shown above.
-<ul>
-<li>If you see a popup window, you are vulnerable to XSS attacks - which is obviously very bad and must be fixed ASAP!<br />
- </li>
-</ul>
-</li>
-<li>(Sidenote: the above would make a neat test case!)</li>
-</ul>
-<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/XSS-result-protected.png&quot;);background-size:95% auto;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="21" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
-<h1 id="xss---protected-results">XSS - Protected Results</h1>
-<p><img src="images/XSS-result-protected-rendered.png" alt="" style="width:700px;" /><br />
-</p>
-<p>Embedded code is printed, not executed <img class="emoji" draggable="false" alt="👍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f44d.svg" data-marp-twemoji=""/></p>
-<p>Keep this vulnerability in mind when developing web apps! Consider implementing test cases on relevant forms to avoid XSS risks.</p>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
@@ -1926,6 +1917,289 @@ table {
 
 div.mermaid { all: unset; }
 ;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h1 id="xss---how-to-protect-your-web-app">XSS - How to protect your web app</h1>
+<p> </p>
+<p><strong>Safe-encode all user input</strong> (HTML forms, query strings, ...) using <a href="https://www.w3schools.com/html/html_entities.asp">HTML Entities</a> instead of using raw characters before printing them on a page.</p>
+<ul>
+<li>
+<p>Example: <code>&amp;lt;</code> for <code>&lt;</code></p>
+</li>
+<li>
+<p>Razor Pages take care of this when using Tag Helpers, HTML Helpers, or the @ syntax</p>
+</li>
+</ul>
+<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-footer="![width:300px](images/banner-transparent.png)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="23" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--footer:![width:300px](images/banner-transparent.png);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<header>10 minutes</header>
+<h1 id="xss---is-your-chirp-app-protected">XSS - Is your Chirp! app protected??</h1>
+
+<ul>
+<li>Launch your Chirp! app locally</li>
+<li>Log in and create a new cheep:
+<ul>
+<li>
+<p>As text, use the following:</p>
+<p><code>Hello, I am feeling good!&lt;script&gt;alert('If you see this in a popup, you are in trouble!');&lt;/script&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<ul>
+<li>The new cheep should be printed to the timeline exactly as shown above.
+<ul>
+<li>If you see a popup window, you are vulnerable to XSS attacks - which is obviously very bad and must be fixed ASAP!<br />
+ </li>
+</ul>
+</li>
+<li>(Sidenote: the above would make a neat test case!)</li>
+</ul>
+<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="24" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/XSS-result-protected.png&quot;);background-size:95% auto;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="24" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="24" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="42" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1 id="xss---protected-results">XSS - Protected Results</h1>
+<p><img src="images/XSS-result-protected-rendered.png" alt="" style="width:700px;" /><br />
+</p>
+<p>Embedded code is printed, not executed <img class="emoji" draggable="false" alt="👍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f44d.svg" data-marp-twemoji=""/></p>
+<p>Keep this vulnerability in mind when developing web apps! Consider implementing test cases on relevant forms to avoid XSS risks.</p>
+<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="24" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+" lang="en-US" data-marpit-pagination="25" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+  font-size: 25px;
+}
+container {
+  height: 300px;
+  width: 100%;
+  display: block;
+  justify-content: right;
+  text-align: right;
+}
+header {
+  float: right;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  background-color: lightgrey;
+  font-size: 80%;
+}
+
+table {
+  font-size: 22px;
+}
+
+div.mermaid { all: unset; }
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
 <h1 id="cross-site-forgery-attacks-csrf">Cross-Site Forgery Attacks (CSRF)</h1>
 <p>A malicious/compromised websites use HTML forms to let users (without noticing it) send POST requests to your web app. The user's browser appends cookies, making the request appear legitimate on your end.</p>
 <p>Example: You implement a new website for online banking (<code>https://my-bank.dk/</code>). You implement money transferal via a POST request on <code>https://my-bank.dk/send-money</code></p>
@@ -1971,7 +2245,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="23" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -1997,7 +2271,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-1.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-1.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2023,7 +2297,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="23" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2051,7 +2325,8 @@ table {
 div.mermaid { all: unset; }
 ;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="content">
 <h1 id="csrf-bank-example">CSRF: Bank Example</h1>
-<div>Image source: <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action</i>, Chapter 29</a></div>
+<div>
+Image source: <a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock <i>ASP.NET Core in Action</i>, Chapter 29</a></div>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
@@ -2080,7 +2355,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="23" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+" lang="en-US" data-marpit-pagination="26" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2106,7 +2381,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="24" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2132,7 +2407,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-2.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-2.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2158,7 +2433,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="24" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2215,7 +2490,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="24" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+" lang="en-US" data-marpit-pagination="27" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2241,7 +2516,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="25" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2267,7 +2542,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-3.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-3.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2293,7 +2568,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="25" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2350,7 +2625,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="25" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+" lang="en-US" data-marpit-pagination="28" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2376,7 +2651,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2402,7 +2677,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-4.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/CSRF-4.png&quot;);background-size:70% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2428,7 +2703,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
+" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2485,227 +2760,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="26" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<h1 id="csrf---how-to-protect-your-web-app">CSRF - How to protect your web app</h1>
-<p><strong>Anti-Forgery Tokens</strong> (synchronizer token pattern)</p>
-<ul>
-<li>
-<p>Generate tokens to distinguish your own forms from maliciously forged forms</p>
-<ul>
-<li>token values are based on logged-in user, malicious parties cannot mimic tokens</li>
-</ul>
-</li>
-<li>
-<p>One token is stored in browser cookies and re-send with every request</p>
-</li>
-<li>
-<p>Another token is placed in the form as hidden <code>&lt;input&gt;</code> and submitted</p>
-</li>
-</ul>
-<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<h1 id="csrf---anti-forgery-middleware">CSRF - Anti-Forgery Middleware</h1>
-<p>Antiforgery middleware is added to the dependency injection container when one of the following APIs is called in <code>Program.cs</code>:</p>
-<ul>
-<li><code>builder.Services.AddMvc();</code></li>
-<li><code>app.MapRazorPages();</code></li>
-<li><code>app.MapControllerRoute();</code></li>
-<li><code>app.MapBlazorHub();</code></li>
-</ul>
-<p>Last week, we saw how this results in a hidden <code>&lt;input&gt;</code> tag in HTML forms generated by Razor:</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/SubmitMessage&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">data-val</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-val-required</span>=<span class="hljs-string">&quot;The Message field is required.&quot;</span>
-    <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Message&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Message&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Share&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;__RequestVerificationToken&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;CfDJ8i3PMq1Vw...&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-</code></pre>
-<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-marpit-fragments="2" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<h1 id="built-in-browser-security">Built-in Browser Security</h1>
-<h3 id="are-internet-browsers-really-that-naive">Are internet browsers really that naive?</h3>
-<ul>
-<li data-marpit-fragment="1">
-<p>Modern browsers protect against CSRF attacks by distinguishing between cookies shared between websites and so called &quot;<strong>SameSite cookies</strong>&quot;</p>
-<ul>
-<li>You can configure your ASP.NET app to use SameSite cookies (<a href="https://learn.microsoft.com/de-de/aspnet/core/security/samesite?view=aspnetcore-8.0">read more</a>)</li>
-</ul>
-</li>
-<li data-marpit-fragment="2">
-<p>Modern browsers protect against XSS through the <strong>Same Origin Policy (SOP)</strong> standard</p>
-<ul>
-<li>Scripts can send asynchronous requests only to the site (origin) they are embedded in</li>
-<li>Origin = protocol, domain, and port
-<ul>
-<li>example: SOP considers <code>https://chirp.dk/</code> and <code>https://www.chirp.dk/</code> as different</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p> <br />
-<strong>Important</strong>: Those are browser features! Old browsers and other tools ignore the above!</p>
-<footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+" lang="en-US" data-marpit-pagination="29" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2758,30 +2813,25 @@ table {
 
 div.mermaid { all: unset; }
 ;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<h1 id="sop---how-to-relax-it-safely-to-enable-async-scripts">SOP - How to relax it safely to enable async. scripts?</h1>
-<p>You send specific HTTP headers along with your HTTP responses to instruct client browsers:</p>
+<h1 id="csrf---how-to-protect-your-web-app">CSRF - How to protect your web app</h1>
+<p><strong>Anti-Forgery Tokens</strong> (synchronizer token pattern)</p>
 <ul>
-<li><strong>Cross-Origin Resource Sharing (CORS)</strong>: Send a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS Header</a> to whitelist safe origins who may receive data from the server.
+<li>
+<p>Generate tokens to distinguish your own forms from maliciously forged forms</p>
 <ul>
-<li>Use case: A browser on another website verifies if they may request data from your site<br />
-<code>Access-Control-Allow-Origin: *</code> - &quot;anyone can fetch my data&quot; (<em>dangerous</em>)<br />
-<code>Access-Control-Allow-Origin: chirp.dk</code> - &quot;only that website can request my data&quot;</li>
+<li>token values are based on logged-in user, malicious parties cannot mimic tokens</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li data-marpit-fragment="1"><strong>Content Security Policy (CSP)</strong>: Send a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP Header</a> to whitelist safe origins from where to fetch data and scripts:
-<ul>
-<li>Use case: A browser on your site verifies if they may request data from another site<br />
-<code>Content-Security-Policy: default-src 'self' chirp.dk *.chirp.dk</code></li>
-<li>No full protection against XSS, but makes attackers' life significantly harder!</li>
-</ul>
+<li>
+<p>One token is stored in browser cookies and re-send with every request</p>
+</li>
+<li>
+<p>Another token is placed in the form as hidden <code>&lt;input&gt;</code> and submitted</p>
 </li>
 </ul>
-<p>You will want to use these headers in combination with a secure HTTPS connection.</p>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2833,64 +2883,26 @@ table {
 }
 
 div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/xkcd-bobby-tables.png&quot;);background-size:89% auto;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="31" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42" data-marpit-advanced-background="content">
-<h1 id="sql-injection">SQL injection</h1>
-<div>Image source: <a href="https://xkcd.com/327/">xkcd.com</a></div>
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h1 id="csrf---anti-forgery-middleware">CSRF - Anti-Forgery Middleware</h1>
+<p>Antiforgery middleware is added to the dependency injection container when one of the following APIs is called in <code>Program.cs</code>:</p>
+<ul>
+<li><code>builder.Services.AddMvc();</code></li>
+<li><code>app.MapRazorPages();</code></li>
+<li><code>app.MapControllerRoute();</code></li>
+<li><code>app.MapBlazorHub();</code></li>
+</ul>
+<p>Last week, we saw how this results in a hidden <code>&lt;input&gt;</code> tag in HTML forms generated by Razor:</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/SubmitMessage&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">data-val</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-val-required</span>=<span class="hljs-string">&quot;The Message field is required.&quot;</span>
+    <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Message&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Message&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Share&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;__RequestVerificationToken&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;CfDJ8i3PMq1Vw...&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-marpit-fragments="2" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -2916,7 +2928,7 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="31" style="" data-marpit-pagination-total="42" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="linear-gradient(to bottom, #67b8e3, #0288d1)" data-footer="![width:300px](images/banner-transparent.png)" data-color="white" data-header="10 minutes" data-theme="gaia" data-heading-divider="1" data-style="section {
+" lang="en-US" data-marpit-pagination="32" style="--paginate:true;--background-color:#fff;--background-image:url('https://marp.app/assets/hero-background.svg');--footer:![width:300px](images/banner-transparent.png);--theme:gaia;--heading-divider:1;--style:section {
   font-size: 25px;
 }
 container {
@@ -2942,52 +2954,33 @@ table {
 }
 
 div.mermaid { all: unset; }
-" lang="en-US" data-marpit-pagination="32" style="--paginate:true;--background-color:#fff;--background-image:linear-gradient(to bottom, #67b8e3, #0288d1);--footer:![width:300px](images/banner-transparent.png);--color:white;--header:10 minutes;--theme:gaia;--heading-divider:1;--style:section {
-  font-size: 25px;
-}
-container {
-  height: 300px;
-  width: 100%;
-  display: block;
-  justify-content: right;
-  text-align: right;
-}
-header {
-  float: right;
-}
-
-a {
-  color: blue;
-  text-decoration: underline;
-  background-color: lightgrey;
-  font-size: 80%;
-}
-
-table {
-  font-size: 22px;
-}
-
-div.mermaid { all: unset; }
-;color:white;background-color:#fff;background-image:linear-gradient(to bottom, #67b8e3, #0288d1);background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<header>10 minutes</header>
-<h1 id="what-happened-in-the-school-system">What happened in the school system?</h1>
-
-<p>Probably, the school's system contains a query implemented as a string expression with a few variable-filled gaps for student names similar to the following:<br />
-<code>&quot;INSERT INTO Students VALUES ('&quot; + FirstName + &quot;', '&quot; + LastName + &quot;')&quot;;</code></p>
+;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
+<h1 id="built-in-browser-security">Built-in Browser Security</h1>
+<h3 id="are-internet-browsers-really-that-naive">Are internet browsers really that naive?</h3>
 <ul>
-<li>What happens when we fill in Bobby's full firstname in the above query and why is this bad?</li>
-<li>How could the school's vulnerability be addressed?</li>
+<li data-marpit-fragment="1">
+<p>Modern browsers protect against CSRF attacks by distinguishing between cookies shared between websites and so called &quot;<strong>SameSite cookies</strong>&quot;</p>
+<ul>
+<li>You can configure your ASP.NET app to use SameSite cookies (<a href="https://learn.microsoft.com/de-de/aspnet/core/security/samesite?view=aspnetcore-8.0">read more</a>)</li>
+</ul>
+</li>
+<li data-marpit-fragment="2">
+<p>Modern browsers protect against XSS through the <strong>Same Origin Policy (SOP)</strong> standard</p>
+<ul>
+<li>Scripts can send asynchronous requests only to the site (origin) they are embedded in</li>
+<li>Origin = protocol, domain, and port
+<ul>
+<li>example: SOP considers <code>https://chirp.dk/</code> and <code>https://www.chirp.dk/</code> as different</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p> <br />
-For reference, bobby's firstname is: <code>Robert'); DROP TABLE Students;--</code><br />
-(Tip: <code>--</code> typically starts a comment in SQL)</p>
-<p> </p>
-<ul>
-<li data-marpit-fragment="1">For a thorough answer to all of the above, read through this <a href="https://stackoverflow.com/questions/332365/how-does-the-sql-injection-from-the-bobby-tables-xkcd-comic-work">StackOverflow post</a></li>
-</ul>
+<strong>Important</strong>: Those are browser features! Old browsers and other tools ignore the above!</p>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-marpit-fragments="1" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {
   font-size: 25px;
 }
 container {
@@ -3040,12 +3033,27 @@ table {
 
 div.mermaid { all: unset; }
 ;background-color:#fff;background-image:url('https://marp.app/assets/hero-background.svg');background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="42">
-<h1 id="sql-injection---protection">SQL injection - protection</h1>
-<p>Attackers typically launch SQL injections through HTML forms and query strings.</p>
-<p>Protection: Once again, you need to <strong>safe-encode all user input</strong> - always!</p>
-<p> </p>
-<h3 id="because-you-use-ef-core-this-is-taken-care-for-you-%F0%9F%98%8C">Because you use EF Core, this is taken care for you <img class="emoji" draggable="false" alt="😌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60c.svg" data-marp-twemoji=""/></h3>
-<p>(unless you do funny stuff that circumvents the built-in measures, e.g., hand-crafting SQL as strings in a similar way to little Bobby Tables' school)</p>
+<h1 id="sop---how-to-relax-it-safely-to-enable-async-scripts">SOP - How to relax it safely to enable async. scripts?</h1>
+<p>You send specific HTTP headers along with your HTTP responses to instruct client browsers:</p>
+<ul>
+<li><strong>Cross-Origin Resource Sharing (CORS)</strong>: Send a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS Header</a> to whitelist safe origins who may receive data from the server.
+<ul>
+<li>Use case: A browser on another website verifies if they may request data from your site<br />
+<code>Access-Control-Allow-Origin: *</code> - &quot;anyone can fetch my data&quot; (<em>dangerous</em>)<br />
+<code>Access-Control-Allow-Origin: chirp.dk</code> - &quot;only that website can request my data&quot;</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li data-marpit-fragment="1"><strong>Content Security Policy (CSP)</strong>: Send a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP Header</a> to whitelist safe origins from where to fetch data and scripts:
+<ul>
+<li>Use case: A browser on your site verifies if they may request data from another site<br />
+<code>Content-Security-Policy: default-src 'self' chirp.dk *.chirp.dk</code></li>
+<li>No full protection against XSS, but makes attackers' life significantly harder!</li>
+</ul>
+</li>
+</ul>
+<p>You will want to use these headers in combination with a secure HTTPS connection.</p>
 <footer><img src="images/banner-transparent.png" alt="" style="width:300px;" /></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-background-color="#fff" data-background-image="url('https://marp.app/assets/hero-background.svg')" data-footer="![width:300px](images/banner-transparent.png)" data-theme="gaia" data-heading-divider="1" data-style="section {

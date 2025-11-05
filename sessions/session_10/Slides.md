@@ -268,6 +268,47 @@ Many more exist!
 
 
 
+# SQL injection
+
+![bg width:89%](images/xkcd-bobby-tables.png)
+
+<div style="font-size: 0.6em;position:absolute;left:40%;bottom:25px">Image source: <a href="https://xkcd.com/327/">xkcd.com</a></div>
+
+
+
+
+# What happened in the school system?
+<!--
+_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
+_color: white
+_header: 10 minutes
+-->
+
+Probably, the school's system contains a query implemented as a string expression with a few variable-filled gaps for student names similar to the following:
+`"INSERT INTO Students VALUES ('" + FirstName + "', '" + LastName + "')";`
+- What happens when we fill in Bobby's full firstname in the above query and why is this bad?
+- How could the school's vulnerability be addressed?
+
+&emsp;
+For reference, bobby's firstname is: `Robert'); DROP TABLE Students;--`
+(Tip: `--` typically starts a comment in SQL)
+
+&emsp;
+* For a thorough answer to all of the above, read through this [StackOverflow post](https://stackoverflow.com/questions/332365/how-does-the-sql-injection-from-the-bobby-tables-xkcd-comic-work)
+
+
+
+# SQL injection - protection
+
+Attackers typically launch SQL injections through HTML forms and query strings.
+
+Protection: Once again, you need to **safe-encode all user input** - always!
+
+&emsp;
+### Because you use EF Core, this is taken care for you 😌
+(unless you do funny stuff that circumvents the built-in measures, e.g., hand-crafting SQL as strings in a similar way to little Bobby Tables' school)
+
+
 # Cross-Site Scripting (XSS)
 
 ![bg right:60% w:95%](images/XSS-attack.png)
@@ -439,49 +480,6 @@ You send specific HTTP headers along with your HTTP responses to instruct client
   - No full protection against XSS, but makes attackers' life significantly harder!
 
 You will want to use these headers in combination with a secure HTTPS connection.
-
-
-
-# SQL injection
-
-![bg width:89%](images/xkcd-bobby-tables.png)
-
-<div style="font-size: 0.6em;position:absolute;left:40%;bottom:25px">Image source: <a href="https://xkcd.com/327/">xkcd.com</a></div>
-
-
-
-
-# What happened in the school system?
-<!--
-_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
-_color: white
-_header: 10 minutes
--->
-
-Probably, the school's system contains a query implemented as a string expression with a few variable-filled gaps for student names similar to the following:
-`"INSERT INTO Students VALUES ('" + FirstName + "', '" + LastName + "')";`
-- What happens when we fill in Bobby's full firstname in the above query and why is this bad?
-- How could the school's vulnerability be addressed?
-
-&emsp;
-For reference, bobby's firstname is: `Robert'); DROP TABLE Students;--`
-(Tip: `--` typically starts a comment in SQL)
-
-&emsp;
-* For a thorough answer to all of the above, read through this [StackOverflow post](https://stackoverflow.com/questions/332365/how-does-the-sql-injection-from-the-bobby-tables-xkcd-comic-work)
-
-
-
-# SQL injection - protection
-
-Attackers typically launch SQL injections through HTML forms and query strings.
-
-Protection: Once again, you need to **safe-encode all user input** - always!
-
-&emsp;
-### Because you use EF Core, this is taken care for you 😌
-(unless you do funny stuff that circumvents the built-in measures, e.g., hand-crafting SQL as strings in a similar way to little Bobby Tables' school)
-
 
 
 # What other vulnerabilities exist?

@@ -164,14 +164,15 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|11
 .2+|46
 |12.11.2025
-|Sven
+| Fioralba Ajazi (ITU, guest lecture: Modern SE in today’s data-driven world.
+What to know before you touch a line of code)
 .2+| link:sessions/session_11/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_11/Slides.md[Requirements and Intro to visual languages for design and architecture]
 .2+| link:sessions/session_11/README_PROJECT.md[Add (un-)follow feature, fix _Chirp!_ users]
 .2+|
 
 |14.11.2025
-| Fioralba Ajazi (ITU, guest lecture)
+| Sven
 
 .2+|12
 .2+|47

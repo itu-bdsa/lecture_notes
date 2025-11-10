@@ -2,7 +2,7 @@
 
 ## Guest Lecture
 
- Guido Palazzo and Ulrich Hoffrage: "The Dark Pattern: The Hidden Dynamics of Corporate Scandals," Basic Venture, 2025
+Palazzo, G., & Hoffrage, U. (2025). The dark pattern: The hidden dynamics of corporate scandals. Basic Venture.
 
 ## Visualization of software design
 

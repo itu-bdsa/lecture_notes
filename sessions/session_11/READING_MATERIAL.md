@@ -1,5 +1,8 @@
 # Reading Material for Session 11
 
+## Guest Lecture
+
+ Guido Palazzo and Ulrich Hoffrage: "The Dark Pattern: The Hidden Dynamics of Corporate Scandals," Basic Venture, 2025
 
 ## Visualization of software design
 

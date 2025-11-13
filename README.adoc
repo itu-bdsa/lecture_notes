@@ -164,7 +164,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+|11
 .2+|46
 |12.11.2025
-| Fioralba Ajazi (ITU, guest lecture: link:session_10/ITU_presentation_Fioralba.pdf[Modern SE in today’s data-driven world.
+| Fioralba Ajazi (ITU, guest lecture: link:sessions/session_10/ITU_presentation_Fioralba.pdf[Modern SE in today’s data-driven world.
 What to know before you touch a line of code])
 .2+| link:sessions/session_11/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_11/Slides.md[Requirements and Intro to visual languages for design and architecture]

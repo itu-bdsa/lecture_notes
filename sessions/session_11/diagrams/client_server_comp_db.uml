@@ -1,0 +1,14 @@
+@startuml
+skinparam dpi 300
+set separator none
+
+left to right direction
+Component "Server" as WS << webserver >>
+HTTP -- WS
+[Client] ..> HTTP : use
+
+database "SQLite" {
+}
+
+[WS] --> SQLite
+@enduml

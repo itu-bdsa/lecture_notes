@@ -1,0 +1,20 @@
+@startuml
+
+skinparam dpi 300
+
+start
+repeat :Display public timeline;
+:Login;
+repeat while (Successful?) is (No) not (Yes)
+:Display private timeline;
+
+repeat :Type cheep;
+:Share;
+backward :Display warning;
+note left: Cheep length <= 160 characters;
+repeat while (Valid?) is (No) not (Yes)
+
+:Display private timeline;
+:Logout;
+stop
+@enduml

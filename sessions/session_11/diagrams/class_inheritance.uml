@@ -1,0 +1,14 @@
+@startuml
+
+skinparam dpi 300
+
+class Student {
+
+}
+
+class GuestStudent {
+
+}
+
+Student <|-- GuestStudent
+@enduml

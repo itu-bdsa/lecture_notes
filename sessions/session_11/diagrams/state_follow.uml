@@ -1,0 +1,16 @@
+@startuml
+
+skinparam dpi 300
+
+[*] -> LoggedOut
+LoggedOut --> LoggedIn : click_login
+
+state LoggedIn {
+  state "Following(None)" as follow1
+  state "Following(Bella)" as follow2
+  [*] --> follow1
+  follow1 --> follow2 : click_follow/follow(Bella)
+  follow2 --> follow1 : click_unfollow/unfollow(Bella)
+}
+LoggedIn --> LoggedOut : click_logout
+@enduml

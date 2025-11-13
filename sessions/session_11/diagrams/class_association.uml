@@ -1,0 +1,21 @@
+@startuml
+
+skinparam dpi 300
+
+left to right direction
+
+class Student {
+
+    + Name: string
+    + photo: Image
+
+    + enroll(Course course)
+}
+
+class Course
+{
+    + Id: int
+}
+
+Student ----> "courses *" Course
+@enduml

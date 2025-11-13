@@ -1,0 +1,9 @@
+@startuml
+
+skinparam dpi 300
+
+[*] --> LoggedOut
+
+LoggedOut -> LoggedIn : click login
+LoggedIn -> LoggedOut : click logout
+@enduml

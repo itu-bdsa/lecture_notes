@@ -1,0 +1,31 @@
+@startuml
+
+skinparam dpi 300
+set separator none
+left to right direction
+
+package "Microsoft.AspNetCore.Identity" {
+    class IdentityUser {
+        name: string
+        email: string
+    }
+}
+
+
+package "Chirp.Razor.Infrastructure" {
+Author -up-|> IdentityUser
+
+class Author {
+    --
+}
+
+class Cheep {
+    text: string
+    timestamp: DateTime
+    --
+}
+
+Author "1 author" ---- " * cheeps" Cheep
+
+}
+@enduml

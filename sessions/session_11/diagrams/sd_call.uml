@@ -1,0 +1,8 @@
+@startuml
+
+skinparam dpi 300
+
+"<u>:Manager</u>" -> "<u>:Student</u>" : enroll(course)
+activate "<u>:Student</u>"
+return Status.Sucess
+@enduml

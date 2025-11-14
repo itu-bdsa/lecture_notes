@@ -56,18 +56,9 @@ Session 11
 
 <!-- First hour -->
 
-# Requirements vs Reality
+# Requirements vs. Reality
 
 ![w:750px](https://deliveringresults.leeds.ac.uk/wp-content/uploads/sites/8/2017/02/Requirements2.png)
-
-
-## Functional vs. Non-functional requirements
-
-> * _Functional requirements_ These are statements of services the system should provide, how the system should react to particular inputs, and how the system should behave in particular situations. In some cases, the functional requirements may also explicitly state what the system should not do.
-> * _Non-functional requirements_ These are constraints on the services or functions offered by the system. They include timing constraints, constraints on the development process, and constraints imposed by standards. Non-functional requirements often apply to the system as a whole rather than individual system features or services.<font size=3>
-Source: I. Sommerville <i>Software Engineering</i>
-</font>
-
 
 ## Requirements more formally
 
@@ -89,7 +80,7 @@ section {
 
 *Source: <a href="https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:29148:ed-2:v1:en">ISO/IEC/IEEE 29148:2018(en) Systems and software engineering — Life cycle processes — Requirements engineering</a>*
 
-  > **software requirements specification (SRS)**. (1) documentation of the essential requirements (functions, performance, design constraints, and attributes) of the software and its external interfaces*<font size=3>
+  > **software requirements specification (SRS)**. (1) documentation of the essential requirements (functions, performance, design constraints, and attributes) of the software and its external interfaces
 
 *Source: <a href="https://standards.ieee.org/ieee/1012/5609/">IEEE 1012-2016 IEEE Standard for System, Software, and Hardware Verification and Validation, 3.1.29</a>*
 
@@ -97,6 +88,16 @@ section {
 
 ![w:800px](images/non_func_reqs.png)
 Image source: I. Sommerville <i>Software Engineering</i>
+
+
+## Functional vs. Non-functional requirements
+
+> * _Functional requirements._ These are statements of services the system should provide, how the system should react to particular inputs, and how the system should behave in particular situations. In some cases, the functional requirements may also explicitly state what the system should not do.
+> * _Non-functional requirements._ These are constraints on the services or functions offered by the system. They include timing constraints, constraints on the development process, and constraints imposed by standards. Non-functional requirements often apply to the system as a whole rather than individual system features or services.
+
+*Source: I. Sommerville <i>Software Engineering</i>*
+
+
 
 ## Metrics for Specifying Non-functional Requirements
 
@@ -112,14 +113,14 @@ _color: white
 _header: 10 minutes
 -->
 
-- Read [today's project description](./README_PROJECT.md/#add-feature-users-can-follow-and-unfollow-each-other) for implementing the new un-/follow feature of _Chirp!_.
+- Read [today's project description](./README_PROJECT.md#add-feature-users-can-follow-and-unfollow-each-other) for implementing the new un-/follow feature of _Chirp!_.
 - Discuss with your neighbors: What kind of requirement is specified there?
 
 - In next week's guest lecture, we will realize that the _Chirp!_ application has to be  [General Data Protection Regulation (GDPR)](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) compliant.
 - Discuss with your neighbors: What kind of requirement is this?
 
 
-## Feedback: **Requirement** for Authentication
+<!--## Feedback: **Requirement** for Authentication
 
 <style scoped>
 section {
@@ -148,7 +149,7 @@ The project task provides a code snippet for the Razor view. It illustrates that
 - After authentication, a cheepbox appears above the list of cheeps, see [ticket #XYZ](...).
 - After authentication, the `login` link in the navigation bar turns into a link to `logout` displaying the text `logout`.
 - After clicking logout, the cheepbox disappears again from the top of the list of cheeps.
-
+-->
 
 <!-- Second hour -->
 
@@ -156,7 +157,7 @@ The project task provides a code snippet for the Razor view. It illustrates that
 
 Eventually, you have to document your system's design and architecture so that your colleagues, customers or other stakeholders have a chance of understanding how your system is structured and how it works.
 
-Remember Martin's guest lecture from two weeks ago? He said that he believes it is the most important task that you have.
+<!--Remember Martin's guest lecture from two weeks ago? He said that he believes it is the most important task that you have.-->
 
 Since it is such a common task, various visual notations were developed over time. One of them is the _Unified Modeling Language_ (UML). I will give you a whirlwind tour through some of its diagram types today.
 
@@ -196,7 +197,7 @@ Best practice:
 
 *Image source: <a href="https://camunda.com/bpmn/reference/">BPMN 2.0 Symbol Reference</a>*
 
-
+<!--
 ## Visualizing structure or behavior with your own notations?
 
 <style scoped>
@@ -215,19 +216,16 @@ Best practice:
 ![bg right:50% 100%](./images/feature_model.png)
 
 Image source: <a href="https://www.researchgate.net/publication/271737676_The_design_space_of_multi-language_development_environments">H. Pfeiffer et al. <i>The design space of multi-language development environments</i></a>
+-->
 
 ## Unified Modeling Language (UML)
 
-- WHat is the UML
+- What is the UML?
   - General purpose modeling language for developing software systems
   - Provides a standard way to visualize the design of a system
 - Detailed specification in the UML Super Structure: https://www.omg.org/spec/UML/ 
 
 ![w:700px](https://upload.wikimedia.org/wikipedia/commons/d/d6/Uml_diagram2.png)
-
-## Case Tools
-
-In this course, we use the community edition of Visual Paradigm
 
 ## Structural Diagrams
 <!-- _class: centered -->
@@ -287,7 +285,7 @@ pre {
    font-size: 22px;
 }
 section {
-   font-size: 22px;
+   font-size: 21px;
 }
 </style>
 
@@ -314,11 +312,25 @@ public class Course
 
 If you have bi-directional references in your code, then the association becomes just a line, i.e., no arrows, with the names of the respective references at the opposite end of the association.
 
-## Use UML Class diagrams scarcely
 
-For documentation, do not overuse UML class diagrams.
+## Modeling Best Practices
+- Classes
+  - Names are singular, e.g., *Cheep*
 
-Likely, it is best to use them to illustrate your domain model, i.e., your entities and their relations.
+- Associations
+  - At least one association end name
+  - At least one multiplicity
+  - Names reflect multiplicities, e.g., \* *courses*
+
+![width:700px](./images/class_association.png)
+
+
+## Domain Models
+
+Systematically capture the entities, their properites, and their relationships that exist in the domain in which the system will operate.
+- Help to create a common knowledge about the domain
+- Describe the problem domain, i.e., what is the problem that will be addressed by the system
+- First step towards developing a solution (e.g., models describing the application domain)
 
 ## Task: Entity Diagram
 
@@ -328,8 +340,8 @@ _color: white
 _header: 10 minutes
 -->
 
-- Use the community edition of Visual Paradigm Backup: Navigate to https://online.visual-paradigm.com/)
-- From the UML elements in the bottom left, choose classes, associations, and if necessary inheritance relations.
+- For drawing: Navigate to https://app.diagrams.net/
+- **Hint:** From the UML elements in the bottom left, choose classes, associations, and if necessary inheritance relations.
 - Draft an illustration of the domain model of your _Chirp!_ application.
 - Once done, send an image to our Teams chat (all in one thread), so that we can discuss some of the diagrams.
 
@@ -350,45 +362,34 @@ What are alternatives to entity diagrams with UML class diagrams?
 * ER diagrams as you saw them in your database class.
 
 
+## Models are more than pictures
 
-## UML Package diagrams — Mapping of visual elements to code
-<!--
-_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
-_color: white
--->
+In practice you will often sketch models by hand, e.g., brainstorming on a white board
 
-<style scoped>
-pre {
-   font-size: 22px;
-}
-section {
-   font-size: 22px;
-}
-</style>
+But you have to stick to the syntax
 
-```csharp
-namespace Chirp.CLI.SimpleDB;
+- **Question:** How easy was it to stick to the UML syntax?
 
-public interface IDatabaseRepository<T>
-{
-    public IEnumerable<T> Read(int? limit = null);
-    public void Store(T record);
-}
-```
+Models can be more powerful
+- Multiple views on the same model (in the UML, model and view are decoupled)
+- Reuse of elements between views
+- A lot of automation
 
-```csharp
-namespace Chirp.CLI.SimpleDB;
 
-using CsvHelper;
-using System.Globalization;
+## Computer-Aided Software Engineering (CASE) Tools
 
-public sealed class CSVDatabase<T> : IDatabaseRepository<T>
-{
-    ...
-}
-```
+Assist developers and analysts in creating and managing models (like UML class diagrams) and other artifacts throughout the software development life cycle (SDLC).
 
-![bg right:50% 100%](images/accross_pkg_dep_ui.png)
+Functions
+  - **Modeling:**	Create and edit UML diagrams (class, use case, sequence, activity, state, etc.).
+  - **Code Generation:**	Automatically generate source code from UML diagrams.
+  - **Reverse Engineering:**	Generate UML diagrams from existing source code.
+  - **Consistency Checking:**	Verify relationships and constraints across diagrams.
+  - **Documentation:**	Automatically produce technical documentation from models.
+  - **Collaboration:**	Working together on the same UML project with version control.
+
+In this course, we use the community edition of Visual Paradigm
+ - https://www.visual-paradigm.com/download/community.jsp
 
 
 ## UML Component diagrams
@@ -403,22 +404,19 @@ _color: white
 ## Detour: What is a _component_???
 
 
-  > A software element that conforms to a standard component model and can be **independently deployed and composed** without modification according to a composition standard.<font size=3>
-Source:  W.T. Councill et al. _"Definition of a Software Component and Its Elements."_
-</font>
+  > A software element that conforms to a standard component model and can be **independently deployed and composed** without modification according to a composition standard.
+  *Source:  W.T. Councill et al. _"Definition of a Software Component and Its Elements."_*
 
-  > A software component is a unit of composition with contractually-specified interfaces and explicit context dependencies only. A software component can be **deployed independently and is subject to composition** by third parties.<font size=3>
-Source:  C. Szyperski _"Component Software: Beyond Object-Oriented Programming"_
-</font>
+  > A software component is a unit of composition with contractually-specified interfaces and explicit context dependencies only. A software component can be **deployed independently and is subject to composition** by third parties.
+  *Source:  C. Szyperski _"Component Software: Beyond Object-Oriented Programming"_*
 
 
 ## Detour: Characteristics of Components
 
   > 1. The component is an **independent executable entity** that is defined by its interfaces. You don’t need any knowledge of its source code to use it. It can either be referenced as an **external service or included directly** in a program.
   >
-  > 2. The services offered by a component are made available through an interface, and all interactions are through that interface. The component interface is expressed in terms of parameterized operations, and its internal state is never exposed.<font size=3>
-Source: I. Sommerville _Software Engineering_
-</font>
+  > 2. The services offered by a component are made available through an interface, and all interactions are through that interface. The component interface is expressed in terms of parameterized operations, and its internal state is never exposed.
+  *Source: I. Sommerville _Software Engineering_*
 
 
 ## Task: What are components in your _Chirp!_ applications?
@@ -531,9 +529,10 @@ _header: 10 minutes
 -->
 
 ![bg right:30% 100%](./images/activity.png)
-- Read again [today's project description](./README_PROJECT.md/#add-feature-users-can-follow-and-unfollow-each-other) for implementing the new un-/follow feature of _Chirp!_.
-- Navigate to https://online.visual-paradigm.com/.
-- From the UML elements in the bottom left, choose activities, conditions, and start and end states.
+- Read again [today's project description](./README_PROJECT.md#add-feature-users-can-follow-and-unfollow-each-other) for implementing the new un-/follow feature of _Chirp!_.
+
+- Use Visual Paradigm
+
 - Draft an activity diagram that illustrates a sequence of activities when a user is choosing to follow another user.
 <!-- - Once done, send an image to our Teams chat (all in one thread), so that we can discuss some of the diagrams. -->
 
@@ -624,7 +623,6 @@ What did we do in the previous slides?
 
 ## Next week, guest lecture: GDPR and "Privacy by Design"
 
-We will start the lecture with a guest lecture.
 
 ![w:400px](https://assets.swoogo.com/uploads/full/1642938-622b4a6ee2364.png)
 
@@ -655,4 +653,4 @@ Next week, we will have a guest lecture about GDPR and privacy by design. To mot
 - Check the [reading material](./READING_MATERIAL.md)
 - Work on the [project](./README_PROJECT.md)
 
-- <font color="#cecdce">We are done reading chapters from [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition)! </font>
+- *We are done reading chapters from [Andrew Lock _ASP.NET Core in Action, Third Edition_](https://www.manning.com/books/asp-net-core-in-action-third-edition)!*

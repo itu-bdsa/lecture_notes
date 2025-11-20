@@ -180,7 +180,7 @@ What to know before you touch a line of code])
 | Jakob Krabbe (Comply Cloud, guest lecture)
 .2+| link:sessions/session_12/READING_MATERIAL.md[Material]
 .2+a| * "Privacy by Design"
-   * link:sessions/session_12/Slides.md[Ethics in Software Engineering, documentation, and visual languages for design and architecture]
+   * link:sessions/session_12/Slides.md[Behavioral Models, Documentation, and Architecture]
 .2+a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
    * *Project Review 3 (tba)*
 .2+|

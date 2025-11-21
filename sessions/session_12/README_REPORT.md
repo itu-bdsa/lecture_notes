@@ -10,8 +10,8 @@ Let it contain a file called `report.md`.
 
 In case you include illustrations from image files, put all of these of a subdirectory of `docs`, which shall be called `images`.
 
-Before Thursday, 2 January 2025, hand-in a PDF file with your report on LearnIT (https://learnit.itu.dk/mod/exam/view.php?id=182186).
-The filename of your report has to be `2024_itubdsa_group_<no>_report.pdf`, where where `<no>` is replaced with the group number from [here](https://ituniversity.sharepoint.com/:x:/r/sites/2024AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Groups.xlsx?d=w6776b670fe464ef09d2d4eb3f1a559b7&csf=1&web=1&e=TSJ9jD).
+Before Thursday, 2 January 2025>, hand-in a PDF file with your report on LearnIT (https://learnit.itu.dk/mod/exam/view.php?id=182186).
+The filename of your report has to be `2025_itubdsa_group_<no>_report.pdf`, where where `<no>` is replaced with the group number from [here](https://ituniversity.sharepoint.com/:x:/r/sites/2024AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Groups.xlsx?d=w6776b670fe464ef09d2d4eb3f1a559b7&csf=1&web=1&e=TSJ9jD).
 
 You can convert your report from markdown to PDF format with `pandoc`:
 ```
@@ -38,8 +38,8 @@ That is, write short and precise sentences that do not contain fluff.
 Important, all illustrations have to be legible in the produced PDF document.
 So make sure they do not become too small.
 
-Create all illustrations either with [PlantUML](https://plantuml.com/) or with [DrawIO](https://app.diagrams.net/).
-Store all sources of your diagrams, i.e., PlantUML diagram source code or DrawIO XML files under `docs` in a directory called `diagrams`.
+Create all illustrations with [Visual Paradig Community Edition](https://www.visual-paradigm.com/).
+Store all sources of your diagrams, i.e., diagram source code under `docs` in a directory called `diagrams`, also store exports of the diagrams as PDFs.
 
 Before handing in your project report, make sure that your source code is suitably documented in-code.
 

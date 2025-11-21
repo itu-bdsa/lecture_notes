@@ -1,0 +1,13 @@
+@startuml
+
+skinparam dpi 300
+
+start
+note left: Start/Entry point
+repeat :Display welcome page;
+:Login;
+note left: Activity
+repeat while (Successful?) is (No) not (Yes)
+stop
+note left: Stop/Exit point
+@enduml

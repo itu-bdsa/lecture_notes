@@ -1,0 +1,21 @@
+@startuml
+
+skinparam dpi 300
+set separator none
+
+package "Chirp.CLI.SimpleDB" {
+  interface "IDatabaseRepository<T>" {
+    public IEnumerable<T> Read(int limit)
+    public void Store(T record)
+  }
+  "IDatabaseRepository<T>" <|.. "CSVDatabase<T>"
+}
+
+package Chirp.CLI.Client {
+  "IDatabaseRepository<T>" "database" <-- Program
+   class UserInterface <<static>>  {
+    {static} void PrintCheeps(IEnumerable<Cheep> cheeps)
+   }
+   UserInterface <-- Program
+}
+@enduml

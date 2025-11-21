@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+class Cheep {
+    text: string {text -> text.size <= 160}
+    timestamp: DateTime
+    --
+}
+class Author {
+    name: string
+    email: string
+    --
+}
+Cheep " * cheeps" ---- "author 1" Author
+@enduml

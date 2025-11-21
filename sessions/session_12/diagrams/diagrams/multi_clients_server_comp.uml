@@ -1,0 +1,27 @@
+@startuml
+
+skinparam dpi 300
+set separator none
+
+left to right direction
+node "Client Computer A" {
+  Component "Chirp.CLI" as C1 << client >>
+}
+
+node "Client Computer B" {
+  Component "Chirp.CLI" as C2 << client >>
+}
+
+node "Client Computer C" {
+  Component "Chirp.CLI" as C3 << client >>
+}
+
+node "Azure App Service" {
+  Component "Server" as WS << webserver >>
+}
+HTTP -- WS
+
+C1 ..> HTTP : use
+C2 ..> HTTP : use
+C3 ..> HTTP : use
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+skinparam dpi 300
+
+":Client" -> "AuthEP:ResourceOwner" : GET
+activate "AuthEP:ResourceOwner"
+"AuthEP:ResourceOwner" -> "AuthEP:AuthServer" : GET
+activate "AuthEP:AuthServer"
+"AuthEP:ResourceOwner" -> "AuthEP:AuthServer" : authenticate(ResourceOwner)
+return Success
+"AuthEP:ResourceOwner" -> "AuthEP:AuthServer" : authenticate(Client)
+return Success
+return redirectURL, authCode
+return redirectUrl, authCode
+":Client" -> "TokenEP:ResourceOwner" : POST (AuthCode, Credentials)
+activate "TokenEP:ResourceOwner"
+return AccessToken
+":Client" -> ":Chirp" : GET
+activate ":Chirp"
+return ProtectedResource
+@enduml

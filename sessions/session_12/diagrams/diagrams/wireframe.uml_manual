@@ -1,0 +1,47 @@
+@startuml
+
+skinparam dpi 300
+
+!unquoted procedure SALT($x)
+"{{
+salt
+%invoke_procedure("_"+$x)
+}}" as $x
+!endprocedure
+
+!procedure _publictimeline()
+{+
+[login]
+<b>Public Timeline
+Bella: Hello world
+Cheryl: Hej!
+}
+!endprocedure
+
+!procedure _sendcheep()
+{+
+<b>Anna's Timeline
+| "My first cheep!"
+[Share]
+}
+!endprocedure
+
+!procedure _publictimeline2()
+{+
+[logout]
+<b>Public Timeline
+Anna: My first cheep!
+Bella [follow]: Hello world
+Cheryl [follow]: Hej!
+}
+!endprocedure
+
+
+
+
+(*) --> SALT(publictimeline)
+-right-> Login
+-right-> SALT(sendcheep)
+-right-> SALT(publictimeline2)
+
+@enduml

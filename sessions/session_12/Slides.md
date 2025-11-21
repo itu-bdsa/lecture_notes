@@ -47,6 +47,23 @@ style: |
 Session 11
 [Sven Peldszus](svpe@itu.dk)
 
+## Project Demo Day
+
+5-minute presentation of your custom Chirp! feature
+
+In  lectures of December 2 and 5 (last lecture week)
+
+Assignments of teams to timeslots follows
+
+Presence at the own lecture day is mandatory!
+
+## Project Report
+
+Deadline: January 2
+
+Please ask **questions before Christmas**
+(ITU forces us to take vacation until January!)
+
 
 ## Plan for this week
 
@@ -54,7 +71,7 @@ Session 11
   - Requirements Engineering
   - Structural Modeling (class and component diagrams)
 - This week
-  - Structural Modeling (deployment diagrams)
+  - Structural Modeling (deployment diagrams) - I will move those slides to the other lecture
   - Behavioral Modeling
   - Documentation
 
@@ -342,6 +359,12 @@ What did we do in the previous slides?
 
 <!-- ## Documentation -->
 
+## Is planning enough?
+
+No, you also have to document
+  - using models
+  - but also on the code level
+
 ## In-code documentation
 
 <style scoped>
@@ -564,17 +587,18 @@ There is a plethora of such tools. In this and future courses at ITU, you likely
 Many projects consider it a good practice when your illustrations are generated in-code (PlantUML) compared to WYSIWYG editors (DrawIO).
 (Same philosophy as with markup languages compared, e.g. Microsoft Word files.)
 
+ - Industrial projects in critical domains typically require formal models, e.g., using Visual Paradigm
+
 
 ## Best practice: Let documentation live together with your source code
 
-What is Software? Helge's definition:
+What is Software?
 
   > Software is the collection of **all artifacts**, which allow (a) **suitably educated person(s)** with access to specified and suitable **hardware** to instantiate a running system.
   >
-  > Additionally, the collection of such artifacts allow such suitably educated person(s) to **understand** and **reason** about a systems' working and properties and let them **understand** why the system is as it is and why it behaves the way it does.<font size=3>
-Source:  Helge
-</font>
+  > Additionally, the collection of such artifacts allow such suitably educated person(s) to **understand** and **reason** about a systems' working and properties and let them **understand** why the system is as it is and why it behaves the way it does.
 
+*Source:  Helge*
 
 ## The report
 
@@ -586,9 +610,9 @@ Source:  Helge
 
 ## Software Design?
 
-  > use of **scientific principles**, **technical information**, and **imagination** in the definition of a software system to perform **pre-specified functions** with maximum **economy** and **efficiency**<font size=3>
-Source: ISO/IEC/IEEE 24765:2017 <i>Systems and software engineering-Vocabulary</i>
-</font>
+  > use of **scientific principles**, **technical information**, and **imagination** in the definition of a software system to perform **pre-specified functions** with maximum **economy** and **efficiency**
+  
+  *Source: ISO/IEC/IEEE 24765:2017 <i>Systems and software engineering-Vocabulary</i>*
 
 
 ## Software Design?
@@ -599,35 +623,33 @@ Source: ISO/IEC/IEEE 24765:2017 <i>Systems and software engineering-Vocabulary</
   > - **Conforms to limitations** of the target medium
   > - **Meets** implicit or explicit **requirements** on performance and resource usage
   > - **Satisfies** implicit or explicit **design criteria** on the form of the artifact
-  > - **Satisfies** restrictions on the **design process** itself, such as its length or cost, or the tools available for doing the design<font size=3>
-Source: <a href="https://www.informit.com/articles/article.aspx?p=726130&seqNum=6">G. Booch et al. _"Object-Oriented Analysis and Design with Applications"_</a>
-</font>
+  > - **Satisfies** restrictions on the **design process** itself, such as its length or cost, or the tools available for doing the design
 
+*Source: <a href="https://www.informit.com/articles/article.aspx?p=726130&seqNum=6">G. Booch et al. _"Object-Oriented Analysis and Design with Applications"_</a>*
 
 ## Software Design?
 
 That is similar to what Sommerville says about _Software Engineering_:
 
-  > **Engineering discipline** Engineers make things work. They **apply theories, methods, and tools** where these are appropriate. However, they use them selectively and always **try to discover solutions** to problems even when there are no applicable theories and methods. Engineers also recognize that they must **work within organizational and financial constraints**, and they must look for solutions within these constraints.<font size=3>
-Source: I.Sommerville _"Software Engineering"_
-</font>
+  > **Engineering discipline** Engineers make things work. They **apply theories, methods, and tools** where these are appropriate. However, they use them selectively and always **try to discover solutions** to problems even when there are no applicable theories and methods. Engineers also recognize that they must **work within organizational and financial constraints**, and they must look for solutions within these constraints.
+  
+  *Source: I.Sommerville _"Software Engineering"_*
 
 
 ## Software Design
 
   > The **final goal of any engineering activity** is the some type of **documentation**. When a design effort is complete, the design documentation is turned over to the manufacturing team. This is a completely different group with completely different skills from the design team. If the design documents truly represent a complete design, the manufacturing team can proceed to build the product. In fact, they can proceed to build lots of the product, all without any further intervention of the designers.
-  > [...] the only software documentation that actually seems to satisfy the criteria of an engineering design is the source code listings.<font size=3>
-Source: J. Reeves _"What is Software?"_
-</font>
-
+  > [...] the only software documentation that actually seems to satisfy the criteria of an engineering design is the source code listings.
+  
+  *Source: J. Reeves _"What is Software?"_*
 
 ## Software Design
 
 Note, other more object-oriented analysis and design advocates have a slightly other opinion on that:
 
-  > Design involves **balancing a set of competing requirements**. The **products of design are models** that enable us to reason about our structures, make trade-offs when requirements conflict, and in general, provide **a blueprint for implementation**.<font size=3>
-Source: <a href="https://www.informit.com/articles/article.aspx?p=726130&seqNum=6">G. Booch et al. _"Object-Oriented Analysis and Design with Applications"_</a>
-</font>
+  > Design involves **balancing a set of competing requirements**. The **products of design are models** that enable us to reason about our structures, make trade-offs when requirements conflict, and in general, provide **a blueprint for implementation**.
+  
+  *Source: <a href="https://www.informit.com/articles/article.aspx?p=726130&seqNum=6">G. Booch et al. _"Object-Oriented Analysis and Design with Applications"_</a>*
 
 
 ## Task: One system/feature many different designs?
@@ -643,37 +665,38 @@ _header: 10 minutes
   - What could be the most simple solution?
   - Can you foresee any issues?
 
-
+<!--
 ## Note on Pseudonomization vs. Anonymization
 
 > Pseudonymization is a data management and de-identification procedure by which personally identifiable information fields within a data record are replaced by one or more artificial identifiers, or pseudonyms. A single pseudonym for each replaced field or collection of replaced fields makes the data record less identifiable while remaining suitable for data analysis and data processing.
 >
 > [it] is one way to comply with the European Union's new General Data Protection Regulation (GDPR) demands for secure data storage of personal information. Pseudonymized data can be restored to its original state with the addition of information which allows individuals to be re-identified. In contrast, anonymization is intended to prevent re-identification of individuals within the dataset.
-> <font size=3>
-Source: <a href="https://en.wikipedia.org/wiki/Pseudonymization">Wikipedia</a>
-</font>
+> 
 
+*Source: <a href="https://en.wikipedia.org/wiki/Pseudonymization">Wikipedia</a>*
+-->
 
-## Software Architecture?
-
-  > Architecture represents the set of **significant design decisions** that shape the form and the function of a system, where **significant is measured by cost of change.**<font size=3>
-Source: <a href="https://twitter.com/Grady_Booch/status/1301810358819069952">G. Booch</a>
-</font>
 
 
 ## Software Architecture?
 
-  > Architecture is about **the important stuff**. Whatever that is. On first blush, that sounds trite, but I find it carries a lot of richness. It means that the heart of thinking architecturally about software is to decide what is important, (i.e. what is architectural), and then expend energy on keeping those architectural elements in good condition. For a developer to become an architect, they need to be able to recognize what elements are important, recognizing what elements are likely to result in serious problems should they not be controlled.<font size=3>
-Source: <a href="https://ieeexplore.ieee.org/document/1231144">Martin Fowler _"Design - Who needs an architect?"_</a>
-</font>
+  > Architecture represents the set of **significant design decisions** that shape the form and the function of a system, where **significant is measured by cost of change.**
+
+  *Source: <a href="https://twitter.com/Grady_Booch/status/1301810358819069952">G. Booch</a>*
 
 
 ## Software Architecture?
 
-  > Combining the concept of the **class and object structures** together with the five attributes of a complex system (hierarchy, relative primitives [i.e., multiple levels of abstraction], separation of concerns, patterns, and stable intermediate forms), we find that virtually all complex systems take on the same (canonical) form, [...]. Collectively, we speak of the **class and object structures of a system as its architecture**.<font size=3>
-Source: <a href="https://www.informit.com/articles/article.aspx?p=726130&seqNum=4">G. Booch et al. _"Object-Oriented Analysis and Design with Applications"_</a>
-</font>
+  > Architecture is about **the important stuff**. Whatever that is. On first blush, that sounds trite, but I find it carries a lot of richness. It means that the heart of thinking architecturally about software is to decide what is important, (i.e. what is architectural), and then expend energy on keeping those architectural elements in good condition. For a developer to become an architect, they need to be able to recognize what elements are important, recognizing what elements are likely to result in serious problems should they not be controlled.
+  
+  *Source: <a href="https://ieeexplore.ieee.org/document/1231144">Martin Fowler _"Design - Who needs an architect?"_</a>*
 
+
+## Software Architecture?
+
+  > Combining the concept of the **class and object structures** together with the five attributes of a complex system (hierarchy, relative primitives [i.e., multiple levels of abstraction], separation of concerns, patterns, and stable intermediate forms), we find that virtually all complex systems take on the same (canonical) form, [...]. Collectively, we speak of the **class and object structures of a system as its architecture**.
+  
+  *Source: <a href="https://www.informit.com/articles/article.aspx?p=726130&seqNum=4">G. Booch et al. _"Object-Oriented Analysis and Design with Applications"_</a>*
 
 ## Software Architecture &mdash; Case: Coronapas App
 
@@ -681,11 +704,9 @@ An illustration of architecture in the large:
 
 ![w:500](https://github.com/itu-bdsa/lecture-notes/blob/main/sessions/swe_02/images/coronapas_app_arkitektur.png?raw=true)
 
-<font size=3>
-Source: <a href="https://digst.dk/media/24346/whitepaper-om-coronapas_290521.pdf">Whitepaper om coronapas-appen</a>
-</font>
+*Source: <a href="https://digst.dk/media/24346/whitepaper-om-coronapas_290521.pdf">Whitepaper om coronapas-appen</a>*
 
-
+<!--
 ## Feedback: Use of Large Language Models?
 
 In all of your commits, I found nine that stated to be co-authored with ChatGPT.
@@ -693,7 +714,7 @@ Is that true? I cannot believe that 😃
 
 Let's get some data that I can use for next week. Please fillout the following survey:
 https://www.menti.com/alete7oe13yv
-
+-->
 
 ## What to do now?
 
@@ -702,3 +723,4 @@ https://www.menti.com/alete7oe13yv
 - If not done, complete the Tasks (blue slides) from this class
 - Check the [reading material](./READING_MATERIAL.md)
 - Work on the [project](./README_PROJECT.md)
+

@@ -10,7 +10,7 @@ Let it contain a file called `report.md`.
 
 In case you include illustrations from image files, put all of these of a subdirectory of `docs`, which shall be called `images`.
 
-Before Thursday, 19 December 2024, 14:00, hand-in a PDF file with your report on LearnIT (https://learnit.itu.dk/mod/exam/view.php?id=182186).
+Before Thursday, 2 January 2025, hand-in a PDF file with your report on LearnIT (https://learnit.itu.dk/mod/exam/view.php?id=182186).
 The filename of your report has to be `2024_itubdsa_group_<no>_report.pdf`, where where `<no>` is replaced with the group number from [here](https://ituniversity.sharepoint.com/:x:/r/sites/2024AnalysisDesignandSoftwareArchitecture/Shared%20Documents/General/Groups.xlsx?d=w6776b670fe464ef09d2d4eb3f1a559b7&csf=1&web=1&e=TSJ9jD).
 
 You can convert your report from markdown to PDF format with `pandoc`:

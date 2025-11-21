@@ -128,7 +128,7 @@ Before the first lecture, please read (and install the software from link:sessio
 .2+| link:sessions/session_08/READING_MATERIAL.md[Material]
 .2+| link:sessions/session_08/Slides.md[Handling Users with ASP.NET Core Identity and OAuth]
 .2+a| * link:sessions/session_08/README_PROJECT.md[Add login with GitHub to _Chirp!_]
-   * *Project Review 2 (tba)*
+   * *Project Review 2*
 .2+|link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-6?origin=product-toc[6], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-7?origin=product-toc[7], link:https://livebook.manning.com/book/asp-net-core-in-action-third-edition/chapter-23?origin=product-toc[23]
 
 
@@ -182,7 +182,7 @@ What to know before you touch a line of code])
 .2+a| * "Privacy by Design"
    * link:sessions/session_12/Slides.md[Behavioral Models, Documentation, and Architecture]
 .2+a| * link:sessions/session_12/README_PROJECT.md[Add user info page and "forget me" feature to _Chirp!_]
-   * *Project Review 3 (tba)*
+   * *Project Review 3*
 .2+|
 
 

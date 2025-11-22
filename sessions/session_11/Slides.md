@@ -429,7 +429,31 @@ _header: 5 minutes
 
 Discuss with each other, what are components in your _Chirp!_ applications?
 
-## Intro to project work
+## Architecture in the small vs. in the large
+
+  > 1. **Architecture in the small** is concerned with the architecture of individual programs. At this level, we are concerned with the way that an individual program is decomposed into components.
+  > 2. **Architecture in the large** is concerned with the architecture of complex enterprise systems that include other systems, programs, and program components. These enterprise systems may be distributed over different computers, which may be owned and managed by different companies.
+  
+Source: *I. Sommerville _Software Engineering_*
+
+<!--@Helge: Name what maps to components in the small and in the large.-->
+
+
+## Design: UML Deployment diagrams
+<!--
+_backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
+_color: white
+-->
+
+> [A] Node is a deployment target which represents computational resource upon which artifacts may be deployed for execution.
+*Source: <a href="https://www.uml-diagrams.org/deployment-diagrams.html">uml-diagrams.org</a>*
+
+![bg right:50% 100%](./images/multi_clients_server_comp.png)
+
+In your cases, you can consider each service that you receive from Azure as a Node.
+
+
+## Project work
 
 - From now on, tasks in project work are formulated more openly.
 - That is, you have to _analyze_ what is written there to be able to design a suitable solution and to implement it correctly.

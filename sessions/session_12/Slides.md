@@ -59,25 +59,31 @@ Presence at the own lecture day is mandatory!
 
 ## Project Report
 
-Deadline: January 2
+Organization
 
-Please ask **questions before Christmas**
+- Deadline: January 2
+
+- Please ask **questions before Christmas**
 (ITU forces us to take vacation until January!)
+
+The report
+
+- See the description of the deliverable [here](./README_REPORT.md)
+- Find the template for the report [here](./docs/)
 
 
 ## Plan for this week
 
 - Last week
   - Requirements Engineering
-  - Structural Modeling (class and component diagrams)
+  - Structural Modeling
 - This week
-  - Structural Modeling (deployment diagrams) - I will move those slides to the other lecture
   - Behavioral Modeling
   - Documentation
 
 <!-- First hour -->
 
-## Unified Modeling Language (UML)
+## Recapitulation: Unified Modeling Language (UML)
 
 - What is the UML?
   - General purpose modeling language for developing software systems
@@ -86,7 +92,7 @@ Please ask **questions before Christmas**
 
 ![w:700px](https://upload.wikimedia.org/wikipedia/commons/d/d6/Uml_diagram2.png)
 
-## Computer-Aided Software Engineering (CASE) Tools
+## Recapitulation: Computer-Aided Software Engineering (CASE) Tools
 
 Assist developers and analysts in creating and managing models (like UML class diagrams) and other artifacts throughout the software development life cycle (SDLC).
 
@@ -102,11 +108,11 @@ In this course, we use the community edition of Visual Paradigm
  - https://www.visual-paradigm.com/download/community.jsp
  
 
-## Structural Diagrams
+## Recapitulation: Structural Diagrams
 <!-- _class: centered -->
 
 
-## Design: UML Class diagrams to illustrate Domain model
+## Recapitulation: UML Class diagrams to illustrate Domain model
 
 <!--
 _backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
@@ -122,7 +128,7 @@ What are alternatives to entity diagrams with UML class diagrams?
 * ER diagrams as you saw them in your database class.
 
 
-## Modeling Best Practices
+## Recapitulation: Modeling Best Practices
 - Classes
   - Names are singular, e.g., *Cheep*
 
@@ -134,7 +140,7 @@ What are alternatives to entity diagrams with UML class diagrams?
 ![width:700px](../session_11/images/class_association.png)
 
 
-## UML Component diagrams
+## Recapitulation: UML Component diagrams
 <!--
 _backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
 _color: white
@@ -143,46 +149,7 @@ _color: white
 ![bg 70%](../session_11/images/client_server_comp_db.png)
 
 
-## Detour: What is a _component_???
-
-
-  > A software element that conforms to a standard component model and can be **independently deployed and composed** without modification according to a composition standard.
-  *Source:  W.T. Councill et al. _"Definition of a Software Component and Its Elements."_*
-
-  > A software component is a unit of composition with contractually-specified interfaces and explicit context dependencies only. A software component can be **deployed independently and is subject to composition** by third parties.
-  *Source:  C. Szyperski _"Component Software: Beyond Object-Oriented Programming"_*
-
-
-## Detour: Characteristics of Components
-
-  > 1. The component is an **independent executable entity** that is defined by its interfaces. You don’t need any knowledge of its source code to use it. It can either be referenced as an **external service or included directly** in a program.
-  >
-  > 2. The services offered by a component are made available through an interface, and all interactions are through that interface. The component interface is expressed in terms of parameterized operations, and its internal state is never exposed.
-  *Source: I. Sommerville _Software Engineering_*
-
-
-## Task: What are components in your _Chirp!_ applications?
-
-<!--
-_backgroundImage: "linear-gradient(to bottom, #67b8e3, #0288d1)"
-_color: white
-_header: 5 minutes
--->
-
-Discuss with each other, what are components in your _Chirp!_ applications?
-
-
-## Architecture in the small vs. in the large
-
-  > 1. **Architecture in the small** is concerned with the architecture of individual programs. At this level, we are concerned with the way that an individual program is decomposed into components.
-  > 2. **Architecture in the large** is concerned with the architecture of complex enterprise systems that include other systems, programs, and program components. These enterprise systems may be distributed over different computers, which may be owned and managed by different companies.
-  
-Source: *I. Sommerville _Software Engineering_*
-
-<!--@Helge: Name what maps to components in the small and in the large.-->
-
-
-## Design: UML Deployment diagrams
+## Recapitulation: Design: UML Deployment diagrams
 <!--
 _backgroundImage: "linear-gradient(to bottom, #deb887, #d17e12)"
 _color: white
@@ -599,11 +566,6 @@ What is Software?
   > Additionally, the collection of such artifacts allow such suitably educated person(s) to **understand** and **reason** about a systems' working and properties and let them **understand** why the system is as it is and why it behaves the way it does.
 
 *Source:  Helge*
-
-## The report
-
-- See the description of the deliverable [here](./README_REPORT.md)
-- Find the template for the report [here](./docs/)
 
 
 <!-- Fourth hour -->

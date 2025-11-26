@@ -207,9 +207,9 @@ What to know before you touch a line of code])
 |03.12.2025
 |Sven
 .2+|
-.2+|link:sessions/session_14/Slides.md[Repetition]
-.2+|link:sessions/session_14/README_PROJECT.md#3-demo-day[Project demo day]
-.2+|link:sessions/session_14/README_REPORT.md[Complete projects and write reports]
+.2+|
+.2+|link:sessions/session_13/README_PROJECT.md#3-demo-day[Project demo day]
+.2+|link:sessions/session_12/README_REPORT.md[Complete projects and write reports]
 
 
 |05.12.2025

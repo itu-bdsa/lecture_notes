@@ -1,6 +1,6 @@
 ---
 title: _Chirp!_ Project Report
-subtitle: ITU BDSA 2024 Group `<no>`
+subtitle: ITU BDSA 2025 Group `<no>`
 author:
 - "Helge Pfeiffer <ropf@itu.dk>"
 - "Adrian Hoff <adho@itu.dk>"

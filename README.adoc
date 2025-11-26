@@ -177,7 +177,7 @@ What to know before you touch a line of code])
 .2+|12
 .2+|47
 |19.11.2025
-| Jakob Krabbe (Comply Cloud, guest lecture)
+| Jakob Krabbe (Comply Cloud, guest lecture: link:sessions/session_12/GDPR and AI ACT in relation to software development.pdf[GDPR and AI Act])
 .2+| link:sessions/session_12/READING_MATERIAL.md[Material]
 .2+a| * "Privacy by Design"
    * link:sessions/session_12/Slides.md[Behavioral Models, Documentation, and Architecture]
@@ -218,9 +218,8 @@ What to know before you touch a line of code])
 |=======================================================================
 
 * Exam dates and detaill:
-- exact details tba
-//  - Hand-in of project reports: 19/12/24 (latest at 14:00)
-//  - Written exams (on premises): 3/1/25 (9:00 - 11:00)
+  - Hand-in of project reports: 2/1/26 (latest at 14:00) link:https://learnit.itu.dk/mod/assign/view.php?id=235749&forceview=1[LearnIT Submission]
+  - Written exams (on premises): 9/1/26 (9:00 - 11:00)
 
 === TA Supervision
 

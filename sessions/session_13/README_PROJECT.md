@@ -46,7 +46,7 @@ Make sure that the above features are tested in a suitable form.
 
 Prepare for the Demo day next week (Wednesday 3/12/24 or Friday 5/12/24).
 You present your work to each other in clusters of three groups and you provide peer-feedback to each other.
-Each group has 10 minutes to present. The remaining time in the time slots is used for discussions and feedback.
+Each group has 5 minutes to present. The remaining time in the time slots is used for discussions and feedback.
 
 **OBS**: All times given below are sharp! That is, they are not with an academic quarter.
 
@@ -56,27 +56,23 @@ Wednesday 3/12/24
 
 | Time        | Room   | Groups         | TA     |
 |-------------|--------|----------------|--------|
-| 12:15-13:00 | Aud1   |        |  |
-|             | Aud1   |        |  |
-| 13:15-14:00 | Aud1   |        |  |
-|             | Aud1   |        |  |
+| 12:15-13:00 | Aud1   | 1,2,3,4        | Carl   |
+|             | Aud1   | 5,6,7,8,27     | Jakob  |
+| 13:15-14:00 | Aud1   | 9,10,11,12     | Jonas  |
 
 
 Friday 5/12/24
 
 | Time        | Room    | Groups         | TA      |
 |-------------|---------|----------------|---------|
-| 08:15-09:00 | Aud1    |        |  |
-|             | Aud1 |        |  |
-|             | Aud1    |        |  |
-| 09:15-10:00 | Aud1    |        |  |
-|             | Aud1 |        |  |
-|             | Aud1    |        |  |
+| 08:15-09:00 | Aud1    | 13,14,15,16    | Marius  | 
+|             | Aud1    | 17,18,19,20,21 | Patrick |
+| 09:15-10:00 | Aud1    | 22,23,24,25,26 | Phi Va  |
 
 
 ### What to present?
 
-- Quick tour of features and demonstration of their functionality
+- Quick tour of features and demonstration of their functionality (keep parts everyone had to do short)
 - Brief demo of additional features.
 - Describe design descision that are characteristic for your projects. Amongst others:
   - How is "forget me" feature implemented?
@@ -101,6 +97,6 @@ In the following you find a kind of checklist that you may use as inspiration wh
 - Visualizations:
   - Are the presented visualizations syntactically correct?
   - Are relation ends on the correct side of relations?
-  - Are cardinalities correct?
+  - Are multiplicities/cardinalities correct?
   - Are the correct diagram types used?
   - Are there separate illustrations of structure and behaviour of the _Chirp!_ system or are they mixed?

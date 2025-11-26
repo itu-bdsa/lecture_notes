@@ -44,7 +44,7 @@ style: |
 ---
 
 # **Analysis, Design and Software Architecture (BDSA)**
-Session 11
+Session 12
 [Sven Peldszus](svpe@itu.dk)
 
 ## Project Demo Day

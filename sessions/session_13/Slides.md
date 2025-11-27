@@ -44,18 +44,18 @@ Wednesday 3/12/24
 
 | Time        | Room   | Groups         | TA     |
 |-------------|--------|----------------|--------|
-| 12:15-13:00 | Aud1   | 1,2,3,4        | Carl   |
+| 12:15-14:00 | Aud1   | 1,2,3,4        | Carl   |
 |             | Aud1   | 5,6,7,8,27     | Jakob  |
-| 13:15-14:00 | Aud1   | 9,10,11,12     | Jonas  |
+|             | Aud1   | 9,10,11,12     | Jonas  |
 
 
 Friday 5/12/24
 
 | Time        | Room    | Groups         | TA      |
 |-------------|---------|----------------|---------|
-| 08:15-09:00 | Aud1    | 13,14,15,16    | Marius  | 
+| 08:15-10:00 | Aud1    | 13,14,15,16    | Marius  | 
 |             | Aud1    | 17,18,19,20,21 | Patrick |
-| 09:15-10:00 | Aud1    | 22,23,24,25,26 | Phi Va  |
+|             | Aud1    | 22,23,24,25,26 | Phi Va  |
 
 Presence at the own lecture day is mandatory!
 

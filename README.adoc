@@ -177,7 +177,7 @@ What to know before you touch a line of code])
 .2+|12
 .2+|47
 |19.11.2025
-| Jakob Krabbe (Comply Cloud, guest lecture: link:sessions/session_12/GDPR and AI ACT in relation to software development.pdf[GDPR and AI Act])
+| Jakob Krabbe (Comply Cloud, guest lecture: link:sessions/session_12/GDPR_and_AI_ACT.pdf[GDPR and AI Act])
 .2+| link:sessions/session_12/READING_MATERIAL.md[Material]
 .2+a| * "Privacy by Design"
    * link:sessions/session_12/Slides.md[Behavioral Models, Documentation, and Architecture]

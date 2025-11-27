@@ -67,7 +67,7 @@ Presence at the own lecture day is mandatory!
 **What to present?**
 
 - Quick tour of features and demonstration of their functionality
-*(keep parts everyone had implement short)*
+*(keep parts everyone had to implement short)*
 - Brief demo of additional features.
 - Describe design descision that are characteristic for your projects. Amongst others:
   - How is "forget me" feature implemented?
@@ -83,7 +83,7 @@ Inspiration for providing peer-feedback to the presentations of your fellow grou
   - Is functionality complete or are major features missing?
   - Login with GitHub works without prompting for additional information?
 - Tests:
-  - Are there any tests presented?, Are there different kinds of tests?
+  - Are there any tests presented? Are there different kinds of tests?
   - Are the presented tests sensible? The presented tests are well designed?
 - Visualizations:
   - Are the presented visualizations syntactically correct?
@@ -107,6 +107,9 @@ The report
 
 # Project Report Template (Brief summary!)
 
+**For full structure and details see:** [template](../session_12/docs/) and [description of the delivarable](../session_12/README_REPORT.md)
+
+
 * Design and Architecture of _Chirp!_
 
   * Domain model, Architecture
@@ -125,7 +128,6 @@ The report
 
   * License, LLMs, ChatGPT, CoPilot, and others
 
-**For full structure and details see:** [template](../session_12/docs/) and [description of the delivarable](../session_12/README_REPORT.md)
 
 ## What are we going to do today?
 
@@ -176,9 +178,9 @@ We reflect and develop different perspectives.
 > 1.4 Be fair and take action not to discriminate.
 > 1.5 Respect the work required to produce new ideas, inventions, creative works, and computing artifacts.
 > **1.6** Respect privacy.
-> 1.7 Honor confidentiality.<font size=3>
-Source: <a href="https://ethics.acm.org/">ACM Code of Ethics and Professional Conduct</a>
-</font>
+> 1.7 Honor confidentiality.
+
+*Source: <a href="https://ethics.acm.org/">ACM Code of Ethics and Professional Conduct</a>*
 
 
 ## ACM Code of Ethics and Professional Conduct
@@ -329,11 +331,12 @@ Discuss with your neighbors:
 
 ## Process: Iterative and Incremental
 
-During this course, we simulated an iterative and incremental development process.
+During this course, we simulated an **iterative and incremental development process**.
 That means that from week to week you implemented new features and learned new aspects of the C♯ language and the ASP.NET framework.
 
 That is only one way of working.
-However, in big projects, e.g., those for the public sector, you will meet more plan-driven processes.
+
+However, **in big projects**, e.g., those for the public sector, **you will meet more plan-driven processes**.
 
 
 ## Software Processes?
@@ -463,7 +466,7 @@ Even random outsiders might contribute their changes.
 
 ## Process reflection: Tools
 
-![w:200](https://i.ytimg.com/vi/WKVX7xq58kA/maxresdefault.jpg)
+![w:200](https://web.archive.org/web/20241003053514if_/https://i.ytimg.com/vi/WKVX7xq58kA/maxresdefault.jpg)
 
 - This is not how you worked in this project!
 - The [Fossil version control system](https://www.fossil-scm.org/) was developed by the developers of SQLite to support their work on SQLite.

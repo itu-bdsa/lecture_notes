@@ -8,9 +8,11 @@ All your documentation for this report is written in Markdown, a lightweight mar
 In the root of your repository, create a directory called `docs`.
 Let it contain a file called `report.md`.
 
+[HackMD](https://hackmd.io/) is a tool for collaboratively editing Markdown documents and might be helful for writing the report.
+
 In case you include illustrations from image files, put all of these of a subdirectory of `docs`, which shall be called `images`.
 
-Before Thursday, 2 January 2026>, hand-in a PDF file with your report on LearnIT (https://learnit.itu.dk/mod/assign/view.php?id=235749).
+Before Thursday, 2 January 2026, hand-in a PDF file with your report on LearnIT (https://learnit.itu.dk/mod/assign/view.php?id=235749).
 The filename of your report has to be `2025_itubdsa_group_<no>_report.pdf`, where where `<no>` is replaced with the group number from [here](https://ituniversity.sharepoint.com/:x:/r/sites/2025AnalysisDesignandSoftwareArchitecture/_layouts/15/Doc.aspx?sourcedoc=%7BBA26EE18-E8AF-4A74-930E-D5337ED38D77%7D&file=Groups.xlsx&action=default&mobileredirect=true&wdOrigin=TEAMS-WEB.teams_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1764148689100&web=1).
 
 You can convert your report from markdown to PDF format with `pandoc`:
@@ -38,7 +40,7 @@ That is, write short and precise sentences that do not contain fluff.
 Important, all illustrations have to be legible in the produced PDF document.
 So make sure they do not become too small.
 
-Create all illustrations with [Visual Paradig Community Edition](https://www.visual-paradigm.com/).
+Create all illustrations with [Visual Paradigm Community Edition](https://www.visual-paradigm.com/).
 Store all sources of your diagrams, i.e., diagram source code under `docs` in a directory called `diagrams`, also store exports of the diagrams as PDFs.
 
 Before handing in your project report, make sure that your source code is suitably documented in-code.

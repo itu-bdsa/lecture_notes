@@ -44,7 +44,7 @@ Alternatively, since you remember from Jakob that in terms of GDPR "anonymizatio
 That is, you may want to implement this feature so that user names and other personal data are anonymized
 For this project, it is okay that you do not consider anonymizing the contents of a cheep.
 
-After a user clicked the `Forget me!` button, she shall be logged out of your _Chirp!_ application.
+After a user clicked the `Forget me!` button, they shall be logged out of your _Chirp!_ application.
 
 
 ## 2) Process

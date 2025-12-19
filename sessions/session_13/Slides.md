@@ -95,7 +95,7 @@ Inspiration for providing peer-feedback to the presentations of your fellow grou
 
 Organization
 
-- Deadline: January 2. 2026 (latest at 14:00), hand-in via LearnIT: <a href="https://learnit.itu.dk/mod/assign/view.php?id=235749&forceview=1">LearnIT Submission</a>
+- Deadline: January 2. 2026 (latest at 14:00), hand-in via LearnIT: <a href="https://learnit.itu.dk/mod/exam/view.php?id=226301">LearnIT Submission</a>
 
 - Please ask **questions before Christmas**
 (ITU forces us to take vacation until January!)

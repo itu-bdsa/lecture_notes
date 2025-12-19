@@ -218,7 +218,7 @@ What to know before you touch a line of code])
 |=======================================================================
 
 * Exam dates and detaill:
-  - Hand-in of project reports: 2/1/26 (latest at 14:00) link:https://learnit.itu.dk/mod/assign/view.php?id=235749&forceview=1[LearnIT Submission]
+  - Hand-in of project reports: 2/1/26 (latest at 14:00) link:https://learnit.itu.dk/mod/exam/view.php?id=226301[LearnIT Submission]
   - Written exams (on premises): 9/1/26 (9:00 - 11:00)
 
 === TA Supervision
